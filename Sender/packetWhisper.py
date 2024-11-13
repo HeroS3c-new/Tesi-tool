@@ -489,21 +489,7 @@ def SelectAndGenerateCommonWebsiteFQDNs( sourceFile, cloakedFile ):
 
 def TransferCloakedFile( cloakedFile, queryDelay ):
 
-	print("")
-	print("Broadcasting file...")
-	print("")
-	mDateTimeUTC = datetime.datetime.utcnow()
-
-	print("### Starting Time (UTC): " + mDateTimeUTC.strftime( "%x %X" ))
-	print("")
-
 	status = GenerateDNSQueries( cloakedFile,  queryDelay )
-
-	mDateTimeUTC = datetime.datetime.utcnow()
-
-	print("")
-	print("### Ending Time (UTC): " + mDateTimeUTC.strftime( "%x %X" ))
-	print("")
 
 	return
 
@@ -572,7 +558,7 @@ def ExtractDNSQueriesFromPCAP( pcapFile, osStr ):
 
 	elif ( osStr == "Windows" ):
 
-		commandStr = ".\WinDump -r " + pcapFile + " udp port 53 > " + dnsQueriesFilename
+		commandStr = "WinDump -r " + pcapFile + " udp port 53 > " + dnsQueriesFilename
 
 		os.system( commandStr )
 

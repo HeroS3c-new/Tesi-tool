@@ -1,3 +1,4 @@
+from pathlib import Path
 import os, subprocess, sys, getopt, socket, re, random, datetime, time, cloakify, decloakify
 
 # Set name of knock sequence string (this is only used when transmitting Common FQDN ciphers)
@@ -490,7 +491,7 @@ def SelectAndGenerateCommonWebsiteFQDNs( sourceFile, cloakedFile ):
 def TransferCloakedFile( cloakedFile, queryDelay ):
 
 	print("")
-	print("Broadcasting file...")
+	print("Broadcasting command...")
 	print("")
 	mDateTimeUTC = datetime.datetime.utcnow()
 
@@ -571,9 +572,8 @@ def ExtractDNSQueriesFromPCAP( pcapFile, osStr ):
 		os.system( commandStr )
 
 	elif ( osStr == "Windows" ):
-
-		commandStr = ".\\tshark.exe.lnk -r " + pcapFile + " udp.port==53 > " + dnsQueriesFilename
-
+		pcapFile = "cloaked_command.pcap"
+		commandStr = f'tshark.exe.lnk -r "{Path.cwd()}/{pcapFile}" udp.port==53 > "{dnsQueriesFilename}"'
 		os.system( commandStr )
 
 	else:
@@ -645,11 +645,12 @@ def ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipherFilename, cipherTag,
 	for dnsQuery in queries:
 
 		for cipherElement in cipherStrings:
+			print(3544623	3cipherElement) #debug
 
 			# We're matching on any "A?" DNS queries that also contain the cipher element
 
 			foundQuery1 = re.search(r"A\? " + cipherElement + "?", dnsQuery)
-
+			
 			# For Repeated cipher family, we add a tag as the first element of the FQDN
 			# to identify duplicate requests. This search catches those.
 
@@ -658,6 +659,7 @@ def ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipherFilename, cipherTag,
 				foundQuery2 = re.search(r"A\?\s*.+\." + cipherElement + "?", dnsQuery)
 
 			if foundQuery1 or foundQuery2:
+				
 
 				# Now match those hits to DNS queries that also contain the cipher 
 				# tag. This may seem redundant to the re.search() above, but since

