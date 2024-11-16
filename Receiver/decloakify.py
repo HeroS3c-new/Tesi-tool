@@ -11,9 +11,15 @@ def Decloakify(arg1, arg2, arg3):
         arrayCipher = file.readlines()
         
     clear64 = ""
+    
+    #Per ogni parola, trova l'indice della parola in arrayCipher, 
+    #quindi utilizza questo indice per accedere a un elemento corrispondente in una lista chiamata array64.
+    #La stringa risultante viene concatenata a clear64.
     for word in listExfiltrated:
         clear64 += array64[arrayCipher.index(word)]
-        
+    print(listExfiltrated)
+    print(arrayCipher)
+    print(clear64)
     decoded_string = base64.b64decode(clear64).decode('utf-8')
 
     if arg3 != "":

