@@ -21,7 +21,7 @@ def Decloakify(arg1, arg2, arg3):
     print(arrayCipher)
     print(clear64)
     decoded_string = base64.b64decode(clear64).decode('utf-8')
-
+    print('decoded command: ', decoded_string)
     if arg3 != "":
         with open(arg3, "w") as outFile:
             outFile.write(decoded_string)

