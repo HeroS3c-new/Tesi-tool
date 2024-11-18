@@ -37,3 +37,5 @@ def send_command(command):
 if __name__ == "__main__":
     command = input("Inserisci il comando da eseguire sul server: ")
     send_command(command)
+    
+    
