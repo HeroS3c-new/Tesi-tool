@@ -22,6 +22,7 @@ def Cloakify(arg1, arg2, arg3):
                 for char in payloadB64.decode('utf-8'):
                     if char != '\n':
                         outFile.write(cipherArray[array64.index(char)])
+                outFile.write('endOfTransmission.google.com')
         except Exception as e:
             print(f"!!! Oh noes! Problem opening or writing to file '{file_path}': {e}")
             return

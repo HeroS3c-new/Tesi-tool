@@ -1,5 +1,6 @@
 import sys
 import base64
+import binascii
 
 array64 = list("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/+=")
 
@@ -11,11 +12,22 @@ def Decloakify(arg1, arg2, arg3):
         arrayCipher = file.readlines()
         
     clear64 = ""
+    
+    #Per ogni parola, trova l'indice della parola in arrayCipher, 
+    #quindi utilizza questo indice per accedere a un elemento corrispondente in una lista chiamata array64.
+    #La stringa risultante viene concatenata a clear64.
     for word in listExfiltrated:
         clear64 += array64[arrayCipher.index(word)]
-        
-    decoded_string = base64.b64decode(clear64).decode('utf-8')
-
+    print(listExfiltrated)
+    print(arrayCipher)
+        # Ensure correct base64 padding
+    clear64 = clear64.rstrip('\n')  # Remove trailing newline
+    padding_needed = len(clear64) % 4
+    if padding_needed:
+        clear64 += '=' * (4 - padding_needed)
+    print(clear64)
+    decoded_string = str(binascii.a2b_base64(clear64))#base64.b64decode(clear64).decode('utf-8')
+    print('decoded command: ', decoded_string)
     if arg3 != "":
         with open(arg3, "w") as outFile:
             outFile.write(decoded_string)

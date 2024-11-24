@@ -1,3 +1,4 @@
+from pathlib import Path
 import os, subprocess, sys, getopt, socket, re, random, datetime, time, cloakify, decloakify
 
 # Set name of knock sequence string (this is only used when transmitting Common FQDN ciphers)
@@ -557,10 +558,10 @@ def ExtractDNSQueriesFromPCAP( pcapFile, osStr ):
 		os.system( commandStr )
 
 	elif ( osStr == "Windows" ):
-
-		commandStr = "WinDump -r " + pcapFile + " udp port 53 > " + dnsQueriesFilename
-
+		pcapFile = "cloaked_response.pcap"
+		commandStr = f'tshark.exe.lnk -r "{Path.cwd()}/{pcapFile}" udp.port==53 > "{dnsQueriesFilename}"'
 		os.system( commandStr )
+
 
 	else:
 		print("!!! Error: Unknown OS received by ExtractDNSQueriesFromPCAP(), this shouldn't have happened. Oops.")
@@ -587,7 +588,7 @@ def ExtractDNSQueriesFromPCAP( pcapFile, osStr ):
 #========================================================================
 
 def ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipherFilename, cipherTag, isRandomized ):
-
+	print('estrazione payload...')#debug
 	cloakedFilename = "cloaked.payload"
 
 	try:
@@ -626,16 +627,21 @@ def ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipherFilename, cipherTag,
 	# corresponding cipher string to the cloaked payload file, because
 	# inference. \o/
 
-	previousSubdomain = ""
+	#previousSubdomain = ""
 
 	for dnsQuery in queries:
-
 		for cipherElement in cipherStrings:
+			#print('---------------') #debug
+      
+			#print('dnnsquery: "'+dnsQuery+"\"") #debug
+
+			#print('cipherElement: "'+cipherElement+"\"") #debug
 
 			# We're matching on any "A?" DNS queries that also contain the cipher element
 
-			foundQuery1 = re.search(r"A\? " + cipherElement + "?", dnsQuery)
-
+			foundQuery1 = re.search(r"A " + cipherElement + "?", dnsQuery) #re.search(r"A\?\s*.+\." + cipherElement + "?", dnsQuery)
+			
+   
 			# For Repeated cipher family, we add a tag as the first element of the FQDN
 			# to identify duplicate requests. This search catches those.
 
@@ -644,6 +650,10 @@ def ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipherFilename, cipherTag,
 				foundQuery2 = re.search(r"A\?\s*.+\." + cipherElement + "?", dnsQuery)
 
 			if foundQuery1 or foundQuery2:
+				#print(re.search(r"A " + cipherElement + "?", dnsQuery)) #debug
+				#print(dnsQuery)
+				#print('query1: '+str(foundQuery1), ', query2: '+str(foundQuery2)) #debug
+				
 
 				# Now match those hits to DNS queries that also contain the cipher 
 				# tag. This may seem redundant to the re.search() above, but since
@@ -651,10 +661,9 @@ def ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipherFilename, cipherTag,
 				# use a different regex base string ("IP ") that will always appear
 				# before the possible positions of the cipher tag
 
-				found = re.search(r"IP " + cipherTag + "?", dnsQuery)
-
-				if found:
-
+				found = re.search(cipherTag, dnsQuery)#re.search(r"IP " + cipherTag + "", dnsQuery)#debug
+				#print(found)#debug
+				if found: 
 					# Confirmed match, minimized the risk of "bad luck" false 
 					# positives. Add the cipher element to the extracted cloaked 
 					# file that we'll later pass to Decloakify()
@@ -663,9 +672,12 @@ def ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipherFilename, cipherTag,
 					fqdnElements = queryElements[ 7 ].split( '.' )
 					subdomain = fqdnElements[ 0 ]
 
+					#print('queryElements: "'+queryElements+"\"")#debug
+					#print('fqdnElements: "'+fqdnElements+"\"")#debug
+					#print('subdomain: "'+subdomain+"\"")#debug
 					# Don't write out duplicate subdomains if cipher was
 					# randomized, since that means it's a duplicate DNS query
-					if isRandomized and subdomain != previousSubdomain:
+					if isRandomized: #and subdomain != previousSubdomain:
 
 						cloakedFile.write( cipherElement )
 
@@ -673,8 +685,10 @@ def ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipherFilename, cipherTag,
 		
 						cloakedFile.write( cipherElement )
 
-					previousSubdomain = subdomain
-
+					#previousSubdomain = subdomain
+			#print('---------------')#debug
+     
+		
 	queriesFile.close()
 	cipherFile.close()
 	cloakedFile.close()

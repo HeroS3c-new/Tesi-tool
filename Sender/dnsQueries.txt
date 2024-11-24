@@ -1,0 +1,263 @@
+    1   0.000000 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 228 Standard query response 0x0005 AAAA www.groupon.com CNAME www.groupon.com.edgekey.net CNAME e13056.x.akamaiedge.net SOA n0x.akamaiedge.net
+    2   0.039789 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 152 Standard query 0x0001 PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa
+    3   0.051196 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 236 Standard query response 0x0001 No such name PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa SOA fake-for-negative-caching.adguard.com
+    4   0.051869 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 99 Standard query 0x0002 A www.netflix.com.lan
+    5   0.055571 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 99 Standard query response 0x0002 No such name A www.netflix.com.lan
+    6   0.056155 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 99 Standard query 0x0003 AAAA www.netflix.com.lan
+    7   0.060279 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 99 Standard query response 0x0003 No such name AAAA www.netflix.com.lan
+    8   0.060924 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 95 Standard query 0x0004 A www.netflix.com
+    9   0.067189 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 288 Standard query response 0x0004 A www.netflix.com CNAME www.dradis.netflix.com CNAME www.eu-west-1.internal.dradis.netflix.com CNAME apiproxy-website-nlb-prod-3-ac110f6ae472b85a.elb.eu-west-1.amazonaws.com A 3.251.50.149 A 54.74.73.31 A 54.155.178.5
+   10   0.072255 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 95 Standard query 0x0005 AAAA www.netflix.com
+   11   0.078482 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 324 Standard query response 0x0005 AAAA www.netflix.com CNAME www.dradis.netflix.com CNAME www.eu-west-1.internal.dradis.netflix.com CNAME apiproxy-website-nlb-prod-1-5675d5ecda6efdd8.elb.eu-west-1.amazonaws.com AAAA 2a05:d018:76c:b684:8e48:47c9:84aa:b34d AAAA 2a05:d018:76c:b685:3b38:679d:2640:1ced AAAA 2a05:d018:76c:b683:f711:f0cf:5cc7:b815
+   12   0.115851 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 152 Standard query 0x0001 PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa
+   13   0.123731 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 236 Standard query response 0x0001 No such name PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa SOA fake-for-negative-caching.adguard.com
+   14   0.124538 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 100 Standard query 0x0002 A www.blogspot.com.lan
+   15   0.129895 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 100 Standard query response 0x0002 No such name A www.blogspot.com.lan
+   16   0.130147 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 100 Standard query 0x0003 AAAA www.blogspot.com.lan
+   17   0.133853 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 100 Standard query response 0x0003 No such name AAAA www.blogspot.com.lan
+   18   0.134186 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 96 Standard query 0x0004 A www.blogspot.com
+   19   0.141358 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 143 Standard query response 0x0004 A www.blogspot.com CNAME blogger.l.google.com A 216.58.206.73
+   20   0.145216 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 96 Standard query 0x0005 AAAA www.blogspot.com
+   21   0.151949 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 155 Standard query response 0x0005 AAAA www.blogspot.com CNAME blogger.l.google.com AAAA 2a00:1450:4001:80e::2009
+   26   0.182695 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 152 Standard query 0x0001 PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa
+   33   0.190725 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 236 Standard query response 0x0001 No such name PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa SOA fake-for-negative-caching.adguard.com
+   35   0.191604 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 97 Standard query 0x0002 A www.imgur.com.lan
+   36   0.196820 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 97 Standard query response 0x0002 No such name A www.imgur.com.lan
+   37   0.197201 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 97 Standard query 0x0003 AAAA www.imgur.com.lan
+   39   0.201220 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 97 Standard query response 0x0003 No such name AAAA www.imgur.com.lan
+   40   0.201449 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 93 Standard query 0x0004 A www.imgur.com
+   41   0.273179 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 164 Standard query response 0x0004 A www.imgur.com CNAME ipv4.imgur.map.fastly.net A 199.232.192.193 A 199.232.196.193
+   42   0.280165 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 93 Standard query 0x0005 AAAA www.imgur.com
+   43   0.286255 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 190 Standard query response 0x0005 AAAA www.imgur.com CNAME ipv4.imgur.map.fastly.net SOA ns1.fastly.net
+   44   0.330783 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 152 Standard query 0x0001 PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa
+   45   0.336939 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 236 Standard query response 0x0001 No such name PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa SOA fake-for-negative-caching.adguard.com
+   46   0.337864 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 99 Standard query 0x0002 A www.foxnews.com.lan
+   47   0.341461 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 99 Standard query response 0x0002 No such name A www.foxnews.com.lan
+   48   0.341802 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 99 Standard query 0x0003 AAAA www.foxnews.com.lan
+   49   0.345394 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 99 Standard query response 0x0003 No such name AAAA www.foxnews.com.lan
+   50   0.345685 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 95 Standard query 0x0004 A www.foxnews.com
+   51   0.439070 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 206 Standard query response 0x0004 A www.foxnews.com CNAME www.foxnews.com.edgekey.net CNAME e197183.dsca.akamaiedge.net A 23.36.162.202 A 23.36.162.218
+   52   0.444260 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 95 Standard query 0x0005 AAAA www.foxnews.com
+   53   0.678534 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 230 Standard query response 0x0005 AAAA www.foxnews.com CNAME www.foxnews.com.edgekey.net CNAME e197183.dsca.akamaiedge.net AAAA 2a02:26f0:3500:18::1724:a296 AAAA 2a02:26f0:3500:18::1724:a28d
+   54   0.748162 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 152 Standard query 0x0001 PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa
+   55   0.754364 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 236 Standard query response 0x0001 No such name PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa SOA fake-for-negative-caching.adguard.com
+   56   0.755721 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 96 Standard query 0x0002 A www.live.com.lan
+   57   0.760057 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 96 Standard query response 0x0002 No such name A www.live.com.lan
+   58   0.760539 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 96 Standard query 0x0003 AAAA www.live.com.lan
+   59   0.765066 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 96 Standard query response 0x0003 No such name AAAA www.live.com.lan
+   60   0.765643 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 92 Standard query 0x0004 A www.live.com
+   63   0.891308 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 171 Standard query response 0x0004 A www.live.com CNAME outlook-fd-0010.live.com CNAME a-0010.a-msedge.net A 204.79.197.212
+   64   0.899944 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 92 Standard query 0x0005 AAAA www.live.com
+   65   0.988161 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 183 Standard query response 0x0005 AAAA www.live.com CNAME outlook-fd-0010.live.com CNAME a-0010.a-msedge.net AAAA 2620:1ec:c11::212
+   66   1.061952 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 152 Standard query 0x0001 PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa
+   67   1.076475 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 236 Standard query response 0x0001 No such name PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa SOA fake-for-negative-caching.adguard.com
+   68   1.077751 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 106 Standard query 0x0002 A www.huffingtonpost.com.lan
+   69   1.082823 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 106 Standard query response 0x0002 No such name A www.huffingtonpost.com.lan
+   70   1.083320 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 106 Standard query 0x0003 AAAA www.huffingtonpost.com.lan
+   71   1.087189 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 106 Standard query response 0x0003 No such name AAAA www.huffingtonpost.com.lan
+   72   1.087813 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 102 Standard query 0x0004 A www.huffingtonpost.com
+   75   1.265623 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 204 Standard query response 0x0004 A www.huffingtonpost.com CNAME buzzfeed2.map.fastly.net A 151.101.66.114 A 151.101.2.114 A 151.101.194.114 A 151.101.130.114
+   76   1.275234 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 102 Standard query 0x0005 AAAA www.huffingtonpost.com
+   79   1.351132 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 198 Standard query response 0x0005 AAAA www.huffingtonpost.com CNAME buzzfeed2.map.fastly.net SOA ns1.fastly.net
+   80   1.431136 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 152 Standard query 0x0001 PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa
+   81   1.437479 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 236 Standard query response 0x0001 No such name PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa SOA fake-for-negative-caching.adguard.com
+   82   1.438734 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 100 Standard query 0x0002 A www.outbrain.com.lan
+   83   1.442897 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 100 Standard query response 0x0002 No such name A www.outbrain.com.lan
+   84   1.443230 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 100 Standard query 0x0003 AAAA www.outbrain.com.lan
+   85   1.447138 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 100 Standard query response 0x0003 No such name AAAA www.outbrain.com.lan
+   86   1.447467 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 96 Standard query 0x0004 A www.outbrain.com
+   87   1.453349 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 112 Standard query response 0x0004 A www.outbrain.com A 0.0.0.0
+   88   1.459878 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 96 Standard query 0x0005 AAAA www.outbrain.com
+   89   1.477298 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 124 Standard query response 0x0005 AAAA www.outbrain.com AAAA ::
+   90   1.516154 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 152 Standard query 0x0001 PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa
+   91   1.522699 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 236 Standard query response 0x0001 No such name PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa SOA fake-for-negative-caching.adguard.com
+   92   1.523411 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 99 Standard query 0x0002 A www.groupon.com.lan
+   93   1.527443 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 99 Standard query response 0x0002 No such name A www.groupon.com.lan
+   94   1.527755 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 99 Standard query 0x0003 AAAA www.groupon.com.lan
+   95   1.532142 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 99 Standard query response 0x0003 No such name AAAA www.groupon.com.lan
+   96   1.532483 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 95 Standard query 0x0004 A www.groupon.com
+   97   1.539226 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 186 Standard query response 0x0004 A www.groupon.com CNAME www.groupon.com.edgekey.net CNAME e13056.x.akamaiedge.net A 69.192.161.149
+   98   1.543961 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 95 Standard query 0x0005 AAAA www.groupon.com
+   99   1.550208 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 228 Standard query response 0x0005 AAAA www.groupon.com CNAME www.groupon.com.edgekey.net CNAME e13056.x.akamaiedge.net SOA n0x.akamaiedge.net
+  100   1.584157 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 152 Standard query 0x0001 PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa
+  101   1.591616 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 236 Standard query response 0x0001 No such name PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa SOA fake-for-negative-caching.adguard.com
+  102   1.592205 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 101 Standard query 0x0002 A www.pinterest.com.lan
+  103   1.596780 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 101 Standard query response 0x0002 No such name A www.pinterest.com.lan
+  104   1.597072 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 101 Standard query 0x0003 AAAA www.pinterest.com.lan
+  105   1.601610 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 101 Standard query response 0x0003 No such name AAAA www.pinterest.com.lan
+  106   1.601873 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 97 Standard query 0x0004 A www.pinterest.com
+  117   1.753539 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 289 Standard query response 0x0004 A www.pinterest.com CNAME www-pinterest-com.gslb.pinterest.com CNAME 2-01-37d2-0018.cdx.cedexis.net CNAME prod.pinterest.global.map.fastly.net A 151.101.128.84 A 151.101.64.84 A 151.101.0.84 A 151.101.192.84
+  118   1.761957 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 97 Standard query 0x0005 AAAA www.pinterest.com
+  119   1.843250 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 309 Standard query response 0x0005 AAAA www.pinterest.com CNAME www-pinterest-com.gslb.pinterest.com CNAME 2-01-37d2-0018.cdx.cedexis.net CNAME www.pinterest.com.edgekey.net CNAME e6449.a.akamaiedge.net SOA n0a.akamaiedge.net
+  123   1.903918 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 152 Standard query 0x0001 PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa
+  124   1.910262 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 236 Standard query response 0x0001 No such name PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa SOA fake-for-negative-caching.adguard.com
+  125   1.911512 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 106 Standard query 0x0002 A www.washingtonpost.com.lan
+  126   1.916436 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 106 Standard query response 0x0002 No such name A www.washingtonpost.com.lan
+  127   1.917037 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 106 Standard query 0x0003 AAAA www.washingtonpost.com.lan
+  128   1.921795 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 106 Standard query response 0x0003 No such name AAAA www.washingtonpost.com.lan
+  129   1.922490 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 102 Standard query 0x0004 A www.washingtonpost.com
+  133   2.063601 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 182 Standard query response 0x0004 A www.washingtonpost.com CNAME 50992.edgekey.net CNAME e9631.j.akamaiedge.net A 23.45.108.250
+  134   2.072105 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 102 Standard query 0x0005 AAAA www.washingtonpost.com
+  135   2.139738 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 224 Standard query response 0x0005 AAAA www.washingtonpost.com CNAME 50992.edgekey.net CNAME e9631.j.akamaiedge.net SOA n0j.akamaiedge.net
+  136   2.198475 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 152 Standard query 0x0001 PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa
+  139   2.248931 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 236 Standard query response 0x0001 No such name PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa SOA fake-for-negative-caching.adguard.com
+  140   2.250341 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 98 Standard query 0x0002 A www.office.com.lan
+  141   2.254883 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 98 Standard query response 0x0002 No such name A www.office.com.lan
+  142   2.255430 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 98 Standard query 0x0003 AAAA www.office.com.lan
+  143   2.261348 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 98 Standard query response 0x0003 No such name AAAA www.office.com.lan
+  144   2.262017 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 94 Standard query 0x0004 A www.office.com
+  145   2.390876 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 202 Standard query response 0x0004 A www.office.com CNAME home-portal.office.com CNAME home-office365-com.b-0004.b-msedge.net CNAME b-0004.b-msedge.net A 13.107.6.156
+  146   2.398877 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 94 Standard query 0x0005 AAAA www.office.com
+  147   2.460180 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 214 Standard query response 0x0005 AAAA www.office.com CNAME home-portal.office.com CNAME home-office365-com.b-0004.b-msedge.net CNAME b-0004.b-msedge.net AAAA 2620:1ec:a92::156
+  150   2.518685 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 152 Standard query 0x0001 PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa
+  151   2.524889 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 236 Standard query response 0x0001 No such name PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa SOA fake-for-negative-caching.adguard.com
+  152   2.526118 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 96 Standard query 0x0002 A www.yelp.com.lan
+  153   2.529532 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 96 Standard query response 0x0002 No such name A www.yelp.com.lan
+  154   2.529893 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 96 Standard query 0x0003 AAAA www.yelp.com.lan
+  155   2.533552 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 96 Standard query response 0x0003 No such name AAAA www.yelp.com.lan
+  156   2.533986 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 92 Standard query 0x0004 A www.yelp.com
+  157   2.542221 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 192 Standard query response 0x0004 A www.yelp.com CNAME yelpcdn.map.fastly.net A 151.101.0.116 A 151.101.64.116 A 151.101.128.116 A 151.101.192.116
+  158   2.548711 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 92 Standard query 0x0005 AAAA www.yelp.com
+  159   2.694935 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 186 Standard query response 0x0005 AAAA www.yelp.com CNAME yelpcdn.map.fastly.net SOA ns1.fastly.net
+  160   2.746714 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 152 Standard query 0x0001 PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa
+  161   2.755415 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 236 Standard query response 0x0001 No such name PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa SOA fake-for-negative-caching.adguard.com
+  162   2.756023 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 98 Standard query 0x0002 A www.target.com.lan
+  163   2.759662 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 98 Standard query response 0x0002 No such name A www.target.com.lan
+  164   2.760325 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 98 Standard query 0x0003 AAAA www.target.com.lan
+  165   2.763902 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 98 Standard query response 0x0003 No such name AAAA www.target.com.lan
+  166   2.764301 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 94 Standard query 0x0004 A www.target.com
+  167   2.893101 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 199 Standard query response 0x0004 A www.target.com CNAME sites.target.map.fastly.net A 151.101.130.187 A 151.101.194.187 A 151.101.2.187 A 151.101.66.187
+  168   2.900441 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 94 Standard query 0x0005 AAAA www.target.com
+  169   2.982640 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 193 Standard query response 0x0005 AAAA www.target.com CNAME sites.target.map.fastly.net SOA ns1.fastly.net
+  172   3.041490 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 152 Standard query 0x0001 PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa
+  174   3.049930 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 236 Standard query response 0x0001 No such name PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa SOA fake-for-negative-caching.adguard.com
+  175   3.050718 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 96 Standard query 0x0002 A www.etsy.com.lan
+  176   3.054999 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 96 Standard query response 0x0002 No such name A www.etsy.com.lan
+  177   3.055912 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 96 Standard query 0x0003 AAAA www.etsy.com.lan
+  178   3.060261 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 96 Standard query response 0x0003 No such name AAAA www.etsy.com.lan
+  179   3.060655 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 92 Standard query 0x0004 A www.etsy.com
+  180   3.179817 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 209 Standard query response 0x0004 A www.etsy.com CNAME zone1.www.etsy.com CNAME etsy.map.fastly.net A 151.101.1.224 A 151.101.193.224 A 151.101.129.224 A 151.101.65.224
+  182   3.185286 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 92 Standard query 0x0005 AAAA www.etsy.com
+  185   3.265658 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 203 Standard query response 0x0005 AAAA www.etsy.com CNAME zone1.www.etsy.com CNAME etsy.map.fastly.net SOA ns1.fastly.net
+  186   3.302509 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 152 Standard query 0x0001 PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa
+  187   3.314961 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 236 Standard query response 0x0001 No such name PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa SOA fake-for-negative-caching.adguard.com
+  188   3.315662 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 98 Standard query 0x0002 A www.zillow.com.lan
+  189   3.322427 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 98 Standard query response 0x0002 No such name A www.zillow.com.lan
+  190   3.322846 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 98 Standard query 0x0003 AAAA www.zillow.com.lan
+  191   3.333704 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 98 Standard query response 0x0003 No such name AAAA www.zillow.com.lan
+  192   3.334217 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 94 Standard query 0x0004 A www.zillow.com
+  197   3.514440 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 158 Standard query response 0x0004 A www.zillow.com A 108.138.26.117 A 108.138.26.39 A 108.138.26.62 A 108.138.26.93
+  198   3.523140 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 94 Standard query 0x0005 AAAA www.zillow.com
+  199   3.590966 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 155 Standard query response 0x0005 AAAA www.zillow.com SOA ns-188.awsdns-23.com
+  200   3.627366 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 152 Standard query 0x0001 PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa
+  201   3.634165 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 236 Standard query response 0x0001 No such name PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa SOA fake-for-negative-caching.adguard.com
+  202   3.634961 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 99 Standard query 0x0002 A www.groupon.com.lan
+  203   3.638786 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 99 Standard query response 0x0002 No such name A www.groupon.com.lan
+  204   3.639160 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 99 Standard query 0x0003 AAAA www.groupon.com.lan
+  205   3.643483 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 99 Standard query response 0x0003 No such name AAAA www.groupon.com.lan
+  206   3.643888 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 95 Standard query 0x0004 A www.groupon.com
+  207   3.713667 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 186 Standard query response 0x0004 A www.groupon.com CNAME www.groupon.com.edgekey.net CNAME e13056.x.akamaiedge.net A 69.192.161.149
+  208   3.718219 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 95 Standard query 0x0005 AAAA www.groupon.com
+  209   3.725229 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 228 Standard query response 0x0005 AAAA www.groupon.com CNAME www.groupon.com.edgekey.net CNAME e13056.x.akamaiedge.net SOA n0x.akamaiedge.net
+  210   3.769214 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 152 Standard query 0x0001 PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa
+  211   3.776821 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 236 Standard query response 0x0001 No such name PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa SOA fake-for-negative-caching.adguard.com
+  212   3.777510 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 98 Standard query 0x0002 A www.github.com.lan
+  213   3.783171 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 98 Standard query response 0x0002 No such name A www.github.com.lan
+  214   3.783517 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 98 Standard query 0x0003 AAAA www.github.com.lan
+  215   3.787533 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 98 Standard query response 0x0003 No such name AAAA www.github.com.lan
+  216   3.787997 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 94 Standard query 0x0004 A www.github.com
+  217   3.926861 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 124 Standard query response 0x0004 A www.github.com CNAME github.com A 140.82.121.4
+  218   3.931911 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 94 Standard query 0x0005 AAAA www.github.com
+  219   4.007450 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 192 Standard query response 0x0005 AAAA www.github.com CNAME github.com SOA ns-1707.awsdns-21.co.uk
+  220   4.036823 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 152 Standard query 0x0001 PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa
+  221   4.043873 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 236 Standard query response 0x0001 No such name PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa SOA fake-for-negative-caching.adguard.com
+  222   4.044557 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 105 Standard query 0x0002 A www.stackoverflow.com.lan
+  223   4.048549 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 105 Standard query response 0x0002 No such name A www.stackoverflow.com.lan
+  224   4.049005 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 105 Standard query 0x0003 AAAA www.stackoverflow.com.lan
+  225   4.052943 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 105 Standard query response 0x0003 No such name AAAA www.stackoverflow.com.lan
+  226   4.053233 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 101 Standard query 0x0004 A www.stackoverflow.com
+  227   4.059397 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 133 Standard query response 0x0004 A www.stackoverflow.com A 172.64.155.249 A 104.18.32.7
+  228   4.063884 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 101 Standard query 0x0005 AAAA www.stackoverflow.com
+  229   4.070911 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 162 Standard query response 0x0005 AAAA www.stackoverflow.com SOA damian.ns.cloudflare.com
+  230   4.102957 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 152 Standard query 0x0001 PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa
+  231   4.110555 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 236 Standard query response 0x0001 No such name PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa SOA fake-for-negative-caching.adguard.com
+  232   4.111204 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 101 Standard query 0x0002 A www.microsoft.com.lan
+  233   4.114927 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 101 Standard query response 0x0002 No such name A www.microsoft.com.lan
+  234   4.115322 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 101 Standard query 0x0003 AAAA www.microsoft.com.lan
+  235   4.119472 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 101 Standard query response 0x0003 No such name AAAA www.microsoft.com.lan
+  236   4.119714 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 97 Standard query 0x0004 A www.microsoft.com
+  245   4.241888 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 264 Standard query response 0x0004 A www.microsoft.com CNAME www.microsoft.com-c-3.edgekey.net CNAME www.microsoft.com-c-3.edgekey.net.globalredir.akadns.net CNAME e13678.dscb.akamaiedge.net A 23.35.229.160
+  246   4.246194 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 97 Standard query 0x0005 AAAA www.microsoft.com
+  247   4.311237 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 360 Standard query response 0x0005 AAAA www.microsoft.com CNAME www.microsoft.com-c-3.edgekey.net CNAME www.microsoft.com-c-3.edgekey.net.globalredir.akadns.net CNAME e13678.dscb.akamaiedge.net AAAA 2a02:26f0:3500:284::356e AAAA 2a02:26f0:3500:295::356e AAAA 2a02:26f0:3500:2b2::356e AAAA 2a02:26f0:3500:289::356e
+  248   4.341760 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 152 Standard query 0x0001 PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa
+  249   4.353184 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 236 Standard query response 0x0001 No such name PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa SOA fake-for-negative-caching.adguard.com
+  250   4.353971 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 99 Standard query 0x0002 A www.foxnews.com.lan
+  251   4.357819 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 99 Standard query response 0x0002 No such name A www.foxnews.com.lan
+  252   4.358130 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 99 Standard query 0x0003 AAAA www.foxnews.com.lan
+  253   4.362420 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 99 Standard query response 0x0003 No such name AAAA www.foxnews.com.lan
+  254   4.362844 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 95 Standard query 0x0004 A www.foxnews.com
+  255   4.368909 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 206 Standard query response 0x0004 A www.foxnews.com CNAME www.foxnews.com.edgekey.net CNAME e197183.dsca.akamaiedge.net A 23.36.162.202 A 23.36.162.218
+  256   4.373922 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 95 Standard query 0x0005 AAAA www.foxnews.com
+  257   4.380685 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 230 Standard query response 0x0005 AAAA www.foxnews.com CNAME www.foxnews.com.edgekey.net CNAME e197183.dsca.akamaiedge.net AAAA 2a02:26f0:3500:18::1724:a296 AAAA 2a02:26f0:3500:18::1724:a28d
+  258   4.415330 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 152 Standard query 0x0001 PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa
+  259   4.422015 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 236 Standard query response 0x0001 No such name PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa SOA fake-for-negative-caching.adguard.com
+  260   4.422505 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 96 Standard query 0x0002 A www.bing.com.lan
+  261   4.426721 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 96 Standard query response 0x0002 No such name A www.bing.com.lan
+  262   4.427043 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 96 Standard query 0x0003 AAAA www.bing.com.lan
+  263   4.432358 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 96 Standard query response 0x0003 No such name AAAA www.bing.com.lan
+  264   4.432719 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 92 Standard query 0x0004 A www.bing.com
+  265   4.551142 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 293 Standard query response 0x0004 A www.bing.com CNAME www-www.bing.com.trafficmanager.net CNAME www.bing.com.edgekey.net CNAME e86303.dscx.akamaiedge.net A 92.123.104.34 A 92.123.104.32 A 92.123.104.38 A 92.123.104.31 A 92.123.104.33
+  266   4.555980 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 92 Standard query 0x0005 AAAA www.bing.com
+  267   4.656742 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 269 Standard query response 0x0005 AAAA www.bing.com CNAME www-www.bing.com.trafficmanager.net CNAME www.bing.com.edgekey.net CNAME e86303.dscx.akamaiedge.net AAAA 2a02:26f0:3500:1b::1724:a39f AAAA 2a02:26f0:3500:1b::1724:a392
+  268   4.700133 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 152 Standard query 0x0001 PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa
+  269   4.706625 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 236 Standard query response 0x0001 No such name PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa SOA fake-for-negative-caching.adguard.com
+  270   4.707564 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 106 Standard query 0x0002 A www.huffingtonpost.com.lan
+  271   4.712161 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 106 Standard query response 0x0002 No such name A www.huffingtonpost.com.lan
+  272   4.712528 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 106 Standard query 0x0003 AAAA www.huffingtonpost.com.lan
+  273   4.716038 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 106 Standard query response 0x0003 No such name AAAA www.huffingtonpost.com.lan
+  274   4.716426 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 102 Standard query 0x0004 A www.huffingtonpost.com
+  275   4.722682 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 204 Standard query response 0x0004 A www.huffingtonpost.com CNAME buzzfeed2.map.fastly.net A 151.101.66.114 A 151.101.2.114 A 151.101.194.114 A 151.101.130.114
+  276   4.728811 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 102 Standard query 0x0005 AAAA www.huffingtonpost.com
+  279   4.737781 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 198 Standard query response 0x0005 AAAA www.huffingtonpost.com CNAME buzzfeed2.map.fastly.net SOA ns1.fastly.net
+  280   4.773729 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 152 Standard query 0x0001 PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa
+  281   4.779670 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 236 Standard query response 0x0001 No such name PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa SOA fake-for-negative-caching.adguard.com
+  282   4.780555 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 97 Standard query 0x0002 A www.quora.com.lan
+  283   4.784435 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 97 Standard query response 0x0002 No such name A www.quora.com.lan
+  284   4.784811 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 97 Standard query 0x0003 AAAA www.quora.com.lan
+  285   4.788498 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 97 Standard query response 0x0003 No such name AAAA www.quora.com.lan
+  286   4.788937 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 93 Standard query 0x0004 A www.quora.com
+  287   4.938764 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 171 Standard query response 0x0004 A www.quora.com CNAME www.quora.com.cdn.cloudflare.net A 162.159.152.17 A 162.159.153.247
+  288   4.943578 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 93 Standard query 0x0005 AAAA www.quora.com
+  289   5.019617 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 194 Standard query response 0x0005 AAAA www.quora.com CNAME www.quora.com.cdn.cloudflare.net SOA ns1.cloudflare.net
+  290   5.061199 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 152 Standard query 0x0001 PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa
+  291   5.068245 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 236 Standard query response 0x0001 No such name PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa SOA fake-for-negative-caching.adguard.com
+  292   5.069408 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 99 Standard query 0x0002 A www.comcast.net.lan
+  293   5.073918 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 99 Standard query response 0x0002 No such name A www.comcast.net.lan
+  294   5.074243 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 99 Standard query 0x0003 AAAA www.comcast.net.lan
+  295   5.078510 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 99 Standard query response 0x0003 No such name AAAA www.comcast.net.lan
+  296   5.079021 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 95 Standard query 0x0004 A www.comcast.net
+  297   5.285290 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 185 Standard query response 0x0004 A www.comcast.net CNAME www.comcast.net.edgekey.net CNAME e7010.dscg.akamaiedge.net A 23.56.200.250
+  298   5.295215 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 95 Standard query 0x0005 AAAA www.comcast.net
+  299   5.360841 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 225 Standard query response 0x0005 AAAA www.comcast.net CNAME www.comcast.net.edgekey.net CNAME e7010.dscg.akamaiedge.net AAAA 2a02:26f0:3500:594::1b62 AAAA 2a02:26f0:3500:588::1b62
+  300   5.444510 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 152 Standard query 0x0001 PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa
+  301   5.455376 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 236 Standard query response 0x0001 No such name PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa SOA fake-for-negative-caching.adguard.com
+  302   5.456619 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 98 Standard query 0x0002 A www.google.com.lan
+  303   5.460738 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 98 Standard query response 0x0002 No such name A www.google.com.lan
+  304   5.461399 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 98 Standard query 0x0003 AAAA www.google.com.lan
+  305   5.465180 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 98 Standard query response 0x0003 No such name AAAA www.google.com.lan
+  306   5.465820 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 94 Standard query 0x0004 A www.google.com
+  307   5.480277 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 110 Standard query response 0x0004 A www.google.com A 142.250.185.100
+  308   5.490033 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 94 Standard query 0x0005 AAAA www.google.com
+  309   5.496408 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 122 Standard query response 0x0005 AAAA www.google.com AAAA 2a00:1450:4001:829::2004
+  310   5.559261 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 152 Standard query 0x0001 PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa
+  311   5.565828 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 236 Standard query response 0x0001 No such name PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa SOA fake-for-negative-caching.adguard.com
+  312   5.567178 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 99 Standard query 0x0002 A www.dropbox.com.lan
+  313   5.572660 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 99 Standard query response 0x0002 No such name A www.dropbox.com.lan
+  314   5.573322 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 99 Standard query 0x0003 AAAA www.dropbox.com.lan
+  315   5.578518 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 99 Standard query response 0x0003 No such name AAAA www.dropbox.com.lan
+  316   5.579166 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 95 Standard query 0x0004 A www.dropbox.com
+  317   5.585485 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 145 Standard query response 0x0004 A www.dropbox.com CNAME www-env.dropbox-dns.com A 162.125.66.18
+  318   5.591949 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 95 Standard query 0x0005 AAAA www.dropbox.com
+  319   5.600827 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 157 Standard query response 0x0005 AAAA www.dropbox.com CNAME www-env.dropbox-dns.com AAAA 2620:100:6022:18::a27d:4212
+  320   5.643780 fd5a:9620:22e6:10:611d:d1a3:f768:420c → fd5a:9620:22e6:10::1 DNS 152 Standard query 0x0001 PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa
+  321   5.650053 fd5a:9620:22e6:10::1 → fd5a:9620:22e6:10:611d:d1a3:f768:420c DNS 236 Standard query response 0x0001 No such name PTR 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.6.e.2.2.0.2.6.9.a.5.d.f.ip6.arpa SOA fake-for-negative-caching.adguard.com
