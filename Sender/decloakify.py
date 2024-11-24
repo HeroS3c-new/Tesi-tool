@@ -26,7 +26,7 @@ def Decloakify(arg1, arg2, arg3):
     if padding_needed:
         clear64 += '=' * (4 - padding_needed)
     print(clear64)
-    decoded_string = str(binascii.a2b_base64(clear64))#base64.b64decode(clear64).decode('utf-8')
+    decoded_string = base64.b64decode(clear64).decode('utf-8')
     print('decoded command: ', decoded_string)
     if arg3 != "":
         with open(arg3, "w") as outFile:
