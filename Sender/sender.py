@@ -36,15 +36,6 @@ def send_command(command):
     # Rimuove il file dopo l'invio per evitare invii ripetuti
     os.remove(cloaked_command)
 
-def remove_dup_lines(file_input, file_output):
-    lines_seen = set() # holds lines already seen
-    outfile = open(file_output, "w")
-    for line in open(file_input, "r"):
-        if line not in lines_seen: # not a duplicate
-            outfile.write(line)
-            lines_seen.add(line)
-    outfile.close()
-    return file_output
 
 def receive_response():
     print("Capturing pcap...")
@@ -52,9 +43,7 @@ def receive_response():
     print("pcap collected...")
     dnsQueriesFilename = ExtractDNSQueriesFromPCAP("cloaked_response.pcap", osStr="Windows")
     cloakedFile = ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipher, "www", isRandomized=True )
-    cloaked_response = remove_dup_lines(cloakedFile, "_"+cloakedFile)
-    os.remove(cloakedFile)
-    os.rename("_"+cloakedFile, cloakedFile)
+
     cloaked_response = cloakedFile #"cloaked.payload"
     decloaked_response = "decloaked_response.txt"
     
