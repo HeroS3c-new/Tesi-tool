@@ -86,15 +86,15 @@ def send_response(response):
 #www.target.com
 #www.office.com -> non deve essere rimosso
 def remove_dup_lines(file_input, file_output):
-  """ with open(file_input, "r") as infile, open(file_output, "w") as outfile:
+  with open(file_input, "r") as infile, open(file_output, "w") as outfile:
     previous_line = None
     for line in infile:
       if line != previous_line:  # Check for non-consecutive duplicates
         outfile.write(line)
       previous_line = line.rstrip("\n")  # Store previous line without newline
 
-  return file_output """
-  with open(file_input, "r") as infile, open(file_output, "w") as outfile:
+  return file_output
+"""   with open(file_input, "r") as infile, open(file_output, "w") as outfile:
     previous_line = None
     for line in infile:
       if previous_line and line.rstrip("\n") != previous_line.rstrip("\n"):  # Check for non-consecutive duplicates
@@ -102,7 +102,7 @@ def remove_dup_lines(file_input, file_output):
         outfile.write(line)
       previous_line = line.rstrip("\n")  # Store previous line without newline
 
-  return file_output
+  return file_output """
 
 if __name__ == "__main__":
     print("Server in attesa di richieste...")

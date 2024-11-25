@@ -640,7 +640,7 @@ def ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipherFilename, cipherTag,
 	# corresponding cipher string to the cloaked payload file, because
 	# inference. \o/
 
-	#previousSubdomain = ""
+	previousDomain = ""
 
 	for dnsQuery in queries:
 		for cipherElement in cipherStrings:
@@ -683,14 +683,14 @@ def ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipherFilename, cipherTag,
 
 					queryElements = dnsQuery.split()	
 					fqdnElements = queryElements[ 7 ].split( '.' )
-					subdomain = fqdnElements[ 0 ]
+					domain = cipherElement#fqdnElements[ 0 ]
 
 					#print('queryElements: "'+queryElements+"\"")#debug
 					#print('fqdnElements: "'+fqdnElements+"\"")#debug
 					#print('subdomain: "'+subdomain+"\"")#debug
 					# Don't write out duplicate subdomains if cipher was
 					# randomized, since that means it's a duplicate DNS query
-					if isRandomized: #and subdomain != previousSubdomain:
+					if isRandomized and domain != previousDomain:
 
 						cloakedFile.write( cipherElement )
 
@@ -698,7 +698,8 @@ def ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipherFilename, cipherTag,
 		
 						cloakedFile.write( cipherElement )
 
-					#previousSubdomain = subdomain
+					previousDomain = domain
+					print(previousDomain, domain)
 			#print('---------------')#debug
      
 		
