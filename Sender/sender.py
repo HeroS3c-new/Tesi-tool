@@ -12,7 +12,7 @@ cipher = "ciphers\\common_fqdn\\topWebsites"
 
 def send_command(command):
     # Criptare il comando
-    encrypted_command = command#encrypt_message(command, key) #debug
+    encrypted_command = encrypt_message(command, key) #debug
     print("Encrypted command: "+encrypted_command)
     # Genera e cloackifica il comando in `cloaked_command.txt`
     cloaked_command = "cloaked_command.txt"
@@ -59,9 +59,9 @@ def receive_response():
     # Decrypt command
     with open(decloaked_response, 'r') as file:
         encrypted_response = file.read().strip()
-    print("encrypted_response: ", encrypted_response)
-    response = encrypted_response#decrypt_message(encrypted_response, key)
-    print('response: ',response)
+    #print("encrypted_response: ", encrypted_response)
+    response = decrypt_message(encrypted_response, key)
+    print('Received response: ',response)
     
         
 

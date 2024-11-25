@@ -7,7 +7,7 @@ def capture_pcap(filename='cloaked_response.pcap'):
     def packet_callback(packet):
         nonlocal found
         if DNS in packet and packet[DNS].qr == 0:
-            print(f"Richiesta DNS: {packet[DNS].qd.qname.decode()}")
+            #print(f"Richiesta DNS: {packet[DNS].qd.qname.decode()}")
             if packet[DNS].qd.qname.decode() == target_domain:
                 print(f"Intercettata richiesta per {target_domain}. Salvo il pcap e termino.")
                 found = True

