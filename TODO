@@ -1,0 +1,3 @@
+- Fixxare la trasmissione: non è possibile togliere semplicemente i doppioni in sequenza
+- Rimuovere gli output delle richieste
+- Implemenatere dns_server.py

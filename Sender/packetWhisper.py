@@ -686,7 +686,7 @@ def ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipherFilename, cipherTag,
 						cloakedFile.write( cipherElement )
 
 					previousDomain = domain
-					print(previousDomain, domain)
+					
 			#print('---------------')#debug
      
 		

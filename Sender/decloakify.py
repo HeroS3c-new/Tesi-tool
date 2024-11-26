@@ -18,8 +18,6 @@ def Decloakify(arg1, arg2, arg3):
     #La stringa risultante viene concatenata a clear64.
     for word in listExfiltrated:
         clear64 += array64[arrayCipher.index(word)]
-    print(listExfiltrated)
-    print(arrayCipher)
         # Ensure correct base64 padding
     clear64 = clear64.rstrip('\n')  # Remove trailing newline
     padding_needed = len(clear64) % 4
