@@ -78,7 +78,10 @@ def send_response(response):
 if __name__ == "__main__":
     print("Server in attesa di richieste...")
     while True:
-        receive_command() 
+        try:
+            receive_command() 
+        except Exception as e:
+            print(f'Something wrong happend during the connection: {e}')
 
 
     

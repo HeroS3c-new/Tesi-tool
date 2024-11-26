@@ -531,7 +531,7 @@ def GenerateDNSQueries(cloakedFile, queryDelay, dns='localhost'):
             fqdnStr = fqdn.strip()
             # We don't care if the lookup fails, so carry on
             try:
-                ret = subprocess.run(['nslookup', fqdnStr, dns], stdout='NUL',stderr='NUL')
+                ret = subprocess.run(['nslookup', fqdnStr, dns], stdout=os.devnull, stderr=os.devnull)
                 time.sleep(queryDelay)
             except:
                 time.sleep(queryDelay)

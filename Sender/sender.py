@@ -74,5 +74,7 @@ if __name__ == "__main__":
     while True:
         command = input("Inserisci il comando da eseguire sul server: ")
         send_command(command)
-        receive_response()
-    
+        try:
+            receive_response() 
+        except Exception as e:
+            print(f'Something wrong happend during the connection: {e}')
