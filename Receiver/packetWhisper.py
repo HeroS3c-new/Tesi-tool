@@ -593,7 +593,7 @@ def ExtractDNSQueriesFromPCAP( pcapFile, osStr ):
 #========================================================================
 
 def ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipherFilename, cipherTag, isRandomized ):
-	#print('estrazione payload...')#debug
+	print('estrazione payload...')#debug
 	cloakedFilename = "cloaked.payload"
 
 	try:
@@ -631,8 +631,6 @@ def ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipherFilename, cipherTag,
 	# cipher string *appears* in the query. Then we can simply add the 
 	# corresponding cipher string to the cloaked payload file, because
 	# inference. \o/
-
-	previousDomain = ""
 
 	for dnsQuery in queries:
 		for cipherElement in cipherStrings:
@@ -672,15 +670,11 @@ def ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipherFilename, cipherTag,
 					# Confirmed match, minimized the risk of "bad luck" false 
 					# positives. Add the cipher element to the extracted cloaked 
 					# file that we'll later pass to Decloakify()
-
-					domain = cipherElement#fqdnElements[ 0 ]
-
-					#print('queryElements: "'+queryElements+"\"")#debug
-					#print('fqdnElements: "'+fqdnElements+"\"")#debug
-					#print('subdomain: "'+subdomain+"\"")#debug
+					queryElements = dnsQuery.split()
+					reqType = queryElements[11] #A, AAAA, ...
 					# Don't write out duplicate subdomains if cipher was
 					# randomized, since that means it's a duplicate DNS query
-					if isRandomized and domain != previousDomain:
+					if isRandomized and reqType == 'A':
 
 						cloakedFile.write( cipherElement )
 
@@ -688,7 +682,7 @@ def ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipherFilename, cipherTag,
 		
 						cloakedFile.write( cipherElement )
 
-					previousDomain = domain
+					reqType
 			#print('---------------')#debug
      
 		
