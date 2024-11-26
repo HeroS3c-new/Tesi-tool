@@ -673,8 +673,6 @@ def ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipherFilename, cipherTag,
 					# positives. Add the cipher element to the extracted cloaked 
 					# file that we'll later pass to Decloakify()
 
-					queryElements = dnsQuery.split()	
-					fqdnElements = queryElements[ 7 ].split( '.' )
 					domain = cipherElement#fqdnElements[ 0 ]
 
 					#print('queryElements: "'+queryElements+"\"")#debug
