@@ -6,7 +6,7 @@ array64 = list("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/+
 
 def Cloakify(arg1, arg2, arg3):
     payloadB64 = base64.encodebytes(arg1.encode('utf-8'))
-    print(payloadB64)
+    #print(payloadB64)
     try:
         with open(arg2) as file:
             cipherArray = file.readlines()
@@ -30,7 +30,6 @@ def Cloakify(arg1, arg2, arg3):
         for char in payloadB64.decode('utf-8'):
             if char != '\n':
                 print(cipherArray[array64.index(char)], end=' ')
-
 if __name__ == "__main__":
     if len(sys.argv) != 3:
         print("usage: cloakify.py <payloadFilename> <cipherFilename>")

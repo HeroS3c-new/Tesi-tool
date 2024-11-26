@@ -13,14 +13,14 @@ cipher = "ciphers\\common_fqdn\\topWebsites"
 def send_command(command):
     # Criptare il comando
     encrypted_command = encrypt_message(command, key) #debug
-    print("Encrypted command: "+encrypted_command)
+    #print("Encrypted command: "+encrypted_command)
     # Genera e cloackifica il comando in `cloaked_command.txt`
     cloaked_command = "cloaked_command.txt"
     
-    print("Cloaking command...")
+    #print("Cloaking command...")
     Cloakify(encrypted_command, cipher, cloaked_command)
 
-    print("Initializing command transfer")
+    #print("Initializing command transfer")
     TransferCloakedFile("cloaked_command.txt", 0.0, 'localhost')
     # Verifica che il file `cloaked_command.txt` sia stato creato correttamente
     if not os.path.exists(cloaked_command):

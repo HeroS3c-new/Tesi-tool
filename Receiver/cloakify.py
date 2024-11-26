@@ -30,7 +30,7 @@ def Cloakify(arg1, arg2, arg3):
         for char in payloadB64.decode('utf-8'):
             if char != '\n':
                 print(cipherArray[array64.index(char)], end=' ')
-
+                
 if __name__ == "__main__":
     if len(sys.argv) != 3:
         print("usage: cloakify.py <payloadFilename> <cipherFilename>")
