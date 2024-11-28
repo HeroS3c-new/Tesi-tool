@@ -12,6 +12,10 @@
 
 ######## Recent display filters (latest last), cannot be altered through command line ########
 
+recent.display_filter: udp.port == 53
+recent.display_filter: udp.port == 15
+recent.display_filter: dnsserver
+recent.display_filter: udp.stream eq 15
 recent.display_filter: dns
 
 ######## Recent remote hosts (latest first), cannot be altered through command line ########
@@ -19,10 +23,10 @@ recent.display_filter: dns
 
 # Main window geometry.
 # Decimal numbers.
-gui.geometry_main_x: -1920
-gui.geometry_main_y: 485
-gui.geometry_main_width: 1536
-gui.geometry_main_height: 793
+gui.geometry_main_x: 0
+gui.geometry_main_y: -8
+gui.geometry_main_width: 1920
+gui.geometry_main_height: 1009
 
 # Main window maximized.
 # true or false (case-insensitive).
@@ -30,7 +34,7 @@ gui.geometry_main_maximized: true
 
 # Main window geometry state.
 # Hex byte string.
-gui.geometry_main: 01d9d0cb00030000fffff880000001e5fffffe7f0000051bfffffe910000009100000180000002b700000001020000000600fffff88000000203fffffe7f0000051b
+gui.geometry_main: 01d9d0cb0003000000000000fffffff80000077f00000407000001e0000000840000059f000003830000000002000000078000000000000000170000077f00000407
 
 # Leftalign Action Buttons.
 # true or false (case-insensitive).
@@ -74,6 +78,17 @@ gui.search_multiple_occurs: false
 # Find packet search type.
 # One of: DISPLAY_FILTER, HEX_VALUE, STRING, REGEX
 gui.search_type: DISPLAY_FILTER
+
+# Geometry and maximized state of FollowStreamDialog window.
+# Decimal integers.
+gui.geom.FollowStreamDialog.x: 310
+gui.geom.FollowStreamDialog.y: 0
+gui.geom.FollowStreamDialog.width: 1280
+gui.geom.FollowStreamDialog.height: 1009
+# true or false (case-insensitive).
+gui.geom.FollowStreamDialog.maximized: false
+# Qt Geometry State (hex byte string).
+gui.geom.FollowStreamDialog.qt_geometry: 01d9d0cb000300000000013600000000000006350000040f000001360000001f000006350000040f00000000000000000780000001360000001f000006350000040f
 
 # Custom colors.
 # List of custom colors selected in Qt color picker.
