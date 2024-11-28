@@ -23,9 +23,10 @@ def Decloakify(arg1, arg2, arg3):
     padding_needed = len(clear64) % 4
     if padding_needed:
         clear64 += '=' * (4 - padding_needed)
-    
-    decoded_string = base64.b64decode(clear64).decode('utf-8')
-    
+    try:
+        decoded_string = base64.b64decode(clear64).decode('utf-8')
+    except:
+        return -1
     if arg3 != "":
         with open(arg3, "w") as outFile:
             outFile.write(decoded_string)

