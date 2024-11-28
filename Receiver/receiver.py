@@ -1,6 +1,7 @@
 import subprocess
 import os
-import sys
+import multiprocessing
+import dns_server   
 import time
 from aes_encrypt import decrypt_message, encrypt_message
 from cloakify import Cloakify
@@ -80,6 +81,7 @@ def send_response(response):
 
 
 if __name__ == "__main__":
+    subprocess.Popen(['python', 'dns_server.py'])
     print("Server in attesa di richieste...")
     while True:
         try:

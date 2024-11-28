@@ -1,3 +1,3 @@
-- Inserire partenza subprocess dns_server all'inizio del main (entrambi)
+- Cambiare e testare la risoluzione dei dns usando gli ip del DNS_server (usare 2 macchine virtuali)
 - modificare la cattura di indirizzi (da record A a record A?)
 - Rimuovere gli output delle richieste

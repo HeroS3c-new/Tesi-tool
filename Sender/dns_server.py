@@ -11,7 +11,7 @@ def start_udp_server():
     server_address = ('', 53)  # Listen on all interfaces on port 53
     sock.bind(server_address)
 
-    print("Listening on UDP port 53...")
+    #print("Listening on UDP port 53...")
     
     while True:
         # Wait for incoming data
