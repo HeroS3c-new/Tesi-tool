@@ -593,7 +593,7 @@ def ExtractDNSQueriesFromPCAP( pcapFile, osStr ):
 #========================================================================
 
 def ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipherFilename, cipherTag, isRandomized ):
-	print('estrazione payload...')#debug
+	print('Extracting payload...')
 	cloakedFilename = "cloaked.payload"
 
 	try:

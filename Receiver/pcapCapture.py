@@ -9,7 +9,7 @@ def capture_pcap(filename='cloaked_command.pcap'):
         if DNS in packet and packet[DNS].qr == 0:
             #print(f"Richiesta DNS: {packet[DNS].qd.qname.decode()}")
             if packet[DNS].qd.qname.decode() == target_domain:
-                print(f"Intercettata richiesta per {target_domain}. Salvo il pcap e termino.")
+                print(f"Intercpeted {target_domain}. Saving pcap and exiting.")
                 found = True
                 wrpcap(filename, packets)
                 sys.exit(0)

@@ -91,7 +91,7 @@ if __name__ == "__main__":
     subprocess.Popen(['python', 'dns_server.py'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     args = parser.parse_args()
     if args.run:
-        print("Server in attesa di richieste...")
+        print("Running and waiting for requests...")
         while True:
             try:
                 receive_command() 
