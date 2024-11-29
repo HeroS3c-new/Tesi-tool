@@ -537,7 +537,7 @@ def GenerateDNSQueries(cloakedFile, queryDelay, dns='localhost'):
                 time.sleep(queryDelay)
             checkpoint = byteCount % 25
             if byteCount > 0 and checkpoint == 0:
-                print(str(byteCount) + "%")
+                print(str(byteCount) + "bytes Transferred.")
             byteCount += 1
     
     return

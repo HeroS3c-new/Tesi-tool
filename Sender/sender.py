@@ -58,7 +58,7 @@ def receive_response():
     #print("Decloakifying...")
     if Decloakify(cloaked_response, cipher, decloaked_response) == -1:
         print("Requesting re-trasmission")
-        send_command('rt')
+        send_command('rt', dns)
         receive_response()
 
     # Decrypt command

@@ -12,6 +12,11 @@
 
 ######## Recent display filters (latest last), cannot be altered through command line ########
 
+recent.display_filter: dns.afsdb.hostname
+recent.display_filter: dns.a
+recent.display_filter: dns.a.ch.domain == google.com
+recent.display_filter: dns.a.ch.domain 
+recent.display_filter: dns.a.ch.domain
 recent.display_filter: udp.port == 53
 recent.display_filter: udp.port == 15
 recent.display_filter: dnsserver
@@ -23,10 +28,10 @@ recent.display_filter: dns
 
 # Main window geometry.
 # Decimal numbers.
-gui.geometry_main_x: 0
-gui.geometry_main_y: -8
-gui.geometry_main_width: 1920
-gui.geometry_main_height: 1009
+gui.geometry_main_x: -1920
+gui.geometry_main_y: 485
+gui.geometry_main_width: 1536
+gui.geometry_main_height: 793
 
 # Main window maximized.
 # true or false (case-insensitive).
@@ -34,7 +39,7 @@ gui.geometry_main_maximized: true
 
 # Main window geometry state.
 # Hex byte string.
-gui.geometry_main: 01d9d0cb0003000000000000fffffff80000077f00000407000001e0000000840000059f000003830000000002000000078000000000000000170000077f00000407
+gui.geometry_main: 01d9d0cb00030000fffff880000001e5fffffe7f0000051b00000001000000d2000003c2000003d300000001020000000600fffff88000000203fffffe7f0000051b
 
 # Leftalign Action Buttons.
 # true or false (case-insensitive).
