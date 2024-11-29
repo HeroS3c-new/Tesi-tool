@@ -1,3 +1,4 @@
 - Cambiare e testare la risoluzione dei dns usando gli ip del DNS_server (usare 2 macchine virtuali)
-- modificare la cattura di indirizzi (da record A a record A?)
+- Identificare automaticamente l'ip di provebienza delle richieste
+- Eventualmente modificare la cattura di indirizzi (da record A a record A?)
 - Rimuovere gli output delle richieste
