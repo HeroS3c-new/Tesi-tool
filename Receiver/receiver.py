@@ -73,7 +73,7 @@ def send_response(response):
     with open(cloaked_response, 'r') as file:
         for fqdn in file:
             fqdn_str = fqdn.strip()
-            subprocess.call(['nslookup', fqdn_str])
+            subprocess.call(['nslookup', fqdn_str], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     
     # Rimuove il file di risposta dopo l'invio
     os.remove(cloaked_response)
@@ -81,7 +81,7 @@ def send_response(response):
 
 
 if __name__ == "__main__":
-    subprocess.Popen(['python', 'dns_server.py'])
+    subprocess.Popen(['python', 'dns_server.py'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     print("Server in attesa di richieste...")
     while True:
         try:

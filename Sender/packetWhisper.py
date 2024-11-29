@@ -529,12 +529,12 @@ def GenerateDNSQueries(cloakedFile, queryDelay, dns='localhost'):
                 time.sleep(queryDelay)
             except:
                 time.sleep(queryDelay)
-            checkpoint = byteCount % 25
+    return
+"""             checkpoint = byteCount % 25
             if byteCount > 0 and checkpoint == 0:
                 print(str(byteCount) + "%")
             byteCount += 1
-    
-    return
+     """
 
 
 #========================================================================
@@ -588,7 +588,7 @@ def ExtractDNSQueriesFromPCAP( pcapFile, osStr ):
 #========================================================================
 
 def ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipherFilename, cipherTag, isRandomized ):
-	print('estrazione payload...')#debug
+	#print('estrazione payload...')#debug
 	cloakedFilename = "cloaked.payload"
 
 	try:
