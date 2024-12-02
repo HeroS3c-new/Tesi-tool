@@ -672,6 +672,7 @@ def ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipherFilename, cipherTag,
 					# file that we'll later pass to Decloakify()
 					queryElements = dnsQuery.split()
 					reqType = queryElements[11] #A, AAAA, ...
+					srcIP = queryElements[2]
 					# Don't write out duplicate subdomains if cipher was
 					# randomized, since that means it's a duplicate DNS query
 					if isRandomized and reqType == 'A':
@@ -690,7 +691,7 @@ def ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipherFilename, cipherTag,
 	cipherFile.close()
 	cloakedFile.close()
 
-	return cloakedFilename
+	return cloakedFilename, srcIP
 
 
 #========================================================================
