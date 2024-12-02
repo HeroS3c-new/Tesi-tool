@@ -1,0 +1,29 @@
+************* Module ciphers.subdomain_randomizer_scripts.akstat_io_prefixes
+Receiver\ciphers\subdomain_randomizer_scripts\akstat_io_prefixes.py:22: [E0001(syntax-error), ] Parsing failed: 'Missing parentheses in call to 'print'. Did you mean print(...)? (ciphers.subdomain_randomizer_scripts.akstat_io_prefixes, line 22)'
+************* Module ciphers.subdomain_randomizer_scripts.cdn_optimizely_prefixes
+Receiver\ciphers\subdomain_randomizer_scripts\cdn_optimizely_prefixes.py:20: [E0001(syntax-error), ] Parsing failed: 'Missing parentheses in call to 'print'. Did you mean print(...)? (ciphers.subdomain_randomizer_scripts.cdn_optimizely_prefixes, line 20)'
+************* Module ciphers.subdomain_randomizer_scripts.cloudfront_prefixes
+Receiver\ciphers\subdomain_randomizer_scripts\cloudfront_prefixes.py:22: [E0001(syntax-error), ] Parsing failed: 'Missing parentheses in call to 'print'. Did you mean print(...)? (ciphers.subdomain_randomizer_scripts.cloudfront_prefixes, line 22)'
+************* Module ciphers.subdomain_randomizer_scripts.log_optimizely_prefixes
+Receiver\ciphers\subdomain_randomizer_scripts\log_optimizely_prefixes.py:19: [E0001(syntax-error), ] Parsing failed: 'Missing parentheses in call to 'print'. Did you mean print(...)? (ciphers.subdomain_randomizer_scripts.log_optimizely_prefixes, line 19)'
+Sender\ciphers\subdomain_randomizer_scripts\akstat_io_prefixes.py:22: [E0001(syntax-error), ] Parsing failed: 'Missing parentheses in call to 'print'. Did you mean print(...)? (ciphers.subdomain_randomizer_scripts.akstat_io_prefixes, line 22)'
+Sender\ciphers\subdomain_randomizer_scripts\cdn_optimizely_prefixes.py:20: [E0001(syntax-error), ] Parsing failed: 'Missing parentheses in call to 'print'. Did you mean print(...)? (ciphers.subdomain_randomizer_scripts.cdn_optimizely_prefixes, line 20)'
+Sender\ciphers\subdomain_randomizer_scripts\cloudfront_prefixes.py:22: [E0001(syntax-error), ] Parsing failed: 'Missing parentheses in call to 'print'. Did you mean print(...)? (ciphers.subdomain_randomizer_scripts.cloudfront_prefixes, line 22)'
+Sender\ciphers\subdomain_randomizer_scripts\log_optimizely_prefixes.py:19: [E0001(syntax-error), ] Parsing failed: 'Missing parentheses in call to 'print'. Did you mean print(...)? (ciphers.subdomain_randomizer_scripts.log_optimizely_prefixes, line 19)'
+************* Module packetWhisper
+Receiver\packetWhisper.py:497: [E1128(assignment-from-none), TransferCloakedFile] Assigning result of a function call, where the function returns None
+Receiver\packetWhisper.py:623: [E0601(used-before-assignment), ExtractPayloadFromDNSQueries] Using variable 'cloakedFile' before assignment
+Receiver\packetWhisper.py:655: [E0606(possibly-used-before-assignment), ExtractPayloadFromDNSQueries] Possibly using variable 'foundQuery2' before assignment
+Receiver\packetWhisper.py:694: [E0601(used-before-assignment), ExtractPayloadFromDNSQueries] Using variable 'srcIP' before assignment
+Receiver\packetWhisper.py:914: [E0602(undefined-variable), GetSourceIPViaKnockSequence] Undefined variable 'dnsQueriesFile'
+Sender\packetWhisper.py:112: [E1120(no-value-for-parameter), CloakAndTransferFile] No value for argument 'dns' in function call
+Sender\packetWhisper.py:114: [E1120(no-value-for-parameter), CloakAndTransferFile] No value for argument 'dns' in function call
+Sender\packetWhisper.py:124: [E1120(no-value-for-parameter), CloakAndTransferFile] No value for argument 'dns' in function call
+Sender\packetWhisper.py:493: [E1128(assignment-from-none), TransferCloakedFile] Assigning result of a function call, where the function returns None
+Sender\packetWhisper.py:618: [E0601(used-before-assignment), ExtractPayloadFromDNSQueries] Using variable 'cloakedFile' before assignment
+Sender\packetWhisper.py:650: [E0606(possibly-used-before-assignment), ExtractPayloadFromDNSQueries] Possibly using variable 'foundQuery2' before assignment
+Sender\packetWhisper.py:908: [E0602(undefined-variable), GetSourceIPViaKnockSequence] Undefined variable 'dnsQueriesFile'
+************* Module sender
+Sender\sender.py:25: [E1121(too-many-function-args), send_command] Too many positional arguments for function call
+Sender\sender.py:61: [E0606(possibly-used-before-assignment), receive_response] Possibly using variable 'dns' before assignment
+Sender\sender.py:71: [E0606(possibly-used-before-assignment), receive_response] Possibly using variable 'command' before assignment
