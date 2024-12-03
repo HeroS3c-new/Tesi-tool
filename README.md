@@ -1,4 +1,4 @@
-![image](logo.jpg)
+![image](logo.png)
 
 Questo progetto permette di stabilire un canale di comunicazione crittografato utilizzando un tunnel DNS. I dati vengono cifrati e offuscati tramite i moduli `cloakify` e `decloakify`, permettendo il trasferimento di comandi e risposte attraverso richieste DNS.
 
