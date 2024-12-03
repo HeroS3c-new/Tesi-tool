@@ -1,5 +1,42 @@
+            I@Y                  ~$o                   o$
+          "o@@@@Bf^          ,x$@@@@@@#)`          IC@@@@@m
+        'h@@Wi>b@@@@@@Mo*$@@@@@@h-  (M@@@@@@BooW@@@@@@Q:|$@@J
+       m@@@}      ;z#@@@@@$b/`          ,na@@@@@@hf`      v@@@v       
+     0@@@v                                                  b@@@[     
+   t@@@Y   #@@@BJ,    <h@@@X.   @@_   j@M m@@@@@@@t @@@@@@    b@@$>   
+ [B@@w     #@. i@@+ `$@Y` +M@C  @@_   f@M    p@Y    @@|        `#@@M, 
+r@@$'      #@. i@@l W@j    ,@@< @@_   f@M    m@c    @@z_-<       [@@@+
+ -@@k      #@@@@f   @@[     @@+ @@_   f@M    m@c    @@ammY       B@$  
+  X@@C     #@. t@$  >@@-   m@h  w@w   k@x    m@c    @@{         o@@i
+   a@$.    #@.  /@W'  Z$@@@o]    r$@@@W[     m@c    @@@@@@~    l@@Q
+   j@@)                                                        b@@i
+   !@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+   `@@#                                                       `@@o
+   ^@@*                                                       '@@*
+   >@@Z                                                        @@@
+   r@@}                                                        p@@<
+   b@$.                                                        i@@J
+  +@@k                                                          M@B
+  a@$                                                           /@@m
+ t@@Y                                                            d@@^
+'@@B                                        <>                   >@@B
+1@@/               1@$CCw@@f  c@@@!  m@n ]@MxfOO                  m@@l
+p@@I               1@#    o@( c@|$@< m@n Z@a                      ]@@t
+$@@                1@#    X@d c@(.@@ m@n  (@@@o<                  !@@Y
+B@@.               1@#    h@/ c@| "@@o@n     ;@@                  i@@X
+0@@>               {@Wl>Q@@r  c@|  :@@@n bz;:X@*                  |@@1
+i@@m               '///|-     >f^    |/   }rnf,                   B@@'
+ Z@@X                                                            d@@-
+  k@@a                                                          M@@n
+   f@@@/                                                      Q@@$~
+     m@@@d;                                                _#@@$n
+       j@@@@@MdX)`                                  I/CkB@@@@B-
+          >O@@@@@@@@@B#w|                   `xbM$@@@@@@@@$c:
+                  -0oW@@@@@@@$c.      ;O@@@@@@@$Mozi
+                         "(Q#@@@@@zw@@@@@hY]
+                               i0@@@$v,
+                                  x:
 
-# Route DNS
 Questo progetto permette di stabilire un canale di comunicazione crittografato utilizzando un tunnel DNS. I dati vengono cifrati e offuscati tramite i moduli `cloakify` e `decloakify`, permettendo il trasferimento di comandi e risposte attraverso richieste DNS.
 
 ## Funzionamento
