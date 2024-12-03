@@ -1,6 +1,5 @@
 from Cryptodome.Cipher import AES
 import base64
-import os
 
 def pad_base64(data):
     missing_padding = len(data) % 4

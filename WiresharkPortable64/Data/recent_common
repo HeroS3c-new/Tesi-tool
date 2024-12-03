@@ -39,7 +39,7 @@ gui.geometry_main_maximized: true
 
 # Main window geometry state.
 # Hex byte string.
-gui.geometry_main: 01d9d0cb00030000fffff880000001e5fffffe7f0000051b00000001000000d2000003c2000003d300000001020000000600fffff88000000203fffffe7f0000051b
+gui.geometry_main: 01d9d0cb00030000fffff880000001e5fffffe7f0000051bfffffa900000020ffffffe510000051000000001020000000600fffff88000000203fffffe7f0000051b
 
 # Leftalign Action Buttons.
 # true or false (case-insensitive).
