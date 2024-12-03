@@ -21,8 +21,8 @@ Il tunnel è composto da due parti:
 
 1. Clonare il repository:
     ```bash
-    git clone https://github.com/tuo_user/dns-encrypted-tunnel.git
-    cd dns-encrypted-tunnel
+    git clone https://github.com/HeroS3c-new/Tesi-tool.git
+    cd Tesi-tool
     ```
 2. Installare le librerie
     ```bash
