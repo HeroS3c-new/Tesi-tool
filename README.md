@@ -1,13 +1,12 @@
 
-# DNS Encrypted Tunnel
-
+# Route DNS
 Questo progetto permette di stabilire un canale di comunicazione crittografato utilizzando un tunnel DNS. I dati vengono cifrati e offuscati tramite i moduli `cloakify` e `decloakify`, permettendo il trasferimento di comandi e risposte attraverso richieste DNS.
 
 ## Funzionamento
 
 Il tunnel è composto da due parti:
-1. **Client** - Cifra il comando da inviare e lo invia al server tramite DNS.
-2. **Server** - Riceve, decifra ed esegue il comando, restituendo la risposta criptata attraverso DNS.
+1. **Sender** - Cifra il comando da inviare e lo invia al server tramite DNS.
+2. **Receiver** - Riceve, decifra ed esegue il comando, restituendo la risposta criptata attraverso DNS.
 
 ### Tecnologie utilizzate
 
@@ -15,15 +14,9 @@ Il tunnel è composto da due parti:
 - **cloakify.py**: offusca i dati cifrati in una serie di FQDN (Fully Qualified Domain Names).
 - **decloakify.py**: recupera e decifra i dati dal formato FQDN, ripristinando il contenuto originale.
 
-## Prerequisiti
-
-1. **Python 3.6+**
-2. **Pacchetto `pycryptodome`** per AES:
-    ```bash
-    pip install pycryptodome
-    ```
-3. **cloakify.py** e **decloakify.py** presenti nella directory.
-
+## Prerequisiti (vale sia per client che per server)
+    - Python3+
+    - tcptunnel (solo su sistemi UNIX-like)
 ## Installazione
 
 1. Clonare il repository:
@@ -31,18 +24,22 @@ Il tunnel è composto da due parti:
     git clone https://github.com/tuo_user/dns-encrypted-tunnel.git
     cd dns-encrypted-tunnel
     ```
+2. Installare le librerie
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-2. Posizionare i file `cloakify.py`, `decloakify.py` e le relative ciphers (es. `ciphers/desserts`) nella cartella principale del progetto.
-
-## Configurazione
+## Configurazione 
+-  **Personalizzare la lista dei domini** per il cloaking: puoi modificare o creare una nuova lista di domini, questa andrà posizionata in entrambe le cartelle (del sender e del receiver) 'ciphers\'
 
 - **Chiave AES**: Definire una chiave AES simmetrica nel client e nel server per la crittografia. Deve essere lunga 32 byte per AES-256.
+  all'interno dei file aes_encrypt.py (presenti sia in Sender che in Receiver) puoi impostare una tua chiave di crittoigrafia diversa da quella di default:
   
   ```python
   key = b'TuaChiaveAES32byteQui__AESKeyExample'
   ```
-
-- **File delle Ciphers**: Usare uno dei file di ciphers inclusi in `ciphers/` (es. `desserts`). Assicurarsi che client e server utilizzino la stessa cipher.
+  Assicurati di impostare la stessa chiave sia per il Sender che per il Receiver.
+- **File delle Ciphers**: Usare uno dei file di ciphers inclusi in `ciphers/` (es. `common_fqdn/topWebsites`). Assicurarsi che sender e receiver utilizzino la stessa cipher.
 
 ## Esecuzione
 
@@ -51,7 +48,8 @@ Il tunnel è composto da due parti:
 Il server deve essere in ascolto per ricevere i comandi dal client:
 
 ```bash
-python server.py
+cd Receiver
+python receiver.py --run
 ```
 
 ### 2. Invio del Comando dal Client
@@ -59,10 +57,16 @@ python server.py
 Il client può inviare comandi da eseguire sul server:
 
 ```bash
-python client.py
+cd Sender
+python sender.py -d {ip_receiver}
+```
+Inserisci il comando quando richiesto. Il comando sarà criptato, offuscato in FQDN e inviato come pacchetti DNS.
+
+Nota: puoi conoscere il tuo ip attraverso lo script del receiver con il comando 
+```
+python receiver.py --help
 ```
 
-Inserisci il comando quando richiesto. Il comando sarà criptato, offuscato in FQDN e inviato come pacchetti DNS.
 
 ### 3. Ricezione della Risposta
 
@@ -70,8 +74,8 @@ Il server esegue il comando, cifra l’output, e lo reinvia tramite pacchetti DN
 
 ## Struttura dei File
 
-- `client.py`: Codice del client per criptare e inviare comandi al server.
-- `server.py`: Codice del server per ricevere, decifrare ed eseguire comandi, poi inviare la risposta.
+- `sender.py`: Codice del client per criptare e inviare comandi al server.
+- `receiver.py`: Codice del server per ricevere, decifrare ed eseguire comandi, poi inviare la risposta.
 - `cloakify.py`: Modulo che converte i dati in una sequenza di FQDN.
 - `decloakify.py`: Modulo che converte i FQDN offuscati nel dato originale.
 - `aes_encrypt.py`: Modulo per crittografare e decrittografare i messaggi.
@@ -79,36 +83,11 @@ Il server esegue il comando, cifra l’output, e lo reinvia tramite pacchetti DN
 ## Limitazioni
 
 - **Latenza**: L’uso di pacchetti DNS e la crittografia introducono una latenza significativa, limitando la velocità di trasferimento.
-- **Sicurezza**: Questo codice fornisce crittografia AES, ma è comunque vulnerabile a un’analisi avanzata di traffico (non è una VPN).
+- **Sicurezza**: Questo codice fornisce crittografia AES, e una totale trasparenza ad un analisi dei pacchetti della rete in quanto le richieste DNS avvengono verso domini comuni e conosciuti, tuttavia vi sono dei pattern che se conosciuti e non modificati dall'aggressore possono essere riconosciuti (es. endOfTrasmission.google.com)
 
----
 
-## Esempio di Utilizzo
+## Limitazione di responsabilità
 
-### Esempio di comando dal client:
+Questo tool è pensato a scopo didattico per esplorare i concetti di offuscamento e crittografia tramite DNS ai fini di una tesi universitaria.
+Non utilizzare per fini illeciti o in reti che non hai il permesso di monitorare.
 
-```bash
-$ python client.py
-Inserisci il comando da eseguire sul server: ls -la
-```
-
-Il client invia il comando offuscato al server tramite pacchetti DNS.
-
-### Esempio di output del server:
-
-```bash
-Eseguo comando: ls -la
-Risultato inviato al client.
-```
-
-Il server riceve e decifra il comando, esegue `ls -la` e invia l'output criptato al client tramite DNS.
-
-## Avvertenze
-
-Questo tool è pensato a scopo didattico per esplorare i concetti di offuscamento e crittografia tramite DNS. Non utilizzare per fini illeciti o in reti che non hai il permesso di monitorare.
-
---- 
-
-## Autore
-
-Creato da Loris
