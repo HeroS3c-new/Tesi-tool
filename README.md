@@ -16,6 +16,7 @@ Il tunnel è composto da due parti:
 
 ## Prerequisiti (vale sia per client che per server)
     - Python3+
+    - Npcap/Winpcap
     - tcptunnel (solo su sistemi UNIX-like)
 ## Installazione
 
