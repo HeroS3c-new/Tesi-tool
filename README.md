@@ -29,6 +29,9 @@ Il tunnel è composto da due parti:
     ```bash
     pip install -r requirements.txt
     ```
+3. Installare Npcap (o alternativamente Winpcap)
+   Npcap: https://npcap.com/#download (Consigliato
+   Winpcap: https://www.winpcap.org/install/
 
 ## Configurazione 
 -  **Personalizzare la lista dei domini** per il cloaking: puoi modificare o creare una nuova lista di domini, questa andrà posizionata in entrambe le cartelle (del sender e del receiver) 'ciphers\'
