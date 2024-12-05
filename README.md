@@ -30,7 +30,7 @@ Il tunnel è composto da due parti:
     pip install -r requirements.txt
     ```
 3. Installare Npcap (o alternativamente Winpcap)
-   - Npcap: https://npcap.com/#download (Consigliato
+   - Npcap: https://npcap.com/#download (Consigliato)
    - Winpcap: https://www.winpcap.org/install/
 
 ## Configurazione 
