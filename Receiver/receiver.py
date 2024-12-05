@@ -8,7 +8,7 @@ from aes_encrypt import decrypt_message, encrypt_message
 from cloakify import Cloakify
 from decloakify import Decloakify
 from pcapCapture import *
-from Receiver.packetWhisper import TransferCloakedFile, ExtractDNSQueriesFromPCAP, ExtractPayloadFromDNSQueries
+from packetWhisper import TransferCloakedFile, ExtractDNSQueriesFromPCAP, ExtractPayloadFromDNSQueries
 
 # AES Key
 key = b'VijMwRNSQHALXQodmjCdH4UB7SCw/+EpnuBXfko7ReyqG3oYAky0eYxxx92xi49q'[:32]
