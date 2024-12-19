@@ -1,4 +1,5 @@
 from pathlib import Path
+import random
 import os, subprocess, re, time
 
 # Set name of knock sequence string (this is only used when transmitting Common FQDN ciphers)
@@ -65,7 +66,7 @@ def SelectAndGenerateCommonWebsiteFQDNs( sourceFile, cloakedFile ):
 #========================================================================
 
 def TransferCloakedFile( cloakedFile, queryDelay, dns ):
-
+	time.sleep(random.uniform(0, 2)) # Random delay to wait 
 	status = GenerateDNSQueries( cloakedFile,  queryDelay, dns)
 
 	return

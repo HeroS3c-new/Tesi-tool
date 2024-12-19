@@ -1,802 +1,455 @@
-   43   1.624781 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
-   46   1.639719      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
-   47   1.641584 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0002 A www.comcast.net.maestrale.local
-   50   1.659827      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0002 No such name A www.comcast.net.maestrale.local SOA a.root-servers.net
-   51   1.660461 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0003 AAAA www.comcast.net.maestrale.local
-   54   1.698732      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0003 No such name AAAA www.comcast.net.maestrale.local SOA a.root-servers.net
-   55   1.699512 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0004 A www.comcast.net
-   68   1.860282      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0004 A www.comcast.net CNAME www.comcast.net.edgekey.net CNAME e7010.dscg.akamaiedge.net A 104.83.117.235
-   69   1.867682 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0005 AAAA www.comcast.net
-   73   2.031106      1.1.1.1 → 192.168.200.71 DNS 205 Standard query response 0x0005 AAAA www.comcast.net CNAME www.comcast.net.edgekey.net CNAME e7010.dscg.akamaiedge.net AAAA 2a02:26f0:8d00:b9f::1b62 AAAA 2a02:26f0:8d00:b8d::1b62
-   74   2.063007 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
-   77   2.079737      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
-   78   2.081631 192.168.200.71 → 1.1.1.1      DNS 89 Standard query 0x0002 A www.force.com.maestrale.local
-   81   2.096696      1.1.1.1 → 192.168.200.71 DNS 164 Standard query response 0x0002 No such name A www.force.com.maestrale.local SOA a.root-servers.net
-   82   2.097403 192.168.200.71 → 1.1.1.1      DNS 89 Standard query 0x0003 AAAA www.force.com.maestrale.local
-   85   2.133970      1.1.1.1 → 192.168.200.71 DNS 164 Standard query response 0x0003 No such name AAAA www.force.com.maestrale.local SOA a.root-servers.net
-   86   2.134921 192.168.200.71 → 1.1.1.1      DNS 73 Standard query 0x0004 A www.force.com
-   90   2.150690      1.1.1.1 → 192.168.200.71 DNS 190 Standard query response 0x0004 A www.force.com CNAME san-mna.salesforce.com.edgekey.net CNAME e36242.dsca.akamaiedge.net A 2.22.248.109 A 2.22.248.89
-   91   2.156342 192.168.200.71 → 1.1.1.1      DNS 73 Standard query 0x0005 AAAA www.force.com
-   94   2.172751      1.1.1.1 → 192.168.200.71 DNS 214 Standard query response 0x0005 AAAA www.force.com CNAME san-mna.salesforce.com.edgekey.net CNAME e36242.dsca.akamaiedge.net AAAA 2a02:26f0:8d00:3a::217:5412 AAAA 2a02:26f0:8d00:3a::217:540b
-   95   2.210243 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
-   98   2.225497      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
-   99   2.227026 192.168.200.71 → 1.1.1.1      DNS 90 Standard query 0x0002 A www.tumblr.com.maestrale.local
-  102   2.244733      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0002 No such name A www.tumblr.com.maestrale.local SOA a.root-servers.net
-  103   2.245589 192.168.200.71 → 1.1.1.1      DNS 90 Standard query 0x0003 AAAA www.tumblr.com.maestrale.local
-  106   2.282607      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0003 No such name AAAA www.tumblr.com.maestrale.local SOA a.root-servers.net
-  107   2.284110 192.168.200.71 → 1.1.1.1      DNS 74 Standard query 0x0004 A www.tumblr.com
-  110   2.299872      1.1.1.1 → 192.168.200.71 DNS 90 Standard query response 0x0004 A www.tumblr.com A 192.0.77.40
-  111   2.306469 192.168.200.71 → 1.1.1.1      DNS 74 Standard query 0x0005 AAAA www.tumblr.com
-  115   2.321428      1.1.1.1 → 192.168.200.71 DNS 125 Standard query response 0x0005 AAAA www.tumblr.com SOA ns1.tumblr.com
-  116   2.360300 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
-  121   2.376342      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
-  122   2.379020 192.168.200.71 → 1.1.1.1      DNS 90 Standard query 0x0002 A www.office.com.maestrale.local
-  125   2.416147      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0002 No such name A www.office.com.maestrale.local SOA a.root-servers.net
-  126   2.417051 192.168.200.71 → 1.1.1.1      DNS 90 Standard query 0x0003 AAAA www.office.com.maestrale.local
-  131   2.458651      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0003 No such name AAAA www.office.com.maestrale.local SOA a.root-servers.net
-  132   2.459239 192.168.200.71 → 1.1.1.1      DNS 74 Standard query 0x0004 A www.office.com
-  135   2.477135      1.1.1.1 → 192.168.200.71 DNS 182 Standard query response 0x0004 A www.office.com CNAME home-portal.office.com CNAME home-office365-com.b-0004.b-msedge.net CNAME b-0004.b-msedge.net A 13.107.6.156
-  136   2.481330 192.168.200.71 → 1.1.1.1      DNS 74 Standard query 0x0005 AAAA www.office.com
-  139   2.497017      1.1.1.1 → 192.168.200.71 DNS 194 Standard query response 0x0005 AAAA www.office.com CNAME home-portal.office.com CNAME home-office365-com.b-0004.b-msedge.net CNAME b-0004.b-msedge.net AAAA 2620:1ec:a92::156
-  140   2.531549 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
-  143   2.546635      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
-  145   2.549323 192.168.200.71 → 1.1.1.1      DNS 87 Standard query 0x0002 A www.msn.com.maestrale.local
-  147   2.586079      1.1.1.1 → 192.168.200.71 DNS 162 Standard query response 0x0002 No such name A www.msn.com.maestrale.local SOA a.root-servers.net
-  148   2.587370 192.168.200.71 → 1.1.1.1      DNS 87 Standard query 0x0003 AAAA www.msn.com.maestrale.local
-  151   2.618191      1.1.1.1 → 192.168.200.71 DNS 162 Standard query response 0x0003 No such name AAAA www.msn.com.maestrale.local SOA a.root-servers.net
-  152   2.619437 192.168.200.71 → 1.1.1.1      DNS 71 Standard query 0x0004 A www.msn.com
-  155   2.634041      1.1.1.1 → 192.168.200.71 DNS 146 Standard query response 0x0004 A www.msn.com CNAME www-msn-com.a-0003.a-msedge.net CNAME a-0003.a-msedge.net A 204.79.197.203
-  156   2.640533 192.168.200.71 → 1.1.1.1      DNS 71 Standard query 0x0005 AAAA www.msn.com
-  159   2.655463      1.1.1.1 → 192.168.200.71 DNS 187 Standard query response 0x0005 AAAA www.msn.com CNAME www-msn-com.a-0003.a-msedge.net CNAME a-0003.a-msedge.net SOA ns1.a-msedge.net
-  160   2.690824 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
-  163   2.706714      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
-  164   2.708439 192.168.200.71 → 1.1.1.1      DNS 98 Standard query 0x0002 A www.washingtonpost.com.maestrale.local
-  167   2.725852      1.1.1.1 → 192.168.200.71 DNS 173 Standard query response 0x0002 No such name A www.washingtonpost.com.maestrale.local SOA a.root-servers.net
-  168   2.726471 192.168.200.71 → 1.1.1.1      DNS 98 Standard query 0x0003 AAAA www.washingtonpost.com.maestrale.local
-  171   2.741204      1.1.1.1 → 192.168.200.71 DNS 173 Standard query response 0x0003 No such name AAAA www.washingtonpost.com.maestrale.local SOA a.root-servers.net
-  172   2.742062 192.168.200.71 → 1.1.1.1      DNS 82 Standard query 0x0004 A www.washingtonpost.com
-  175   2.759407      1.1.1.1 → 192.168.200.71 DNS 162 Standard query response 0x0004 A www.washingtonpost.com CNAME 50992.edgekey.net CNAME e9631.j.akamaiedge.net A 23.50.153.34
-  176   2.763382 192.168.200.71 → 1.1.1.1      DNS 82 Standard query 0x0005 AAAA www.washingtonpost.com
-  185   2.780286      1.1.1.1 → 192.168.200.71 DNS 204 Standard query response 0x0005 AAAA www.washingtonpost.com CNAME 50992.edgekey.net CNAME e9631.j.akamaiedge.net SOA n0j.akamaiedge.net
-  186   2.815137 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
-  190   2.831749      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
-  191   2.833819 192.168.200.71 → 1.1.1.1      DNS 90 Standard query 0x0002 A www.indeed.com.maestrale.local
-  194   2.851871      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0002 No such name A www.indeed.com.maestrale.local SOA a.root-servers.net
-  195   2.852531 192.168.200.71 → 1.1.1.1      DNS 90 Standard query 0x0003 AAAA www.indeed.com.maestrale.local
-  198   2.891671      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0003 No such name AAAA www.indeed.com.maestrale.local SOA a.root-servers.net
-  199   2.892373 192.168.200.71 → 1.1.1.1      DNS 74 Standard query 0x0004 A www.indeed.com
-  202   2.907426      1.1.1.1 → 192.168.200.71 DNS 106 Standard query response 0x0004 A www.indeed.com A 162.159.129.67 A 162.159.130.67
-  203   2.911634 192.168.200.71 → 1.1.1.1      DNS 74 Standard query 0x0005 AAAA www.indeed.com
-  206   2.927006      1.1.1.1 → 192.168.200.71 DNS 133 Standard query response 0x0005 AAAA www.indeed.com SOA brit.ns.cloudflare.com
-  207   2.959331 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
-  210   2.975210      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
-  211   2.976988 192.168.200.71 → 1.1.1.1      DNS 98 Standard query 0x0002 A www.washingtonpost.com.maestrale.local
-  214   3.010493      1.1.1.1 → 192.168.200.71 DNS 173 Standard query response 0x0002 No such name A www.washingtonpost.com.maestrale.local SOA a.root-servers.net
-  215   3.011351 192.168.200.71 → 1.1.1.1      DNS 98 Standard query 0x0003 AAAA www.washingtonpost.com.maestrale.local
-  218   3.029458      1.1.1.1 → 192.168.200.71 DNS 173 Standard query response 0x0003 No such name AAAA www.washingtonpost.com.maestrale.local SOA a.root-servers.net
-  219   3.030139 192.168.200.71 → 1.1.1.1      DNS 82 Standard query 0x0004 A www.washingtonpost.com
-  222   3.065990      1.1.1.1 → 192.168.200.71 DNS 162 Standard query response 0x0004 A www.washingtonpost.com CNAME 50992.edgekey.net CNAME e9631.j.akamaiedge.net A 23.50.153.34
-  223   3.071258 192.168.200.71 → 1.1.1.1      DNS 82 Standard query 0x0005 AAAA www.washingtonpost.com
-  226   3.088998      1.1.1.1 → 192.168.200.71 DNS 204 Standard query response 0x0005 AAAA www.washingtonpost.com CNAME 50992.edgekey.net CNAME e9631.j.akamaiedge.net SOA n0j.akamaiedge.net
-  228   3.119171 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
-  231   3.135043      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
-  232   3.136580 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0002 A www.citi.com.maestrale.local
-  235   3.152464      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0002 No such name A www.citi.com.maestrale.local SOA a.root-servers.net
-  236   3.153120 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0003 AAAA www.citi.com.maestrale.local
-  239   3.190838      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0003 No such name AAAA www.citi.com.maestrale.local SOA a.root-servers.net
-  240   3.191658 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0004 A www.citi.com
-  243   3.206484      1.1.1.1 → 192.168.200.71 DNS 164 Standard query response 0x0004 A www.citi.com CNAME san.www.citi.com.edgekey.net CNAME e16976.x.akamaiedge.net A 104.83.107.194
-  244   3.211646 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0005 AAAA www.citi.com
-  247   3.227569      1.1.1.1 → 192.168.200.71 DNS 206 Standard query response 0x0005 AAAA www.citi.com CNAME san.www.citi.com.edgekey.net CNAME e16976.x.akamaiedge.net SOA n0x.akamaiedge.net
-  248   3.260564 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
-  251   3.276143      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
-  252   3.277971 192.168.200.71 → 1.1.1.1      DNS 94 Standard query 0x0002 A www.wellsfargo.com.maestrale.local
-  255   3.309712      1.1.1.1 → 192.168.200.71 DNS 169 Standard query response 0x0002 No such name A www.wellsfargo.com.maestrale.local SOA a.root-servers.net
-  256   3.311456 192.168.200.71 → 1.1.1.1      DNS 94 Standard query 0x0003 AAAA www.wellsfargo.com.maestrale.local
-  259   3.342838      1.1.1.1 → 192.168.200.71 DNS 169 Standard query response 0x0003 No such name AAAA www.wellsfargo.com.maestrale.local SOA a.root-servers.net
-  260   3.343907 192.168.200.71 → 1.1.1.1      DNS 78 Standard query 0x0004 A www.wellsfargo.com
-  263   3.359082      1.1.1.1 → 192.168.200.71 DNS 188 Standard query response 0x0004 A www.wellsfargo.com CNAME www.wellsfargo.com.edgekey.net CNAME e82164.b.akamaiedge.net A 173.222.105.39 A 173.222.105.11
-  264   3.363400 192.168.200.71 → 1.1.1.1      DNS 78 Standard query 0x0005 AAAA www.wellsfargo.com
-  276   3.382420      1.1.1.1 → 192.168.200.71 DNS 214 Standard query response 0x0005 AAAA www.wellsfargo.com CNAME www.wellsfargo.com.edgekey.net CNAME e82164.b.akamaiedge.net SOA n0b.akamaiedge.net
-  278   3.422614 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
-  281   3.437825      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
-  282   3.439372 192.168.200.71 → 1.1.1.1      DNS 94 Standard query 0x0002 A www.salesforce.com.maestrale.local
-  287   3.485880      1.1.1.1 → 192.168.200.71 DNS 169 Standard query response 0x0002 No such name A www.salesforce.com.maestrale.local SOA a.root-servers.net
-  288   3.486571 192.168.200.71 → 1.1.1.1      DNS 94 Standard query 0x0003 AAAA www.salesforce.com.maestrale.local
-  292   3.505103      1.1.1.1 → 192.168.200.71 DNS 169 Standard query response 0x0003 No such name AAAA www.salesforce.com.maestrale.local SOA a.root-servers.net
-  293   3.505918 192.168.200.71 → 1.1.1.1      DNS 78 Standard query 0x0004 A www.salesforce.com
-  296   3.522774      1.1.1.1 → 192.168.200.71 DNS 191 Standard query response 0x0004 A www.salesforce.com CNAME www.salesforce.com.edgekey.net CNAME e63490.dsca.akamaiedge.net A 104.104.52.104 A 104.104.52.24
-  297   3.527076 192.168.200.71 → 1.1.1.1      DNS 78 Standard query 0x0005 AAAA www.salesforce.com
-  300   3.550748      1.1.1.1 → 192.168.200.71 DNS 215 Standard query response 0x0005 AAAA www.salesforce.com CNAME www.salesforce.com.edgekey.net CNAME e63490.dsca.akamaiedge.net AAAA 2a02:26f0:8d00:3a::217:5406 AAAA 2a02:26f0:8d00:3a::217:543a
-  302   3.581302 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
-  305   3.599209      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
-  306   3.601365 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0002 A www.comcast.net.maestrale.local
-  317   3.691620      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0002 No such name A www.comcast.net.maestrale.local SOA a.root-servers.net
-  318   3.692399 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0003 AAAA www.comcast.net.maestrale.local
-  321   3.710178      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0003 No such name AAAA www.comcast.net.maestrale.local SOA a.root-servers.net
-  322   3.710873 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0004 A www.comcast.net
-  326   3.856518      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0004 A www.comcast.net CNAME www.comcast.net.edgekey.net CNAME e7010.dscg.akamaiedge.net A 104.83.117.235
-  327   3.861379 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0005 AAAA www.comcast.net
-  337   3.997325      1.1.1.1 → 192.168.200.71 DNS 205 Standard query response 0x0005 AAAA www.comcast.net CNAME www.comcast.net.edgekey.net CNAME e7010.dscg.akamaiedge.net AAAA 2a02:26f0:8d00:b9f::1b62 AAAA 2a02:26f0:8d00:b8d::1b62
-  338   4.035905 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
-  341   4.050839      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
-  342   4.053260 192.168.200.71 → 1.1.1.1      DNS 90 Standard query 0x0002 A www.office.com.maestrale.local
-  345   4.095588      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0002 No such name A www.office.com.maestrale.local SOA a.root-servers.net
-  346   4.096939 192.168.200.71 → 1.1.1.1      DNS 90 Standard query 0x0003 AAAA www.office.com.maestrale.local
-  349   4.115177      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0003 No such name AAAA www.office.com.maestrale.local SOA a.root-servers.net
-  350   4.116134 192.168.200.71 → 1.1.1.1      DNS 74 Standard query 0x0004 A www.office.com
-  353   4.131468      1.1.1.1 → 192.168.200.71 DNS 182 Standard query response 0x0004 A www.office.com CNAME home-portal.office.com CNAME home-office365-com.b-0004.b-msedge.net CNAME b-0004.b-msedge.net A 13.107.6.156
-  354   4.136011 192.168.200.71 → 1.1.1.1      DNS 74 Standard query 0x0005 AAAA www.office.com
-  358   4.191099      1.1.1.1 → 192.168.200.71 DNS 194 Standard query response 0x0005 AAAA www.office.com CNAME home-portal.office.com CNAME home-office365-com.b-0004.b-msedge.net CNAME b-0004.b-msedge.net AAAA 2620:1ec:a92::156
-  359   4.220542 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
-  362   4.234540      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
-  363   4.236882 192.168.200.71 → 1.1.1.1      DNS 98 Standard query 0x0002 A www.huffingtonpost.com.maestrale.local
-  366   4.252317      1.1.1.1 → 192.168.200.71 DNS 173 Standard query response 0x0002 No such name A www.huffingtonpost.com.maestrale.local SOA a.root-servers.net
-  367   4.252959 192.168.200.71 → 1.1.1.1      DNS 98 Standard query 0x0003 AAAA www.huffingtonpost.com.maestrale.local
-  370   4.267472      1.1.1.1 → 192.168.200.71 DNS 173 Standard query response 0x0003 No such name AAAA www.huffingtonpost.com.maestrale.local SOA a.root-servers.net
-  371   4.268092 192.168.200.71 → 1.1.1.1      DNS 82 Standard query 0x0004 A www.huffingtonpost.com
-  382   4.303880      1.1.1.1 → 192.168.200.71 DNS 184 Standard query response 0x0004 A www.huffingtonpost.com CNAME buzzfeed2.map.fastly.net A 151.101.2.114 A 151.101.66.114 A 151.101.130.114 A 151.101.194.114
-  383   4.308755 192.168.200.71 → 1.1.1.1      DNS 82 Standard query 0x0005 AAAA www.huffingtonpost.com
-  386   4.343901      1.1.1.1 → 192.168.200.71 DNS 178 Standard query response 0x0005 AAAA www.huffingtonpost.com CNAME buzzfeed2.map.fastly.net SOA ns1.fastly.net
-  388   4.375317 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
-  391   4.390531      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
-  392   4.392945 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0002 A www.bing.com.maestrale.local
-  395   4.427791      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0002 No such name A www.bing.com.maestrale.local SOA a.root-servers.net
-  396   4.428612 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0003 AAAA www.bing.com.maestrale.local
-  399   4.444198      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0003 No such name AAAA www.bing.com.maestrale.local SOA a.root-servers.net
-  400   4.444887 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0004 A www.bing.com
-  403   4.459883      1.1.1.1 → 192.168.200.71 DNS 337 Standard query response 0x0004 A www.bing.com CNAME www-www.bing.com.trafficmanager.net CNAME www.bing.com.edgekey.net CNAME e86303.dscx.akamaiedge.net A 2.18.254.65 A 2.18.254.64 A 2.18.254.82 A 2.18.254.59 A 2.18.254.81 A 2.18.254.66 A 2.18.254.80 A 2.18.254.72 A 2.18.254.67
-  404   4.464555 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0005 AAAA www.bing.com
-  407   4.479690      1.1.1.1 → 192.168.200.71 DNS 249 Standard query response 0x0005 AAAA www.bing.com CNAME www-www.bing.com.trafficmanager.net CNAME www.bing.com.edgekey.net CNAME e86303.dscx.akamaiedge.net AAAA 2a02:26f0:8d00:14::213:7c94 AAAA 2a02:26f0:8d00:14::213:7c9e
-  409   4.525043 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
-  412   4.540102      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
-  413   4.541705 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0002 A www.foxnews.com.maestrale.local
-  416   4.556669      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0002 No such name A www.foxnews.com.maestrale.local SOA a.root-servers.net
-  417   4.557454 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0003 AAAA www.foxnews.com.maestrale.local
-  420   4.574790      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0003 No such name AAAA www.foxnews.com.maestrale.local SOA a.root-servers.net
-  421   4.575451 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0004 A www.foxnews.com
-  435   4.619275      1.1.1.1 → 192.168.200.71 DNS 186 Standard query response 0x0004 A www.foxnews.com CNAME www.foxnews.com.edgekey.net CNAME e197183.dsca.akamaiedge.net A 2.22.248.113 A 2.22.248.105
-  437   4.623712 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0005 AAAA www.foxnews.com
-  440   4.664563      1.1.1.1 → 192.168.200.71 DNS 170 Standard query response 0x0005 AAAA www.foxnews.com CNAME j.sni.global.fastly.net SOA ns1.fastly.net
-  442   4.697050 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
-  445   4.715295      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
-  446   4.717543 192.168.200.71 → 1.1.1.1      DNS 92 Standard query 0x0002 A www.outbrain.com.maestrale.local
-  449   4.734158      1.1.1.1 → 192.168.200.71 DNS 167 Standard query response 0x0002 No such name A www.outbrain.com.maestrale.local SOA a.root-servers.net
-  450   4.735267 192.168.200.71 → 1.1.1.1      DNS 92 Standard query 0x0003 AAAA www.outbrain.com.maestrale.local
-  453   4.766116      1.1.1.1 → 192.168.200.71 DNS 167 Standard query response 0x0003 No such name AAAA www.outbrain.com.maestrale.local SOA a.root-servers.net
-  454   4.767374 192.168.200.71 → 1.1.1.1      DNS 76 Standard query 0x0004 A www.outbrain.com
-  457   4.783755      1.1.1.1 → 192.168.200.71 DNS 173 Standard query response 0x0004 A www.outbrain.com CNAME wildcard.outbrain.com.edgekey.net CNAME e10883.g.akamaiedge.net A 104.102.29.173
-  458   4.794009 192.168.200.71 → 1.1.1.1      DNS 76 Standard query 0x0005 AAAA www.outbrain.com
-  461   4.811849      1.1.1.1 → 192.168.200.71 DNS 215 Standard query response 0x0005 AAAA www.outbrain.com CNAME wildcard.outbrain.com.edgekey.net CNAME e10883.g.akamaiedge.net SOA n0g.akamaiedge.net
-  463   4.854569 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
-  466   4.870149      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
-  467   4.872045 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0002 A www.bestbuy.com.maestrale.local
-  470   4.887685      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0002 No such name A www.bestbuy.com.maestrale.local SOA a.root-servers.net
-  471   4.888340 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0003 AAAA www.bestbuy.com.maestrale.local
-  484   4.922464      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0003 No such name AAAA www.bestbuy.com.maestrale.local SOA a.root-servers.net
-  485   4.923362 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0004 A www.bestbuy.com
-  488   4.940676      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0004 A www.bestbuy.com CNAME www.bestbuy.com.edgekey.net CNAME e5816.x.akamaiedge.net A 2.20.80.209
-  489   4.945199 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0005 AAAA www.bestbuy.com
-  492   4.962296      1.1.1.1 → 192.168.200.71 DNS 207 Standard query response 0x0005 AAAA www.bestbuy.com CNAME www.bestbuy.com.edgekey.net CNAME e5816.x.akamaiedge.net SOA n0x.akamaiedge.net
-  494   4.996095 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
-  497   5.011296      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
-  498   5.012904 192.168.200.71 → 1.1.1.1      DNS 90 Standard query 0x0002 A www.tumblr.com.maestrale.local
-  501   5.031418      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0002 No such name A www.tumblr.com.maestrale.local SOA a.root-servers.net
-  502   5.032053 192.168.200.71 → 1.1.1.1      DNS 90 Standard query 0x0003 AAAA www.tumblr.com.maestrale.local
-  505   5.049289      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0003 No such name AAAA www.tumblr.com.maestrale.local SOA a.root-servers.net
-  506   5.050074 192.168.200.71 → 1.1.1.1      DNS 74 Standard query 0x0004 A www.tumblr.com
-  509   5.064868      1.1.1.1 → 192.168.200.71 DNS 90 Standard query response 0x0004 A www.tumblr.com A 192.0.77.40
-  510   5.069566 192.168.200.71 → 1.1.1.1      DNS 74 Standard query 0x0005 AAAA www.tumblr.com
-  513   5.085438      1.1.1.1 → 192.168.200.71 DNS 125 Standard query response 0x0005 AAAA www.tumblr.com SOA ns1.tumblr.com
-  514   5.117776 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
-  517   5.134675      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
-  518   5.136238 192.168.200.71 → 1.1.1.1      DNS 97 Standard query 0x0002 A www.bankofamerica.com.maestrale.local
-  521   5.154063      1.1.1.1 → 192.168.200.71 DNS 172 Standard query response 0x0002 No such name A www.bankofamerica.com.maestrale.local SOA a.root-servers.net
-  522   5.154823 192.168.200.71 → 1.1.1.1      DNS 97 Standard query 0x0003 AAAA www.bankofamerica.com.maestrale.local
-  525   5.172214      1.1.1.1 → 192.168.200.71 DNS 172 Standard query response 0x0003 No such name AAAA www.bankofamerica.com.maestrale.local SOA a.root-servers.net
-  526   5.172915 192.168.200.71 → 1.1.1.1      DNS 81 Standard query 0x0004 A www.bankofamerica.com
-  534   5.284479      1.1.1.1 → 192.168.200.71 DNS 127 Standard query response 0x0004 A www.bankofamerica.com CNAME wwwui.ecglb.bac.com A 171.161.116.100
-  535   5.289421 192.168.200.71 → 1.1.1.1      DNS 81 Standard query 0x0005 AAAA www.bankofamerica.com
-  539   5.415234      1.1.1.1 → 192.168.200.71 DNS 111 Standard query response 0x0005 AAAA www.bankofamerica.com CNAME wwwui.ecglb.bac.com
-  540   5.453703 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
-  543   5.473134      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
-  544   5.474787 192.168.200.71 → 1.1.1.1      DNS 86 Standard query 0x0002 A www.go.com.maestrale.local
-  547   5.515930      1.1.1.1 → 192.168.200.71 DNS 161 Standard query response 0x0002 No such name A www.go.com.maestrale.local SOA a.root-servers.net
-  548   5.516742 192.168.200.71 → 1.1.1.1      DNS 86 Standard query 0x0003 AAAA www.go.com.maestrale.local
-  560   5.557874      1.1.1.1 → 192.168.200.71 DNS 161 Standard query response 0x0003 No such name AAAA www.go.com.maestrale.local SOA a.root-servers.net
-  561   5.559112 192.168.200.71 → 1.1.1.1      DNS 70 Standard query 0x0004 A www.go.com
-  564   5.605084      1.1.1.1 → 192.168.200.71 DNS 170 Standard query response 0x0004 A www.go.com CNAME www-cdn.matterhorn.app A 108.157.188.47 A 108.157.188.117 A 108.157.188.44 A 108.157.188.105
-  566   5.614761 192.168.200.71 → 1.1.1.1      DNS 70 Standard query 0x0005 AAAA www.go.com
-  569   5.639243      1.1.1.1 → 192.168.200.71 DNS 184 Standard query response 0x0005 AAAA www.go.com CNAME www-cdn.matterhorn.app SOA ns-221.awsdns-27.com
-  571   5.680474 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
-  574   5.723001      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
-  575   5.725214 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0002 A www.espn.go.com.maestrale.local
-  578   5.741680      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0002 No such name A www.espn.go.com.maestrale.local SOA a.root-servers.net
-  579   5.742858 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0003 AAAA www.espn.go.com.maestrale.local
-  582   5.758795      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0003 No such name AAAA www.espn.go.com.maestrale.local SOA a.root-servers.net
-  583   5.759781 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0004 A www.espn.go.com
-  586   5.800738      1.1.1.1 → 192.168.200.71 DNS 139 Standard query response 0x0004 A www.espn.go.com A 108.138.199.28 A 108.138.199.121 A 108.138.199.58 A 108.138.199.12
-  587   5.805336 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0005 AAAA www.espn.go.com
-  590   5.821737      1.1.1.1 → 192.168.200.71 DNS 157 Standard query response 0x0005 AAAA www.espn.go.com SOA ns-1285.awsdns-32.org
-  600   5.857739 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
-  603   5.889060      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
-  604   5.890844 192.168.200.71 → 1.1.1.1      DNS 93 Standard query 0x0002 A www.wordpress.com.maestrale.local
-  608   5.931377      1.1.1.1 → 192.168.200.71 DNS 168 Standard query response 0x0002 No such name A www.wordpress.com.maestrale.local SOA a.root-servers.net
-  609   5.932091 192.168.200.71 → 1.1.1.1      DNS 93 Standard query 0x0003 AAAA www.wordpress.com.maestrale.local
-  613   5.950845      1.1.1.1 → 192.168.200.71 DNS 168 Standard query response 0x0003 No such name AAAA www.wordpress.com.maestrale.local SOA a.root-servers.net
-  614   5.951616 192.168.200.71 → 1.1.1.1      DNS 77 Standard query 0x0004 A www.wordpress.com
-  617   5.966961      1.1.1.1 → 192.168.200.71 DNS 126 Standard query response 0x0004 A www.wordpress.com CNAME lb.wordpress.com A 192.0.78.13 A 192.0.78.12
-  618   5.972206 192.168.200.71 → 1.1.1.1      DNS 77 Standard query 0x0005 AAAA www.wordpress.com
-  621   5.993854      1.1.1.1 → 192.168.200.71 DNS 147 Standard query response 0x0005 AAAA www.wordpress.com CNAME lb.wordpress.com SOA ns1.wordpress.com
-  623   6.035253 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
-  626   6.049893      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
-  627   6.052729 192.168.200.71 → 1.1.1.1      DNS 98 Standard query 0x0002 A www.huffingtonpost.com.maestrale.local
-  630   6.088863      1.1.1.1 → 192.168.200.71 DNS 173 Standard query response 0x0002 No such name A www.huffingtonpost.com.maestrale.local SOA a.root-servers.net
-  631   6.090111 192.168.200.71 → 1.1.1.1      DNS 98 Standard query 0x0003 AAAA www.huffingtonpost.com.maestrale.local
-  634   6.105177      1.1.1.1 → 192.168.200.71 DNS 173 Standard query response 0x0003 No such name AAAA www.huffingtonpost.com.maestrale.local SOA a.root-servers.net
-  635   6.106278 192.168.200.71 → 1.1.1.1      DNS 82 Standard query 0x0004 A www.huffingtonpost.com
-  638   6.124729      1.1.1.1 → 192.168.200.71 DNS 184 Standard query response 0x0004 A www.huffingtonpost.com CNAME buzzfeed2.map.fastly.net A 151.101.130.114 A 151.101.66.114 A 151.101.194.114 A 151.101.2.114
-  639   6.131415 192.168.200.71 → 1.1.1.1      DNS 82 Standard query 0x0005 AAAA www.huffingtonpost.com
-  650   6.165438      1.1.1.1 → 192.168.200.71 DNS 178 Standard query response 0x0005 AAAA www.huffingtonpost.com CNAME buzzfeed2.map.fastly.net SOA ns1.fastly.net
-  652   6.202557 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
-  655   6.217435      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
-  656   6.218945 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0002 A www.citi.com.maestrale.local
-  659   6.260075      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0002 No such name A www.citi.com.maestrale.local SOA a.root-servers.net
-  660   6.261285 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0003 AAAA www.citi.com.maestrale.local
-  664   6.300393      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0003 No such name AAAA www.citi.com.maestrale.local SOA a.root-servers.net
-  665   6.301817 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0004 A www.citi.com
-  668   6.341995      1.1.1.1 → 192.168.200.71 DNS 164 Standard query response 0x0004 A www.citi.com CNAME san.www.citi.com.edgekey.net CNAME e16976.x.akamaiedge.net A 104.83.107.194
-  670   6.350471 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0005 AAAA www.citi.com
-  673   6.366053      1.1.1.1 → 192.168.200.71 DNS 206 Standard query response 0x0005 AAAA www.citi.com CNAME san.www.citi.com.edgekey.net CNAME e16976.x.akamaiedge.net SOA n0x.akamaiedge.net
-  675   6.403728 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
-  678   6.419348      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
-  679   6.421063 192.168.200.71 → 1.1.1.1      DNS 92 Standard query 0x0002 A www.facebook.com.maestrale.local
-  822   6.492023      1.1.1.1 → 192.168.200.71 DNS 167 Standard query response 0x0002 No such name A www.facebook.com.maestrale.local SOA a.root-servers.net
-  825   6.492801 192.168.200.71 → 1.1.1.1      DNS 92 Standard query 0x0003 AAAA www.facebook.com.maestrale.local
-  829   6.524959      1.1.1.1 → 192.168.200.71 DNS 167 Standard query response 0x0003 No such name AAAA www.facebook.com.maestrale.local SOA a.root-servers.net
-  830   6.526080 192.168.200.71 → 1.1.1.1      DNS 76 Standard query 0x0004 A www.facebook.com
-  833   6.541478      1.1.1.1 → 192.168.200.71 DNS 121 Standard query response 0x0004 A www.facebook.com CNAME star-mini.c10r.facebook.com A 31.13.86.36
-  834   6.545668 192.168.200.71 → 1.1.1.1      DNS 76 Standard query 0x0005 AAAA www.facebook.com
-  837   6.562878      1.1.1.1 → 192.168.200.71 DNS 133 Standard query response 0x0005 AAAA www.facebook.com CNAME star-mini.c10r.facebook.com AAAA 2a03:2880:f16d:81:face:b00c:0:25de
-  838   6.600834 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
-  841   6.615945      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
-  842   6.617964 192.168.200.71 → 1.1.1.1      DNS 90 Standard query 0x0002 A www.paypal.com.maestrale.local
-  845   6.656677      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0002 No such name A www.paypal.com.maestrale.local SOA a.root-servers.net
-  846   6.657528 192.168.200.71 → 1.1.1.1      DNS 90 Standard query 0x0003 AAAA www.paypal.com.maestrale.local
-  849   6.697683      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0003 No such name AAAA www.paypal.com.maestrale.local SOA a.root-servers.net
-  850   6.698544 192.168.200.71 → 1.1.1.1      DNS 74 Standard query 0x0004 A www.paypal.com
-  853   6.713270      1.1.1.1 → 192.168.200.71 DNS 203 Standard query response 0x0004 A www.paypal.com CNAME www.glb.paypal.com CNAME paypal-dynamic.map.fastly.net A 151.101.129.21 A 151.101.193.21 A 151.101.65.21 A 151.101.1.21
-  854   6.717616 192.168.200.71 → 1.1.1.1      DNS 74 Standard query 0x0005 AAAA www.paypal.com
-  857   6.732178      1.1.1.1 → 192.168.200.71 DNS 197 Standard query response 0x0005 AAAA www.paypal.com CNAME www.glb.paypal.com CNAME paypal-dynamic.map.fastly.net SOA ns1.fastly.net
-  881   6.767227 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
-  999   6.801205      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1000   6.802533 192.168.200.71 → 1.1.1.1      DNS 99 Standard query 0x0002 A www.microsoftonline.com.maestrale.local
- 1003   6.843643      1.1.1.1 → 192.168.200.71 DNS 174 Standard query response 0x0002 No such name A www.microsoftonline.com.maestrale.local SOA a.root-servers.net
- 1004   6.844230 192.168.200.71 → 1.1.1.1      DNS 99 Standard query 0x0003 AAAA www.microsoftonline.com.maestrale.local
- 1007   6.885482      1.1.1.1 → 192.168.200.71 DNS 174 Standard query response 0x0003 No such name AAAA www.microsoftonline.com.maestrale.local SOA a.root-servers.net
- 1008   6.886432 192.168.200.71 → 1.1.1.1      DNS 83 Standard query 0x0004 A www.microsoftonline.com
- 1011   6.902061      1.1.1.1 → 192.168.200.71 DNS 167 Standard query response 0x0004 A www.microsoftonline.com CNAME microsoftonline.com SOA ns1-38.azure-dns.com
- 1012   6.906853 192.168.200.71 → 1.1.1.1      DNS 83 Standard query 0x0005 AAAA www.microsoftonline.com
- 1016   6.922696      1.1.1.1 → 192.168.200.71 DNS 167 Standard query response 0x0005 AAAA www.microsoftonline.com CNAME microsoftonline.com SOA ns1-38.azure-dns.com
- 1018   6.957557 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1022   6.973469      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1023   6.975468 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0002 A www.comcast.net.maestrale.local
- 1026   7.011399      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0002 No such name A www.comcast.net.maestrale.local SOA a.root-servers.net
- 1027   7.012690 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0003 AAAA www.comcast.net.maestrale.local
- 1030   7.031848      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0003 No such name AAAA www.comcast.net.maestrale.local SOA a.root-servers.net
- 1031   7.032645 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0004 A www.comcast.net
- 1141   7.188923      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0004 A www.comcast.net CNAME www.comcast.net.edgekey.net CNAME e7010.dscg.akamaiedge.net A 104.83.117.235
- 1142   7.196112 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0005 AAAA www.comcast.net
- 1148   7.334756      1.1.1.1 → 192.168.200.71 DNS 205 Standard query response 0x0005 AAAA www.comcast.net CNAME www.comcast.net.edgekey.net CNAME e7010.dscg.akamaiedge.net AAAA 2a02:26f0:8d00:b9f::1b62 AAAA 2a02:26f0:8d00:b8d::1b62
- 1149   7.374300 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1230   7.397270      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1231   7.399237 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0002 A www.ebay.com.maestrale.local
- 1234   7.413648      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0002 No such name A www.ebay.com.maestrale.local SOA a.root-servers.net
- 1235   7.414300 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0003 AAAA www.ebay.com.maestrale.local
- 1238   7.432410      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0003 No such name AAAA www.ebay.com.maestrale.local SOA a.root-servers.net
- 1239   7.433222 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0004 A www.ebay.com
- 1242   7.450411      1.1.1.1 → 192.168.200.71 DNS 164 Standard query response 0x0004 A www.ebay.com CNAME slot9428.ebay.com.edgekey.net CNAME e9428.a.akamaiedge.net A 2.22.33.86
- 1243   7.454717 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0005 AAAA www.ebay.com
- 1246   7.474570      1.1.1.1 → 192.168.200.71 DNS 206 Standard query response 0x0005 AAAA www.ebay.com CNAME slot9428.ebay.com.edgekey.net CNAME e9428.a.akamaiedge.net SOA n0a.akamaiedge.net
- 1248   7.518497 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1251   7.535606      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1252   7.537409 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0002 A www.netflix.com.maestrale.local
- 1255   7.553728      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0002 No such name A www.netflix.com.maestrale.local SOA a.root-servers.net
- 1256   7.554624 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0003 AAAA www.netflix.com.maestrale.local
- 1259   7.571815      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0003 No such name AAAA www.netflix.com.maestrale.local SOA a.root-servers.net
- 1260   7.572594 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0004 A www.netflix.com
- 1263   7.587826      1.1.1.1 → 192.168.200.71 DNS 268 Standard query response 0x0004 A www.netflix.com CNAME www.dradis.netflix.com CNAME www.eu-west-1.internal.dradis.netflix.com CNAME apiproxy-website-nlb-prod-2-b4de62b516adfbbf.elb.eu-west-1.amazonaws.com A 54.155.246.232 A 54.73.148.110 A 18.200.8.190
- 1264   7.593708 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0005 AAAA www.netflix.com
- 1267   7.610468      1.1.1.1 → 192.168.200.71 DNS 304 Standard query response 0x0005 AAAA www.netflix.com CNAME www.dradis.netflix.com CNAME www.eu-west-1.internal.dradis.netflix.com CNAME apiproxy-website-nlb-prod-1-5675d5ecda6efdd8.elb.eu-west-1.amazonaws.com AAAA 2a05:d018:76c:b683:f711:f0cf:5cc7:b815 AAAA 2a05:d018:76c:b685:3b38:679d:2640:1ced AAAA 2a05:d018:76c:b684:8e48:47c9:84aa:b34d
- 1269   7.655400 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1272   7.671485      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1273   7.673414 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0002 A www.ebay.com.maestrale.local
- 1281   7.711526      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0002 No such name A www.ebay.com.maestrale.local SOA a.root-servers.net
- 1282   7.712698 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0003 AAAA www.ebay.com.maestrale.local
- 1285   7.728120      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0003 No such name AAAA www.ebay.com.maestrale.local SOA a.root-servers.net
- 1286   7.729522 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0004 A www.ebay.com
- 1289   7.745490      1.1.1.1 → 192.168.200.71 DNS 164 Standard query response 0x0004 A www.ebay.com CNAME slot9428.ebay.com.edgekey.net CNAME e9428.a.akamaiedge.net A 2.22.33.86
- 1290   7.751863 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0005 AAAA www.ebay.com
- 1293   7.767986      1.1.1.1 → 192.168.200.71 DNS 206 Standard query response 0x0005 AAAA www.ebay.com CNAME slot9428.ebay.com.edgekey.net CNAME e9428.a.akamaiedge.net SOA n0a.akamaiedge.net
- 1295   7.805749 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1298   7.820802      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1299   7.823396 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0002 A www.citi.com.maestrale.local
- 1302   7.856679      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0002 No such name A www.citi.com.maestrale.local SOA a.root-servers.net
- 1303   7.857398 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0003 AAAA www.citi.com.maestrale.local
- 1306   7.894728      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0003 No such name AAAA www.citi.com.maestrale.local SOA a.root-servers.net
- 1307   7.895588 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0004 A www.citi.com
- 1310   7.910617      1.1.1.1 → 192.168.200.71 DNS 164 Standard query response 0x0004 A www.citi.com CNAME san.www.citi.com.edgekey.net CNAME e16976.x.akamaiedge.net A 104.83.107.194
- 1311   7.915660 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0005 AAAA www.citi.com
- 1314   7.953733      1.1.1.1 → 192.168.200.71 DNS 206 Standard query response 0x0005 AAAA www.citi.com CNAME san.www.citi.com.edgekey.net CNAME e16976.x.akamaiedge.net SOA n0x.akamaiedge.net
- 1316   7.994579 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1327   8.009562      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1328   8.011440 192.168.200.71 → 1.1.1.1      DNS 90 Standard query 0x0002 A www.zillow.com.maestrale.local
- 1331   8.026334      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0002 No such name A www.zillow.com.maestrale.local SOA a.root-servers.net
- 1332   8.027335 192.168.200.71 → 1.1.1.1      DNS 90 Standard query 0x0003 AAAA www.zillow.com.maestrale.local
- 1335   8.067780      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0003 No such name AAAA www.zillow.com.maestrale.local SOA a.root-servers.net
- 1336   8.069004 192.168.200.71 → 1.1.1.1      DNS 74 Standard query 0x0004 A www.zillow.com
- 1339   8.109124      1.1.1.1 → 192.168.200.71 DNS 138 Standard query response 0x0004 A www.zillow.com A 108.156.2.25 A 108.156.2.122 A 108.156.2.124 A 108.156.2.6
- 1340   8.116386 192.168.200.71 → 1.1.1.1      DNS 74 Standard query 0x0005 AAAA www.zillow.com
- 1343   8.132374      1.1.1.1 → 192.168.200.71 DNS 135 Standard query response 0x0005 AAAA www.zillow.com SOA ns-188.awsdns-23.com
- 1345   8.170934 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1348   8.187683      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1349   8.189512 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0002 A www.comcast.net.maestrale.local
- 1352   8.227706      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0002 No such name A www.comcast.net.maestrale.local SOA a.root-servers.net
- 1353   8.229026 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0003 AAAA www.comcast.net.maestrale.local
- 1356   8.244663      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0003 No such name AAAA www.comcast.net.maestrale.local SOA a.root-servers.net
- 1357   8.245914 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0004 A www.comcast.net
- 1373   8.417144      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0004 A www.comcast.net CNAME www.comcast.net.edgekey.net CNAME e7010.dscg.akamaiedge.net A 104.83.117.235
- 1374   8.423762 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0005 AAAA www.comcast.net
- 1378   8.559224      1.1.1.1 → 192.168.200.71 DNS 205 Standard query response 0x0005 AAAA www.comcast.net CNAME www.comcast.net.edgekey.net CNAME e7010.dscg.akamaiedge.net AAAA 2a02:26f0:8d00:b8d::1b62 AAAA 2a02:26f0:8d00:b9f::1b62
- 1380   8.604793 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1394   8.622383      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1395   8.624268 192.168.200.71 → 1.1.1.1      DNS 89 Standard query 0x0002 A www.chase.com.maestrale.local
- 1398   8.642778      1.1.1.1 → 192.168.200.71 DNS 164 Standard query response 0x0002 No such name A www.chase.com.maestrale.local SOA a.root-servers.net
- 1399   8.643671 192.168.200.71 → 1.1.1.1      DNS 89 Standard query 0x0003 AAAA www.chase.com.maestrale.local
- 1402   8.682249      1.1.1.1 → 192.168.200.71 DNS 164 Standard query response 0x0003 No such name AAAA www.chase.com.maestrale.local SOA a.root-servers.net
- 1403   8.683341 192.168.200.71 → 1.1.1.1      DNS 73 Standard query 0x0004 A www.chase.com
- 1406   8.711666      1.1.1.1 → 192.168.200.71 DNS 218 Standard query response 0x0004 A www.chase.com CNAME gtm.www.chase.com.akadns.net CNAME www.chase.com.edgekey.net CNAME e129412.a.akamaiedge.net A 2.21.20.10 A 2.21.20.3
- 1407   8.719541 192.168.200.71 → 1.1.1.1      DNS 73 Standard query 0x0005 AAAA www.chase.com
- 1410   8.748258      1.1.1.1 → 192.168.200.71 DNS 244 Standard query response 0x0005 AAAA www.chase.com CNAME gtm.www.chase.com.akadns.net CNAME www.chase.com.edgekey.net CNAME e129412.a.akamaiedge.net SOA n0a.akamaiedge.net
- 1412   8.789180 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1415   8.805896      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1416   8.807616 192.168.200.71 → 1.1.1.1      DNS 90 Standard query 0x0002 A www.indeed.com.maestrale.local
- 1419   8.844182      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0002 No such name A www.indeed.com.maestrale.local SOA a.root-servers.net
- 1420   8.845318 192.168.200.71 → 1.1.1.1      DNS 90 Standard query 0x0003 AAAA www.indeed.com.maestrale.local
- 1423   8.888150      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0003 No such name AAAA www.indeed.com.maestrale.local SOA a.root-servers.net
- 1424   8.889324 192.168.200.71 → 1.1.1.1      DNS 74 Standard query 0x0004 A www.indeed.com
- 1427   8.905435      1.1.1.1 → 192.168.200.71 DNS 106 Standard query response 0x0004 A www.indeed.com A 162.159.129.67 A 162.159.130.67
- 1428   8.911506 192.168.200.71 → 1.1.1.1      DNS 74 Standard query 0x0005 AAAA www.indeed.com
- 1440   8.929570      1.1.1.1 → 192.168.200.71 DNS 133 Standard query response 0x0005 AAAA www.indeed.com SOA brit.ns.cloudflare.com
- 1441   8.964694 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1445   8.991682      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1446   8.993298 192.168.200.71 → 1.1.1.1      DNS 86 Standard query 0x0002 A www.go.com.maestrale.local
- 1450   9.046851      1.1.1.1 → 192.168.200.71 DNS 161 Standard query response 0x0002 No such name A www.go.com.maestrale.local SOA a.root-servers.net
- 1451   9.047477 192.168.200.71 → 1.1.1.1      DNS 86 Standard query 0x0003 AAAA www.go.com.maestrale.local
- 1454   9.086390      1.1.1.1 → 192.168.200.71 DNS 161 Standard query response 0x0003 No such name AAAA www.go.com.maestrale.local SOA a.root-servers.net
- 1455   9.087187 192.168.200.71 → 1.1.1.1      DNS 70 Standard query 0x0004 A www.go.com
- 1458   9.104993      1.1.1.1 → 192.168.200.71 DNS 170 Standard query response 0x0004 A www.go.com CNAME www-cdn.matterhorn.app A 108.157.188.105 A 108.157.188.44 A 108.157.188.117 A 108.157.188.47
- 1459   9.109568 192.168.200.71 → 1.1.1.1      DNS 70 Standard query 0x0005 AAAA www.go.com
- 1463   9.182434      1.1.1.1 → 192.168.200.71 DNS 184 Standard query response 0x0005 AAAA www.go.com CNAME www-cdn.matterhorn.app SOA ns-221.awsdns-27.com
- 1465   9.228436 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1468   9.243670      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1469   9.245801 192.168.200.71 → 1.1.1.1      DNS 90 Standard query 0x0002 A www.github.com.maestrale.local
- 1472   9.285778      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0002 No such name A www.github.com.maestrale.local SOA a.root-servers.net
- 1473   9.287053 192.168.200.71 → 1.1.1.1      DNS 90 Standard query 0x0003 AAAA www.github.com.maestrale.local
- 1476   9.324117      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0003 No such name AAAA www.github.com.maestrale.local SOA a.root-servers.net
- 1477   9.325400 192.168.200.71 → 1.1.1.1      DNS 74 Standard query 0x0004 A www.github.com
- 1480   9.360577      1.1.1.1 → 192.168.200.71 DNS 104 Standard query response 0x0004 A www.github.com CNAME github.com A 140.82.121.3
- 1481   9.366838 192.168.200.71 → 1.1.1.1      DNS 74 Standard query 0x0005 AAAA www.github.com
- 1484   9.383073      1.1.1.1 → 192.168.200.71 DNS 172 Standard query response 0x0005 AAAA www.github.com CNAME github.com SOA ns-1707.awsdns-21.co.uk
- 1486   9.418812 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1489   9.436859      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1490   9.438649 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0002 A www.ebay.com.maestrale.local
- 1493   9.454333      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0002 No such name A www.ebay.com.maestrale.local SOA a.root-servers.net
- 1494   9.454891 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0003 AAAA www.ebay.com.maestrale.local
- 1497   9.471314      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0003 No such name AAAA www.ebay.com.maestrale.local SOA a.root-servers.net
- 1498   9.471881 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0004 A www.ebay.com
- 1501   9.487880      1.1.1.1 → 192.168.200.71 DNS 164 Standard query response 0x0004 A www.ebay.com CNAME slot9428.ebay.com.edgekey.net CNAME e9428.a.akamaiedge.net A 2.22.33.86
- 1502   9.492204 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0005 AAAA www.ebay.com
- 1505   9.509509      1.1.1.1 → 192.168.200.71 DNS 206 Standard query response 0x0005 AAAA www.ebay.com CNAME slot9428.ebay.com.edgekey.net CNAME e9428.a.akamaiedge.net SOA n0a.akamaiedge.net
- 1516   9.543601 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1519   9.558440      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1520   9.560192 192.168.200.71 → 1.1.1.1      DNS 90 Standard query 0x0002 A www.indeed.com.maestrale.local
- 1523   9.578369      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0002 No such name A www.indeed.com.maestrale.local SOA a.root-servers.net
- 1524   9.579283 192.168.200.71 → 1.1.1.1      DNS 90 Standard query 0x0003 AAAA www.indeed.com.maestrale.local
- 1527   9.617503      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0003 No such name AAAA www.indeed.com.maestrale.local SOA a.root-servers.net
- 1528   9.618728 192.168.200.71 → 1.1.1.1      DNS 74 Standard query 0x0004 A www.indeed.com
- 1531   9.637966      1.1.1.1 → 192.168.200.71 DNS 106 Standard query response 0x0004 A www.indeed.com A 162.159.129.67 A 162.159.130.67
- 1532   9.645856 192.168.200.71 → 1.1.1.1      DNS 74 Standard query 0x0005 AAAA www.indeed.com
- 1535   9.661281      1.1.1.1 → 192.168.200.71 DNS 133 Standard query response 0x0005 AAAA www.indeed.com SOA brit.ns.cloudflare.com
- 1537   9.700981 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1540   9.716209      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1541   9.718192 192.168.200.71 → 1.1.1.1      DNS 89 Standard query 0x0002 A www.quora.com.maestrale.local
- 1544   9.735504      1.1.1.1 → 192.168.200.71 DNS 164 Standard query response 0x0002 No such name A www.quora.com.maestrale.local SOA a.root-servers.net
- 1545   9.736431 192.168.200.71 → 1.1.1.1      DNS 89 Standard query 0x0003 AAAA www.quora.com.maestrale.local
- 1548   9.774290      1.1.1.1 → 192.168.200.71 DNS 164 Standard query response 0x0003 No such name AAAA www.quora.com.maestrale.local SOA a.root-servers.net
- 1549   9.774951 192.168.200.71 → 1.1.1.1      DNS 73 Standard query 0x0004 A www.quora.com
- 1552   9.792243      1.1.1.1 → 192.168.200.71 DNS 151 Standard query response 0x0004 A www.quora.com CNAME www.quora.com.cdn.cloudflare.net A 162.159.153.247 A 162.159.152.17
- 1553   9.796767 192.168.200.71 → 1.1.1.1      DNS 73 Standard query 0x0005 AAAA www.quora.com
- 1556   9.813095      1.1.1.1 → 192.168.200.71 DNS 174 Standard query response 0x0005 AAAA www.quora.com CNAME www.quora.com.cdn.cloudflare.net SOA ns1.cloudflare.net
- 1564   9.859954 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1567   9.873584      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1568   9.875513 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0002 A www.comcast.net.maestrale.local
- 1571   9.893099      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0002 No such name A www.comcast.net.maestrale.local SOA a.root-servers.net
- 1572   9.893971 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0003 AAAA www.comcast.net.maestrale.local
- 1575   9.912111      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0003 No such name AAAA www.comcast.net.maestrale.local SOA a.root-servers.net
- 1576   9.912799 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0004 A www.comcast.net
- 1579   9.932325      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0004 A www.comcast.net CNAME www.comcast.net.edgekey.net CNAME e7010.dscg.akamaiedge.net A 104.83.117.235
- 1580   9.938870 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0005 AAAA www.comcast.net
- 1584  10.085670      1.1.1.1 → 192.168.200.71 DNS 205 Standard query response 0x0005 AAAA www.comcast.net CNAME www.comcast.net.edgekey.net CNAME e7010.dscg.akamaiedge.net AAAA 2a02:26f0:8d00:b8d::1b62 AAAA 2a02:26f0:8d00:b9f::1b62
- 1585  10.121985 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1594  10.140587      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1595  10.142496 192.168.200.71 → 1.1.1.1      DNS 89 Standard query 0x0002 A www.chase.com.maestrale.local
- 1598  10.158577      1.1.1.1 → 192.168.200.71 DNS 164 Standard query response 0x0002 No such name A www.chase.com.maestrale.local SOA a.root-servers.net
- 1599  10.159394 192.168.200.71 → 1.1.1.1      DNS 89 Standard query 0x0003 AAAA www.chase.com.maestrale.local
- 1602  10.178409      1.1.1.1 → 192.168.200.71 DNS 164 Standard query response 0x0003 No such name AAAA www.chase.com.maestrale.local SOA a.root-servers.net
- 1603  10.179228 192.168.200.71 → 1.1.1.1      DNS 73 Standard query 0x0004 A www.chase.com
- 1606  10.208123      1.1.1.1 → 192.168.200.71 DNS 218 Standard query response 0x0004 A www.chase.com CNAME gtm.www.chase.com.akadns.net CNAME www.chase.com.edgekey.net CNAME e129412.a.akamaiedge.net A 2.22.248.95 A 2.22.248.114
- 1607  10.216095 192.168.200.71 → 1.1.1.1      DNS 73 Standard query 0x0005 AAAA www.chase.com
- 1610  10.253677      1.1.1.1 → 192.168.200.71 DNS 244 Standard query response 0x0005 AAAA www.chase.com CNAME gtm.www.chase.com.akadns.net CNAME www.chase.com.edgekey.net CNAME e129412.a.akamaiedge.net SOA n0a.akamaiedge.net
- 1612  10.299497 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1615  10.315013      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1616  10.316836 192.168.200.71 → 1.1.1.1      DNS 92 Standard query 0x0002 A www.outbrain.com.maestrale.local
- 1619  10.355512      1.1.1.1 → 192.168.200.71 DNS 167 Standard query response 0x0002 No such name A www.outbrain.com.maestrale.local SOA a.root-servers.net
- 1620  10.356804 192.168.200.71 → 1.1.1.1      DNS 92 Standard query 0x0003 AAAA www.outbrain.com.maestrale.local
- 1623  10.395720      1.1.1.1 → 192.168.200.71 DNS 167 Standard query response 0x0003 No such name AAAA www.outbrain.com.maestrale.local SOA a.root-servers.net
- 1624  10.397063 192.168.200.71 → 1.1.1.1      DNS 76 Standard query 0x0004 A www.outbrain.com
- 1638  10.452887      1.1.1.1 → 192.168.200.71 DNS 173 Standard query response 0x0004 A www.outbrain.com CNAME wildcard.outbrain.com.edgekey.net CNAME e10883.g.akamaiedge.net A 92.122.145.137
- 1639  10.458009 192.168.200.71 → 1.1.1.1      DNS 76 Standard query 0x0005 AAAA www.outbrain.com
- 1642  10.474070      1.1.1.1 → 192.168.200.71 DNS 215 Standard query response 0x0005 AAAA www.outbrain.com CNAME wildcard.outbrain.com.edgekey.net CNAME e10883.g.akamaiedge.net SOA n0g.akamaiedge.net
- 1643  10.508451 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1647  10.523962      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1648  10.525674 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0002 A www.yelp.com.maestrale.local
- 1651  10.565417      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0002 No such name A www.yelp.com.maestrale.local SOA a.root-servers.net
- 1652  10.566352 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0003 AAAA www.yelp.com.maestrale.local
- 1655  10.603032      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0003 No such name AAAA www.yelp.com.maestrale.local SOA a.root-servers.net
- 1656  10.604321 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0004 A www.yelp.com
- 1659  10.620007      1.1.1.1 → 192.168.200.71 DNS 172 Standard query response 0x0004 A www.yelp.com CNAME yelpcdn.map.fastly.net A 151.101.0.116 A 151.101.192.116 A 151.101.64.116 A 151.101.128.116
- 1660  10.625010 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0005 AAAA www.yelp.com
- 1663  10.667737      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0005 AAAA www.yelp.com CNAME yelpcdn.map.fastly.net SOA ns1.fastly.net
- 1665  10.701952 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1668  10.718834      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1669  10.720405 192.168.200.71 → 1.1.1.1      DNS 95 Standard query 0x0002 A www.tripadvisor.com.maestrale.local
- 1684  10.756714      1.1.1.1 → 192.168.200.71 DNS 170 Standard query response 0x0002 No such name A www.tripadvisor.com.maestrale.local SOA a.root-servers.net
- 1685  10.757497 192.168.200.71 → 1.1.1.1      DNS 95 Standard query 0x0003 AAAA www.tripadvisor.com.maestrale.local
- 1688  10.773805      1.1.1.1 → 192.168.200.71 DNS 170 Standard query response 0x0003 No such name AAAA www.tripadvisor.com.maestrale.local SOA a.root-servers.net
- 1689  10.774355 192.168.200.71 → 1.1.1.1      DNS 79 Standard query 0x0004 A www.tripadvisor.com
- 1692  10.790787      1.1.1.1 → 192.168.200.71 DNS 253 Standard query response 0x0004 A www.tripadvisor.com CNAME policy.www.tripadvisor.com.edge.tacdn.com CNAME www.tripadvisor.com.edge.tacdn.com CNAME www.tripadvisor.map.fastly.net A 151.101.2.40 A 151.101.194.40 A 151.101.66.40 A 151.101.130.40
- 1693  10.794805 192.168.200.71 → 1.1.1.1      DNS 79 Standard query 0x0005 AAAA www.tripadvisor.com
- 1696  10.810117      1.1.1.1 → 192.168.200.71 DNS 247 Standard query response 0x0005 AAAA www.tripadvisor.com CNAME policy.www.tripadvisor.com.edge.tacdn.com CNAME www.tripadvisor.com.edge.tacdn.com CNAME www.tripadvisor.map.fastly.net SOA ns1.fastly.net
- 1697  10.850393 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1700  10.868567      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1701  10.870805 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0002 A www.foxnews.com.maestrale.local
- 1704  10.886578      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0002 No such name A www.foxnews.com.maestrale.local SOA a.root-servers.net
- 1705  10.887855 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0003 AAAA www.foxnews.com.maestrale.local
- 1708  10.910090      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0003 No such name AAAA www.foxnews.com.maestrale.local SOA a.root-servers.net
- 1709  10.911344 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0004 A www.foxnews.com
- 1712  10.928286      1.1.1.1 → 192.168.200.71 DNS 176 Standard query response 0x0004 A www.foxnews.com CNAME j.sni.global.fastly.net A 151.101.2.132 A 151.101.194.132 A 151.101.130.132 A 151.101.66.132
- 1713  10.936792 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0005 AAAA www.foxnews.com
- 1716  10.993377      1.1.1.1 → 192.168.200.71 DNS 210 Standard query response 0x0005 AAAA www.foxnews.com CNAME www.foxnews.com.edgekey.net CNAME e197183.dsca.akamaiedge.net AAAA 2a02:26f0:ad::212:ff42 AAAA 2a02:26f0:ad::212:ff82
- 1718  11.029326 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1721  11.044501      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1722  11.046254 192.168.200.71 → 1.1.1.1      DNS 90 Standard query 0x0002 A www.indeed.com.maestrale.local
- 1737  11.066623      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0002 No such name A www.indeed.com.maestrale.local SOA a.root-servers.net
- 1738  11.068544 192.168.200.71 → 1.1.1.1      DNS 90 Standard query 0x0003 AAAA www.indeed.com.maestrale.local
- 1741  11.086088      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0003 No such name AAAA www.indeed.com.maestrale.local SOA a.root-servers.net
- 1742  11.086878 192.168.200.71 → 1.1.1.1      DNS 74 Standard query 0x0004 A www.indeed.com
- 1745  11.102851      1.1.1.1 → 192.168.200.71 DNS 106 Standard query response 0x0004 A www.indeed.com A 162.159.129.67 A 162.159.130.67
- 1746  11.107850 192.168.200.71 → 1.1.1.1      DNS 74 Standard query 0x0005 AAAA www.indeed.com
- 1749  11.129552      1.1.1.1 → 192.168.200.71 DNS 133 Standard query response 0x0005 AAAA www.indeed.com SOA brit.ns.cloudflare.com
- 1751  11.164392 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1754  11.185178      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1755  11.186997 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0002 A www.foxnews.com.maestrale.local
- 1761  11.224944      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0002 No such name A www.foxnews.com.maestrale.local SOA a.root-servers.net
- 1762  11.225880 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0003 AAAA www.foxnews.com.maestrale.local
- 1767  11.243975      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0003 No such name AAAA www.foxnews.com.maestrale.local SOA a.root-servers.net
- 1768  11.244812 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0004 A www.foxnews.com
- 1771  11.263592      1.1.1.1 → 192.168.200.71 DNS 186 Standard query response 0x0004 A www.foxnews.com CNAME www.foxnews.com.edgekey.net CNAME e197183.dsca.akamaiedge.net A 2.22.248.113 A 2.22.248.105
- 1772  11.269468 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0005 AAAA www.foxnews.com
- 1777  11.309146      1.1.1.1 → 192.168.200.71 DNS 170 Standard query response 0x0005 AAAA www.foxnews.com CNAME j.sni.global.fastly.net SOA ns1.fastly.net
- 1779  11.347396 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1782  11.362962      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1783  11.364750 192.168.200.71 → 1.1.1.1      DNS 90 Standard query 0x0002 A www.paypal.com.maestrale.local
- 1799  11.562655      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0002 No such name A www.paypal.com.maestrale.local SOA a.root-servers.net
- 1800  11.563478 192.168.200.71 → 1.1.1.1      DNS 90 Standard query 0x0003 AAAA www.paypal.com.maestrale.local
- 1803  11.600899      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0003 No such name AAAA www.paypal.com.maestrale.local SOA a.root-servers.net
- 1804  11.601653 192.168.200.71 → 1.1.1.1      DNS 74 Standard query 0x0004 A www.paypal.com
- 1807  11.616997      1.1.1.1 → 192.168.200.71 DNS 203 Standard query response 0x0004 A www.paypal.com CNAME www.glb.paypal.com CNAME paypal-dynamic.map.fastly.net A 151.101.65.21 A 151.101.193.21 A 151.101.1.21 A 151.101.129.21
- 1808  11.621364 192.168.200.71 → 1.1.1.1      DNS 74 Standard query 0x0005 AAAA www.paypal.com
- 1811  11.638997      1.1.1.1 → 192.168.200.71 DNS 197 Standard query response 0x0005 AAAA www.paypal.com CNAME www.glb.paypal.com CNAME paypal-dynamic.map.fastly.net SOA ns1.fastly.net
- 1816  11.674452 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1819  11.689755      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1820  11.691654 192.168.200.71 → 1.1.1.1      DNS 89 Standard query 0x0002 A www.chase.com.maestrale.local
- 1823  11.722724      1.1.1.1 → 192.168.200.71 DNS 164 Standard query response 0x0002 No such name A www.chase.com.maestrale.local SOA a.root-servers.net
- 1824  11.723836 192.168.200.71 → 1.1.1.1      DNS 89 Standard query 0x0003 AAAA www.chase.com.maestrale.local
- 1827  11.739384      1.1.1.1 → 192.168.200.71 DNS 164 Standard query response 0x0003 No such name AAAA www.chase.com.maestrale.local SOA a.root-servers.net
- 1828  11.740393 192.168.200.71 → 1.1.1.1      DNS 73 Standard query 0x0004 A www.chase.com
- 1831  11.770024      1.1.1.1 → 192.168.200.71 DNS 218 Standard query response 0x0004 A www.chase.com CNAME gtm.www.chase.com.akadns.net CNAME www.chase.com.edgekey.net CNAME e129412.a.akamaiedge.net A 2.22.248.114 A 2.22.248.95
- 1832  11.777960 192.168.200.71 → 1.1.1.1      DNS 73 Standard query 0x0005 AAAA www.chase.com
- 1835  11.807448      1.1.1.1 → 192.168.200.71 DNS 244 Standard query response 0x0005 AAAA www.chase.com CNAME gtm.www.chase.com.akadns.net CNAME www.chase.com.edgekey.net CNAME e129412.a.akamaiedge.net SOA n0a.akamaiedge.net
- 1838  11.847715 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1840  11.864117      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1841  11.866231 192.168.200.71 → 1.1.1.1      DNS 86 Standard query 0x0002 A www.go.com.maestrale.local
- 1844  11.901872      1.1.1.1 → 192.168.200.71 DNS 161 Standard query response 0x0002 No such name A www.go.com.maestrale.local SOA a.root-servers.net
- 1845  11.903157 192.168.200.71 → 1.1.1.1      DNS 86 Standard query 0x0003 AAAA www.go.com.maestrale.local
- 1848  11.921807      1.1.1.1 → 192.168.200.71 DNS 161 Standard query response 0x0003 No such name AAAA www.go.com.maestrale.local SOA a.root-servers.net
- 1849  11.923009 192.168.200.71 → 1.1.1.1      DNS 70 Standard query 0x0004 A www.go.com
- 1852  11.946322      1.1.1.1 → 192.168.200.71 DNS 170 Standard query response 0x0004 A www.go.com CNAME www-cdn.matterhorn.app A 108.157.188.44 A 108.157.188.117 A 108.157.188.47 A 108.157.188.105
- 1853  11.955041 192.168.200.71 → 1.1.1.1      DNS 70 Standard query 0x0005 AAAA www.go.com
- 1856  11.972422      1.1.1.1 → 192.168.200.71 DNS 184 Standard query response 0x0005 AAAA www.go.com CNAME www-cdn.matterhorn.app SOA ns-221.awsdns-27.com
- 1864  12.018280 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1867  12.035277      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1868  12.037251 192.168.200.71 → 1.1.1.1      DNS 92 Standard query 0x0002 A www.buzzfeed.com.maestrale.local
- 1871  12.054814      1.1.1.1 → 192.168.200.71 DNS 167 Standard query response 0x0002 No such name A www.buzzfeed.com.maestrale.local SOA a.root-servers.net
- 1872  12.055889 192.168.200.71 → 1.1.1.1      DNS 92 Standard query 0x0003 AAAA www.buzzfeed.com.maestrale.local
- 1875  12.073343      1.1.1.1 → 192.168.200.71 DNS 167 Standard query response 0x0003 No such name AAAA www.buzzfeed.com.maestrale.local SOA a.root-servers.net
- 1876  12.074627 192.168.200.71 → 1.1.1.1      DNS 76 Standard query 0x0004 A www.buzzfeed.com
- 1879  12.112126      1.1.1.1 → 192.168.200.71 DNS 178 Standard query response 0x0004 A www.buzzfeed.com CNAME buzzfeed2.map.fastly.net A 151.101.2.114 A 151.101.66.114 A 151.101.130.114 A 151.101.194.114
- 1880  12.119376 192.168.200.71 → 1.1.1.1      DNS 76 Standard query 0x0005 AAAA www.buzzfeed.com
- 1883  12.136013      1.1.1.1 → 192.168.200.71 DNS 172 Standard query response 0x0005 AAAA www.buzzfeed.com CNAME buzzfeed2.map.fastly.net SOA ns1.fastly.net
- 1885  12.185106 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1888  12.201141      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1889  12.202723 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0002 A www.netflix.com.maestrale.local
- 1892  12.224071      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0002 No such name A www.netflix.com.maestrale.local SOA a.root-servers.net
- 1893  12.225004 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0003 AAAA www.netflix.com.maestrale.local
- 1896  12.243177      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0003 No such name AAAA www.netflix.com.maestrale.local SOA a.root-servers.net
- 1897  12.244085 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0004 A www.netflix.com
- 1900  12.259230      1.1.1.1 → 192.168.200.71 DNS 268 Standard query response 0x0004 A www.netflix.com CNAME www.dradis.netflix.com CNAME www.eu-west-1.internal.dradis.netflix.com CNAME apiproxy-website-nlb-prod-3-ac110f6ae472b85a.elb.eu-west-1.amazonaws.com A 54.155.178.5 A 3.251.50.149 A 54.74.73.31
- 1901  12.265339 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0005 AAAA www.netflix.com
- 1904  12.280260      1.1.1.1 → 192.168.200.71 DNS 304 Standard query response 0x0005 AAAA www.netflix.com CNAME www.dradis.netflix.com CNAME www.eu-west-1.internal.dradis.netflix.com CNAME apiproxy-website-nlb-prod-3-ac110f6ae472b85a.elb.eu-west-1.amazonaws.com AAAA 2a05:d018:76c:b684:8ab7:ac02:667b:e863 AAAA 2a05:d018:76c:b683:a2cd:4240:8669:6d4 AAAA 2a05:d018:76c:b685:e8ab:afd3:af51:3aed
- 1916  12.321774 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1920  12.338134      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1921  12.339873 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0002 A www.vice.com.maestrale.local
- 1924  12.357671      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0002 No such name A www.vice.com.maestrale.local SOA a.root-servers.net
- 1925  12.358671 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0003 AAAA www.vice.com.maestrale.local
- 1928  12.390734      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0003 No such name AAAA www.vice.com.maestrale.local SOA a.root-servers.net
- 1929  12.392210 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0004 A www.vice.com
- 1932  12.407233      1.1.1.1 → 192.168.200.71 DNS 127 Standard query response 0x0004 A www.vice.com CNAME savageplatform.go-vip.net A 192.0.66.177
- 1933  12.412891 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0005 AAAA www.vice.com
- 1936  12.429165      1.1.1.1 → 192.168.200.71 DNS 139 Standard query response 0x0005 AAAA www.vice.com CNAME savageplatform.go-vip.net AAAA 2a04:fa87:fffd::c000:42b1
- 1938  12.467407 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1941  12.481916      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1942  12.483884 192.168.200.71 → 1.1.1.1      DNS 92 Standard query 0x0002 A www.outbrain.com.maestrale.local
- 1945  12.524657      1.1.1.1 → 192.168.200.71 DNS 167 Standard query response 0x0002 No such name A www.outbrain.com.maestrale.local SOA a.root-servers.net
- 1946  12.525296 192.168.200.71 → 1.1.1.1      DNS 92 Standard query 0x0003 AAAA www.outbrain.com.maestrale.local
- 1949  12.556752      1.1.1.1 → 192.168.200.71 DNS 167 Standard query response 0x0003 No such name AAAA www.outbrain.com.maestrale.local SOA a.root-servers.net
- 1950  12.557399 192.168.200.71 → 1.1.1.1      DNS 76 Standard query 0x0004 A www.outbrain.com
- 1959  12.598494      1.1.1.1 → 192.168.200.71 DNS 173 Standard query response 0x0004 A www.outbrain.com CNAME wildcard.outbrain.com.edgekey.net CNAME e10883.g.akamaiedge.net A 184.87.213.107
- 1960  12.602944 192.168.200.71 → 1.1.1.1      DNS 76 Standard query 0x0005 AAAA www.outbrain.com
- 1963  12.642308      1.1.1.1 → 192.168.200.71 DNS 215 Standard query response 0x0005 AAAA www.outbrain.com CNAME wildcard.outbrain.com.edgekey.net CNAME e10883.g.akamaiedge.net SOA n0g.akamaiedge.net
- 1965  12.677251 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1968  12.692144      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1969  12.693913 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0002 A www.ebay.com.maestrale.local
- 1972  12.712611      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0002 No such name A www.ebay.com.maestrale.local SOA a.root-servers.net
- 1973  12.713388 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0003 AAAA www.ebay.com.maestrale.local
- 1976  12.728319      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0003 No such name AAAA www.ebay.com.maestrale.local SOA a.root-servers.net
- 1977  12.729643 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0004 A www.ebay.com
- 1980  12.746359      1.1.1.1 → 192.168.200.71 DNS 164 Standard query response 0x0004 A www.ebay.com CNAME slot9428.ebay.com.edgekey.net CNAME e9428.a.akamaiedge.net A 2.22.33.86
- 1981  12.753924 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0005 AAAA www.ebay.com
- 1984  12.771651      1.1.1.1 → 192.168.200.71 DNS 206 Standard query response 0x0005 AAAA www.ebay.com CNAME slot9428.ebay.com.edgekey.net CNAME e9428.a.akamaiedge.net SOA n0a.akamaiedge.net
- 1986  12.810145 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 1989  12.825778      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 1990  12.827496 192.168.200.71 → 1.1.1.1      DNS 93 Standard query 0x0002 A www.craiglist.org.maestrale.local
- 1993  12.862925      1.1.1.1 → 192.168.200.71 DNS 168 Standard query response 0x0002 No such name A www.craiglist.org.maestrale.local SOA a.root-servers.net
- 1994  12.864484 192.168.200.71 → 1.1.1.1      DNS 93 Standard query 0x0003 AAAA www.craiglist.org.maestrale.local
- 1997  12.884515      1.1.1.1 → 192.168.200.71 DNS 168 Standard query response 0x0003 No such name AAAA www.craiglist.org.maestrale.local SOA a.root-servers.net
- 1998  12.885993 192.168.200.71 → 1.1.1.1      DNS 77 Standard query 0x0004 A www.craiglist.org
- 2017  13.196078      1.1.1.1 → 192.168.200.71 DNS 93 Standard query response 0x0004 A www.craiglist.org A 208.82.238.135
- 2019  13.203624 192.168.200.71 → 1.1.1.1      DNS 77 Standard query 0x0005 AAAA www.craiglist.org
- 2028  13.440048      1.1.1.1 → 192.168.200.71 DNS 140 Standard query response 0x0005 AAAA www.craiglist.org SOA ns1f.craigslist.org
- 2029  13.475636 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 2032  13.491671      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 2033  13.493474 192.168.200.71 → 1.1.1.1      DNS 99 Standard query 0x0002 A www.microsoftonline.com.maestrale.local
- 2042  13.535235      1.1.1.1 → 192.168.200.71 DNS 174 Standard query response 0x0002 No such name A www.microsoftonline.com.maestrale.local SOA a.root-servers.net
- 2044  13.538199 192.168.200.71 → 1.1.1.1      DNS 99 Standard query 0x0003 AAAA www.microsoftonline.com.maestrale.local
- 2046  13.587156      1.1.1.1 → 192.168.200.71 DNS 174 Standard query response 0x0003 No such name AAAA www.microsoftonline.com.maestrale.local SOA a.root-servers.net
- 2047  13.588191 192.168.200.71 → 1.1.1.1      DNS 83 Standard query 0x0004 A www.microsoftonline.com
- 2050  13.622001      1.1.1.1 → 192.168.200.71 DNS 167 Standard query response 0x0004 A www.microsoftonline.com CNAME microsoftonline.com SOA ns1-38.azure-dns.com
- 2051  13.627782 192.168.200.71 → 1.1.1.1      DNS 83 Standard query 0x0005 AAAA www.microsoftonline.com
- 2054  13.650581      1.1.1.1 → 192.168.200.71 DNS 167 Standard query response 0x0005 AAAA www.microsoftonline.com CNAME microsoftonline.com SOA ns1-38.azure-dns.com
- 2056  13.690907 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 2059  13.713409      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 2060  13.714923 192.168.200.71 → 1.1.1.1      DNS 94 Standard query 0x0002 A www.capitalone.com.maestrale.local
- 2063  13.756428      1.1.1.1 → 192.168.200.71 DNS 169 Standard query response 0x0002 No such name A www.capitalone.com.maestrale.local SOA a.root-servers.net
- 2064  13.757237 192.168.200.71 → 1.1.1.1      DNS 94 Standard query 0x0003 AAAA www.capitalone.com.maestrale.local
- 2067  13.775263      1.1.1.1 → 192.168.200.71 DNS 169 Standard query response 0x0003 No such name AAAA www.capitalone.com.maestrale.local SOA a.root-servers.net
- 2068  13.775823 192.168.200.71 → 1.1.1.1      DNS 78 Standard query 0x0004 A www.capitalone.com
- 2071  13.810559      1.1.1.1 → 192.168.200.71 DNS 251 Standard query response 0x0004 A www.capitalone.com CNAME emwp-prod-controller.d16207fc61.capitalonegslbex.com CNAME www.capitalone.com.edgekey.net CNAME e64599.x.akamaiedge.net A 2.22.248.186 A 2.22.248.175
- 2072  13.815207 192.168.200.71 → 1.1.1.1      DNS 78 Standard query 0x0005 AAAA www.capitalone.com
- 2083  13.837126      1.1.1.1 → 192.168.200.71 DNS 277 Standard query response 0x0005 AAAA www.capitalone.com CNAME emwp-prod-controller.d16207fc61.capitalonegslbex.com CNAME www.capitalone.com.edgekey.net CNAME e64599.x.akamaiedge.net SOA n0x.akamaiedge.net
- 2085  13.877565 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 2088  13.892838      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 2089  13.894826 192.168.200.71 → 1.1.1.1      DNS 89 Standard query 0x0002 A www.quora.com.maestrale.local
- 2092  13.933172      1.1.1.1 → 192.168.200.71 DNS 164 Standard query response 0x0002 No such name A www.quora.com.maestrale.local SOA a.root-servers.net
- 2093  13.934601 192.168.200.71 → 1.1.1.1      DNS 89 Standard query 0x0003 AAAA www.quora.com.maestrale.local
- 2096  13.965211      1.1.1.1 → 192.168.200.71 DNS 164 Standard query response 0x0003 No such name AAAA www.quora.com.maestrale.local SOA a.root-servers.net
- 2098  13.967847 192.168.200.71 → 1.1.1.1      DNS 73 Standard query 0x0004 A www.quora.com
- 2100  13.983058      1.1.1.1 → 192.168.200.71 DNS 151 Standard query response 0x0004 A www.quora.com CNAME www.quora.com.cdn.cloudflare.net A 162.159.153.247 A 162.159.152.17
- 2101  13.987445 192.168.200.71 → 1.1.1.1      DNS 73 Standard query 0x0005 AAAA www.quora.com
- 2104  14.004123      1.1.1.1 → 192.168.200.71 DNS 174 Standard query response 0x0005 AAAA www.quora.com CNAME www.quora.com.cdn.cloudflare.net SOA ns1.cloudflare.net
- 2106  14.041346 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 2109  14.056742      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 2110  14.058992 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0002 A www.pandora.com.maestrale.local
- 2113  14.102136      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0002 No such name A www.pandora.com.maestrale.local SOA a.root-servers.net
- 2114  14.103380 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0003 AAAA www.pandora.com.maestrale.local
- 2122  14.142278      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0003 No such name AAAA www.pandora.com.maestrale.local SOA a.root-servers.net
- 2123  14.143254 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0004 A www.pandora.com
- 2127  14.421937      1.1.1.1 → 192.168.200.71 DNS 114 Standard query response 0x0004 A www.pandora.com CNAME www.gslb.pandora.com A 208.85.41.59
- 2128  14.430440 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0005 AAAA www.pandora.com
- 2141  14.544623      1.1.1.1 → 192.168.200.71 DNS 126 Standard query response 0x0005 AAAA www.pandora.com CNAME www.gslb.pandora.com AAAA 2620:106:e007:f00f::3b
- 2143  14.590632 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 2146  14.607268      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 2147  14.609040 192.168.200.71 → 1.1.1.1      DNS 93 Standard query 0x0002 A www.homedepot.com.maestrale.local
- 2150  14.648369      1.1.1.1 → 192.168.200.71 DNS 168 Standard query response 0x0002 No such name A www.homedepot.com.maestrale.local SOA a.root-servers.net
- 2151  14.649342 192.168.200.71 → 1.1.1.1      DNS 93 Standard query 0x0003 AAAA www.homedepot.com.maestrale.local
- 2154  14.698257      1.1.1.1 → 192.168.200.71 DNS 168 Standard query response 0x0003 No such name AAAA www.homedepot.com.maestrale.local SOA a.root-servers.net
- 2155  14.699464 192.168.200.71 → 1.1.1.1      DNS 77 Standard query 0x0004 A www.homedepot.com
- 2158  14.717139      1.1.1.1 → 192.168.200.71 DNS 170 Standard query response 0x0004 A www.homedepot.com CNAME www.homedepot.com.edgekey.net CNAME e14801.x.akamaiedge.net A 23.214.205.251
- 2159  14.723756 192.168.200.71 → 1.1.1.1      DNS 77 Standard query 0x0005 AAAA www.homedepot.com
- 2177  14.755916      1.1.1.1 → 192.168.200.71 DNS 212 Standard query response 0x0005 AAAA www.homedepot.com CNAME www.homedepot.com.edgekey.net CNAME e14801.x.akamaiedge.net SOA n0x.akamaiedge.net
- 2179  14.793517 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 2182  14.809406      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 2183  14.810976 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0002 A www.espn.go.com.maestrale.local
- 2186  14.828805      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0002 No such name A www.espn.go.com.maestrale.local SOA a.root-servers.net
- 2187  14.829446 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0003 AAAA www.espn.go.com.maestrale.local
- 2191  14.847635      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0003 No such name AAAA www.espn.go.com.maestrale.local SOA a.root-servers.net
- 2192  14.848475 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0004 A www.espn.go.com
- 2195  14.868761      1.1.1.1 → 192.168.200.71 DNS 139 Standard query response 0x0004 A www.espn.go.com A 108.138.199.121 A 108.138.199.12 A 108.138.199.28 A 108.138.199.58
- 2196  14.873435 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0005 AAAA www.espn.go.com
- 2200  14.906498      1.1.1.1 → 192.168.200.71 DNS 157 Standard query response 0x0005 AAAA www.espn.go.com SOA ns-1285.awsdns-32.org
- 2202  14.944863 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 2205  14.960046      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 2206  14.961768 192.168.200.71 → 1.1.1.1      DNS 90 Standard query 0x0002 A www.forbes.com.maestrale.local
- 2209  14.995221      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0002 No such name A www.forbes.com.maestrale.local SOA a.root-servers.net
- 2210  14.996137 192.168.200.71 → 1.1.1.1      DNS 90 Standard query 0x0003 AAAA www.forbes.com.maestrale.local
- 2213  15.014717      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0003 No such name AAAA www.forbes.com.maestrale.local SOA a.root-servers.net
- 2214  15.015909 192.168.200.71 → 1.1.1.1      DNS 74 Standard query 0x0004 A www.forbes.com
- 2217  15.033820      1.1.1.1 → 192.168.200.71 DNS 175 Standard query response 0x0004 A www.forbes.com CNAME m.sni.global.fastly.net A 151.101.1.55 A 151.101.65.55 A 151.101.129.55 A 151.101.193.55
- 2218  15.041763 192.168.200.71 → 1.1.1.1      DNS 74 Standard query 0x0005 AAAA www.forbes.com
- 2233  15.061777      1.1.1.1 → 192.168.200.71 DNS 169 Standard query response 0x0005 AAAA www.forbes.com CNAME m.sni.global.fastly.net SOA ns1.fastly.net
- 2235  15.101439 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 2238  15.116628      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 2239  15.118657 192.168.200.71 → 1.1.1.1      DNS 93 Standard query 0x0002 A www.pinterest.com.maestrale.local
- 2242  15.135239      1.1.1.1 → 192.168.200.71 DNS 168 Standard query response 0x0002 No such name A www.pinterest.com.maestrale.local SOA a.root-servers.net
- 2243  15.136112 192.168.200.71 → 1.1.1.1      DNS 93 Standard query 0x0003 AAAA www.pinterest.com.maestrale.local
- 2246  15.183498      1.1.1.1 → 192.168.200.71 DNS 168 Standard query response 0x0003 No such name AAAA www.pinterest.com.maestrale.local SOA a.root-servers.net
- 2247  15.184733 192.168.200.71 → 1.1.1.1      DNS 77 Standard query 0x0004 A www.pinterest.com
- 2250  15.203562      1.1.1.1 → 192.168.200.71 DNS 269 Standard query response 0x0004 A www.pinterest.com CNAME www-pinterest-com.gslb.pinterest.com CNAME 2-01-37d2-0018.cdx.cedexis.net CNAME prod.pinterest.global.map.fastly.net A 151.101.0.84 A 151.101.128.84 A 151.101.64.84 A 151.101.192.84
- 2251  15.208288 192.168.200.71 → 1.1.1.1      DNS 77 Standard query 0x0005 AAAA www.pinterest.com
- 2254  15.225220      1.1.1.1 → 192.168.200.71 DNS 263 Standard query response 0x0005 AAAA www.pinterest.com CNAME www-pinterest-com.gslb.pinterest.com CNAME 2-01-37d2-0018.cdx.cedexis.net CNAME prod.pinterest.global.map.fastly.net SOA ns1.fastly.net
- 2256  15.267562 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 2259  15.283025      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 2260  15.285782 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0002 A www.ebay.com.maestrale.local
- 2263  15.302702      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0002 No such name A www.ebay.com.maestrale.local SOA a.root-servers.net
- 2264  15.303424 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0003 AAAA www.ebay.com.maestrale.local
- 2267  15.321733      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0003 No such name AAAA www.ebay.com.maestrale.local SOA a.root-servers.net
- 2268  15.322803 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0004 A www.ebay.com
- 2271  15.338198      1.1.1.1 → 192.168.200.71 DNS 164 Standard query response 0x0004 A www.ebay.com CNAME slot9428.ebay.com.edgekey.net CNAME e9428.a.akamaiedge.net A 2.22.33.86
- 2272  15.343473 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0005 AAAA www.ebay.com
- 2288  15.366066      1.1.1.1 → 192.168.200.71 DNS 206 Standard query response 0x0005 AAAA www.ebay.com CNAME slot9428.ebay.com.edgekey.net CNAME e9428.a.akamaiedge.net SOA n0a.akamaiedge.net
- 2290  15.401193 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 2293  15.415984      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 2294  15.418069 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0002 A www.vice.com.maestrale.local
- 2297  15.453796      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0002 No such name A www.vice.com.maestrale.local SOA a.root-servers.net
- 2298  15.454626 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0003 AAAA www.vice.com.maestrale.local
- 2301  15.492901      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0003 No such name AAAA www.vice.com.maestrale.local SOA a.root-servers.net
- 2302  15.494132 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0004 A www.vice.com
- 2305  15.510409      1.1.1.1 → 192.168.200.71 DNS 127 Standard query response 0x0004 A www.vice.com CNAME savageplatform.go-vip.net A 192.0.66.177
- 2306  15.516821 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0005 AAAA www.vice.com
- 2309  15.536244      1.1.1.1 → 192.168.200.71 DNS 139 Standard query response 0x0005 AAAA www.vice.com CNAME savageplatform.go-vip.net AAAA 2a04:fa87:fffd::c000:42b1
- 2311  15.576074 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 2314  15.591785      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 2315  15.593760 192.168.200.71 → 1.1.1.1      DNS 98 Standard query 0x0002 A www.huffingtonpost.com.maestrale.local
- 2318  15.610016      1.1.1.1 → 192.168.200.71 DNS 173 Standard query response 0x0002 No such name A www.huffingtonpost.com.maestrale.local SOA a.root-servers.net
- 2319  15.610872 192.168.200.71 → 1.1.1.1      DNS 98 Standard query 0x0003 AAAA www.huffingtonpost.com.maestrale.local
- 2322  15.629482      1.1.1.1 → 192.168.200.71 DNS 173 Standard query response 0x0003 No such name AAAA www.huffingtonpost.com.maestrale.local SOA a.root-servers.net
- 2323  15.630453 192.168.200.71 → 1.1.1.1      DNS 82 Standard query 0x0004 A www.huffingtonpost.com
- 2335  15.673038      1.1.1.1 → 192.168.200.71 DNS 184 Standard query response 0x0004 A www.huffingtonpost.com CNAME buzzfeed2.map.fastly.net A 151.101.2.114 A 151.101.66.114 A 151.101.130.114 A 151.101.194.114
- 2336  15.678387 192.168.200.71 → 1.1.1.1      DNS 82 Standard query 0x0005 AAAA www.huffingtonpost.com
- 2341  15.731171      1.1.1.1 → 192.168.200.71 DNS 178 Standard query response 0x0005 AAAA www.huffingtonpost.com CNAME buzzfeed2.map.fastly.net SOA ns1.fastly.net
- 2342  15.765658 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 2345  15.780415      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 2346  15.782027 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0002 A www.bing.com.maestrale.local
- 2349  15.819670      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0002 No such name A www.bing.com.maestrale.local SOA a.root-servers.net
- 2350  15.820892 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0003 AAAA www.bing.com.maestrale.local
- 2353  15.835884      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0003 No such name AAAA www.bing.com.maestrale.local SOA a.root-servers.net
- 2354  15.836817 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0004 A www.bing.com
- 2357  15.852899      1.1.1.1 → 192.168.200.71 DNS 337 Standard query response 0x0004 A www.bing.com CNAME www-www.bing.com.trafficmanager.net CNAME www.bing.com.edgekey.net CNAME e86303.dscx.akamaiedge.net A 2.18.254.171 A 2.18.254.9 A 2.18.254.16 A 2.18.254.169 A 2.18.254.17 A 2.18.254.18 A 2.18.254.168 A 2.18.254.8 A 2.18.254.170
- 2358  15.858442 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0005 AAAA www.bing.com
- 2361  15.873303      1.1.1.1 → 192.168.200.71 DNS 211 Standard query response 0x0005 AAAA www.bing.com CNAME www-www.bing.com.trafficmanager.net CNAME www-bing-com.dual-a-0034.a-msedge.net CNAME dual-a-0034.a-msedge.net AAAA 2620:1ec:c11::237
- 2363  15.920501 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 2366  15.936203      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 2367  15.938270 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0002 A www.bing.com.maestrale.local
- 2376  15.976769      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0002 No such name A www.bing.com.maestrale.local SOA a.root-servers.net
- 2377  15.977403 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0003 AAAA www.bing.com.maestrale.local
- 2380  15.997727      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0003 No such name AAAA www.bing.com.maestrale.local SOA a.root-servers.net
- 2381  15.998585 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0004 A www.bing.com
- 2384  16.013480      1.1.1.1 → 192.168.200.71 DNS 337 Standard query response 0x0004 A www.bing.com CNAME www-www.bing.com.trafficmanager.net CNAME www.bing.com.edgekey.net CNAME e86303.dscx.akamaiedge.net A 2.18.254.8 A 2.18.254.171 A 2.18.254.16 A 2.18.254.169 A 2.18.254.17 A 2.18.254.9 A 2.18.254.170 A 2.18.254.18 A 2.18.254.168
- 2385  16.017955 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0005 AAAA www.bing.com
- 2388  16.032652      1.1.1.1 → 192.168.200.71 DNS 249 Standard query response 0x0005 AAAA www.bing.com CNAME www-www.bing.com.trafficmanager.net CNAME www.bing.com.edgekey.net CNAME e86303.dscx.akamaiedge.net AAAA 2a02:26f0:8d00:14::213:7c9e AAAA 2a02:26f0:8d00:14::213:7c94
- 2390  16.071262 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 2393  16.085741      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 2394  16.088084 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0002 A www.vice.com.maestrale.local
- 2397  16.104964      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0002 No such name A www.vice.com.maestrale.local SOA a.root-servers.net
- 2398  16.105724 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0003 AAAA www.vice.com.maestrale.local
- 2401  16.123274      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0003 No such name AAAA www.vice.com.maestrale.local SOA a.root-servers.net
- 2402  16.124093 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0004 A www.vice.com
- 2405  16.140222      1.1.1.1 → 192.168.200.71 DNS 127 Standard query response 0x0004 A www.vice.com CNAME savageplatform.go-vip.net A 192.0.66.177
- 2406  16.144476 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0005 AAAA www.vice.com
- 2409  16.159980      1.1.1.1 → 192.168.200.71 DNS 139 Standard query response 0x0005 AAAA www.vice.com CNAME savageplatform.go-vip.net AAAA 2a04:fa87:fffd::c000:42b1
- 2410  16.195237 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 2413  16.210626      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 2414  16.212497 192.168.200.71 → 1.1.1.1      DNS 98 Standard query 0x0002 A www.washingtonpost.com.maestrale.local
- 2417  16.250187      1.1.1.1 → 192.168.200.71 DNS 173 Standard query response 0x0002 No such name A www.washingtonpost.com.maestrale.local SOA a.root-servers.net
- 2418  16.251241 192.168.200.71 → 1.1.1.1      DNS 98 Standard query 0x0003 AAAA www.washingtonpost.com.maestrale.local
- 2421  16.267391      1.1.1.1 → 192.168.200.71 DNS 173 Standard query response 0x0003 No such name AAAA www.washingtonpost.com.maestrale.local SOA a.root-servers.net
- 2422  16.268533 192.168.200.71 → 1.1.1.1      DNS 82 Standard query 0x0004 A www.washingtonpost.com
- 2427  16.286223      1.1.1.1 → 192.168.200.71 DNS 162 Standard query response 0x0004 A www.washingtonpost.com CNAME 50992.edgekey.net CNAME e9631.j.akamaiedge.net A 23.50.153.34
- 2428  16.291206 192.168.200.71 → 1.1.1.1      DNS 82 Standard query 0x0005 AAAA www.washingtonpost.com
- 2431  16.308043      1.1.1.1 → 192.168.200.71 DNS 204 Standard query response 0x0005 AAAA www.washingtonpost.com CNAME 50992.edgekey.net CNAME e9631.j.akamaiedge.net SOA n0j.akamaiedge.net
- 2433  16.344329 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 2436  16.359143      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 2437  16.360568 192.168.200.71 → 1.1.1.1      DNS 92 Standard query 0x0002 A www.blogspot.com.maestrale.local
- 2440  16.378212      1.1.1.1 → 192.168.200.71 DNS 167 Standard query response 0x0002 No such name A www.blogspot.com.maestrale.local SOA a.root-servers.net
- 2441  16.379071 192.168.200.71 → 1.1.1.1      DNS 92 Standard query 0x0003 AAAA www.blogspot.com.maestrale.local
- 2444  16.416223      1.1.1.1 → 192.168.200.71 DNS 167 Standard query response 0x0003 No such name AAAA www.blogspot.com.maestrale.local SOA a.root-servers.net
- 2445  16.417153 192.168.200.71 → 1.1.1.1      DNS 76 Standard query 0x0004 A www.blogspot.com
- 2448  16.453172      1.1.1.1 → 192.168.200.71 DNS 123 Standard query response 0x0004 A www.blogspot.com CNAME blogger.l.google.com A 216.58.204.233
- 2449  16.458207 192.168.200.71 → 1.1.1.1      DNS 76 Standard query 0x0005 AAAA www.blogspot.com
- 2452  16.497315      1.1.1.1 → 192.168.200.71 DNS 135 Standard query response 0x0005 AAAA www.blogspot.com CNAME blogger.l.google.com AAAA 2a00:1450:4002:416::2009
- 2454  16.532503 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 2457  16.548949      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 2458  16.550879 192.168.200.71 → 1.1.1.1      DNS 86 Standard query 0x0002 A www.go.com.maestrale.local
- 2461  16.570539      1.1.1.1 → 192.168.200.71 DNS 161 Standard query response 0x0002 No such name A www.go.com.maestrale.local SOA a.root-servers.net
- 2462  16.571423 192.168.200.71 → 1.1.1.1      DNS 86 Standard query 0x0003 AAAA www.go.com.maestrale.local
- 2472  16.594934      1.1.1.1 → 192.168.200.71 DNS 161 Standard query response 0x0003 No such name AAAA www.go.com.maestrale.local SOA a.root-servers.net
- 2473  16.595771 192.168.200.71 → 1.1.1.1      DNS 70 Standard query 0x0004 A www.go.com
- 2476  16.612826      1.1.1.1 → 192.168.200.71 DNS 170 Standard query response 0x0004 A www.go.com CNAME www-cdn.matterhorn.app A 108.157.188.44 A 108.157.188.47 A 108.157.188.117 A 108.157.188.105
- 2477  16.618653 192.168.200.71 → 1.1.1.1      DNS 70 Standard query 0x0005 AAAA www.go.com
- 2480  16.633488      1.1.1.1 → 192.168.200.71 DNS 184 Standard query response 0x0005 AAAA www.go.com CNAME www-cdn.matterhorn.app SOA ns-221.awsdns-27.com
- 2482  16.673872 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 2485  16.691333      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 2486  16.693072 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0002 A www.comcast.net.maestrale.local
- 2489  16.732694      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0002 No such name A www.comcast.net.maestrale.local SOA a.root-servers.net
- 2490  16.733998 192.168.200.71 → 1.1.1.1      DNS 91 Standard query 0x0003 AAAA www.comcast.net.maestrale.local
- 2493  16.749446      1.1.1.1 → 192.168.200.71 DNS 166 Standard query response 0x0003 No such name AAAA www.comcast.net.maestrale.local SOA a.root-servers.net
- 2494  16.750524 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0004 A www.comcast.net
- 2497  16.766098      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0004 A www.comcast.net CNAME www.comcast.net.edgekey.net CNAME e7010.dscg.akamaiedge.net A 104.83.117.235
- 2498  16.772978 192.168.200.71 → 1.1.1.1      DNS 75 Standard query 0x0005 AAAA www.comcast.net
- 2516  16.940162      1.1.1.1 → 192.168.200.71 DNS 205 Standard query response 0x0005 AAAA www.comcast.net CNAME www.comcast.net.edgekey.net CNAME e7010.dscg.akamaiedge.net AAAA 2a02:26f0:8d00:b9f::1b62 AAAA 2a02:26f0:8d00:b8d::1b62
- 2517  16.982538 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 2520  16.998176      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 2521  17.000160 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0002 A www.ebay.com.maestrale.local
- 2524  17.015576      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0002 No such name A www.ebay.com.maestrale.local SOA a.root-servers.net
- 2525  17.016723 192.168.200.71 → 1.1.1.1      DNS 88 Standard query 0x0003 AAAA www.ebay.com.maestrale.local
- 2528  17.054315      1.1.1.1 → 192.168.200.71 DNS 163 Standard query response 0x0003 No such name AAAA www.ebay.com.maestrale.local SOA a.root-servers.net
- 2529  17.055479 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0004 A www.ebay.com
- 2532  17.072771      1.1.1.1 → 192.168.200.71 DNS 164 Standard query response 0x0004 A www.ebay.com CNAME slot9428.ebay.com.edgekey.net CNAME e9428.a.akamaiedge.net A 2.22.33.86
- 2533  17.080221 192.168.200.71 → 1.1.1.1      DNS 72 Standard query 0x0005 AAAA www.ebay.com
- 2536  17.097355      1.1.1.1 → 192.168.200.71 DNS 206 Standard query response 0x0005 AAAA www.ebay.com CNAME slot9428.ebay.com.edgekey.net CNAME e9428.a.akamaiedge.net SOA n0a.akamaiedge.net
- 2537  17.135983 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 2540  17.152201      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 2541  17.154221 192.168.200.71 → 1.1.1.1      DNS 98 Standard query 0x0002 A www.washingtonpost.com.maestrale.local
- 2544  17.192420      1.1.1.1 → 192.168.200.71 DNS 173 Standard query response 0x0002 No such name A www.washingtonpost.com.maestrale.local SOA a.root-servers.net
- 2545  17.193192 192.168.200.71 → 1.1.1.1      DNS 98 Standard query 0x0003 AAAA www.washingtonpost.com.maestrale.local
- 2558  17.209065      1.1.1.1 → 192.168.200.71 DNS 173 Standard query response 0x0003 No such name AAAA www.washingtonpost.com.maestrale.local SOA a.root-servers.net
- 2559  17.209884 192.168.200.71 → 1.1.1.1      DNS 82 Standard query 0x0004 A www.washingtonpost.com
- 2562  17.225602      1.1.1.1 → 192.168.200.71 DNS 162 Standard query response 0x0004 A www.washingtonpost.com CNAME 50992.edgekey.net CNAME e9631.j.akamaiedge.net A 23.50.153.34
- 2563  17.230072 192.168.200.71 → 1.1.1.1      DNS 82 Standard query 0x0005 AAAA www.washingtonpost.com
- 2566  17.245270      1.1.1.1 → 192.168.200.71 DNS 204 Standard query response 0x0005 AAAA www.washingtonpost.com CNAME 50992.edgekey.net CNAME e9631.j.akamaiedge.net SOA n0j.akamaiedge.net
- 2567  17.278346 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 2570  17.293498      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
- 2571  17.295235 192.168.200.71 → 1.1.1.1      DNS 90 Standard query 0x0002 A www.target.com.maestrale.local
- 2574  17.329582      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0002 No such name A www.target.com.maestrale.local SOA a.root-servers.net
- 2576  17.330536 192.168.200.71 → 1.1.1.1      DNS 90 Standard query 0x0003 AAAA www.target.com.maestrale.local
- 2577  17.371037      1.1.1.1 → 192.168.200.71 DNS 165 Standard query response 0x0003 No such name AAAA www.target.com.maestrale.local SOA a.root-servers.net
- 2578  17.372230 192.168.200.71 → 1.1.1.1      DNS 74 Standard query 0x0004 A www.target.com
- 2585  17.388743      1.1.1.1 → 192.168.200.71 DNS 179 Standard query response 0x0004 A www.target.com CNAME sites.target.map.fastly.net A 151.101.194.187 A 151.101.130.187 A 151.101.2.187 A 151.101.66.187
- 2586  17.394764 192.168.200.71 → 1.1.1.1      DNS 74 Standard query 0x0005 AAAA www.target.com
- 2589  17.410434      1.1.1.1 → 192.168.200.71 DNS 173 Standard query response 0x0005 AAAA www.target.com CNAME sites.target.map.fastly.net SOA ns1.fastly.net
- 2591  17.456267 192.168.200.71 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
- 2594  17.471577      1.1.1.1 → 192.168.200.71 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+   42   0.159800      1.1.1.1 → 192.168.200.55 DNS 114 Standard query response 0x0004 A www.pandora.com CNAME www.gslb.pandora.com A 199.116.164.229
+   43   0.164414 192.168.200.55 → 1.1.1.1      DNS 75 Standard query 0x0005 AAAA www.pandora.com
+  165   0.444855      1.1.1.1 → 192.168.200.55 DNS 126 Standard query response 0x0005 AAAA www.pandora.com CNAME www.gslb.pandora.com AAAA 2620:106:e007:f00f::3b
+  171   0.476018 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  175   0.488714      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  176   0.489977 192.168.200.55 → 1.1.1.1      DNS 92 Standard query 0x0002 A www.buzzfeed.com.maestrale.local
+  196   0.596283      1.1.1.1 → 192.168.200.55 DNS 167 Standard query response 0x0002 No such name A www.buzzfeed.com.maestrale.local SOA a.root-servers.net
+  197   0.596881 192.168.200.55 → 1.1.1.1      DNS 92 Standard query 0x0003 AAAA www.buzzfeed.com.maestrale.local
+  207   0.704177      1.1.1.1 → 192.168.200.55 DNS 167 Standard query response 0x0003 No such name AAAA www.buzzfeed.com.maestrale.local SOA a.root-servers.net
+  208   0.704702 192.168.200.55 → 1.1.1.1      DNS 76 Standard query 0x0004 A www.buzzfeed.com
+  212   0.718685      1.1.1.1 → 192.168.200.55 DNS 178 Standard query response 0x0004 A www.buzzfeed.com CNAME buzzfeed2.map.fastly.net A 151.101.2.114 A 151.101.130.114 A 151.101.66.114 A 151.101.194.114
+  215   0.723222 192.168.200.55 → 1.1.1.1      DNS 76 Standard query 0x0005 AAAA www.buzzfeed.com
+  220   0.736302      1.1.1.1 → 192.168.200.55 DNS 172 Standard query response 0x0005 AAAA www.buzzfeed.com CNAME buzzfeed2.map.fastly.net SOA ns1.fastly.net
+  224   0.767268 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  228   0.780336      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  229   0.781808 192.168.200.55 → 1.1.1.1      DNS 90 Standard query 0x0002 A www.office.com.maestrale.local
+  233   0.814389      1.1.1.1 → 192.168.200.55 DNS 165 Standard query response 0x0002 No such name A www.office.com.maestrale.local SOA a.root-servers.net
+  234   0.815038 192.168.200.55 → 1.1.1.1      DNS 90 Standard query 0x0003 AAAA www.office.com.maestrale.local
+  237   0.852202      1.1.1.1 → 192.168.200.55 DNS 165 Standard query response 0x0003 No such name AAAA www.office.com.maestrale.local SOA a.root-servers.net
+  238   0.852806 192.168.200.55 → 1.1.1.1      DNS 74 Standard query 0x0004 A www.office.com
+  243   0.867362      1.1.1.1 → 192.168.200.55 DNS 182 Standard query response 0x0004 A www.office.com CNAME home-portal.office.com CNAME home-office365-com.b-0004.b-msedge.net CNAME b-0004.b-msedge.net A 13.107.6.156
+  244   0.871548 192.168.200.55 → 1.1.1.1      DNS 74 Standard query 0x0005 AAAA www.office.com
+  247   0.885578      1.1.1.1 → 192.168.200.55 DNS 194 Standard query response 0x0005 AAAA www.office.com CNAME home-portal.office.com CNAME home-office365-com.b-0004.b-msedge.net CNAME b-0004.b-msedge.net AAAA 2620:1ec:a92::156
+  250   0.915039 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  253   0.930756      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  254   0.932392 192.168.200.55 → 1.1.1.1      DNS 91 Standard query 0x0002 A www.foxnews.com.maestrale.local
+  257   0.947054      1.1.1.1 → 192.168.200.55 DNS 166 Standard query response 0x0002 No such name A www.foxnews.com.maestrale.local SOA a.root-servers.net
+  258   0.947662 192.168.200.55 → 1.1.1.1      DNS 91 Standard query 0x0003 AAAA www.foxnews.com.maestrale.local
+  261   0.960796      1.1.1.1 → 192.168.200.55 DNS 166 Standard query response 0x0003 No such name AAAA www.foxnews.com.maestrale.local SOA a.root-servers.net
+  262   0.961461 192.168.200.55 → 1.1.1.1      DNS 75 Standard query 0x0004 A www.foxnews.com
+  269   0.999757      1.1.1.1 → 192.168.200.55 DNS 176 Standard query response 0x0004 A www.foxnews.com CNAME j.sni.global.fastly.net A 151.101.2.132 A 151.101.66.132 A 151.101.130.132 A 151.101.194.132
+  270   1.003785 192.168.200.55 → 1.1.1.1      DNS 75 Standard query 0x0005 AAAA www.foxnews.com
+  275   1.046374      1.1.1.1 → 192.168.200.55 DNS 210 Standard query response 0x0005 AAAA www.foxnews.com CNAME www.foxnews.com.edgekey.net CNAME e197183.dsca.akamaiedge.net AAAA 2a02:26f0:b600::213:c0aa AAAA 2a02:26f0:b600::6868:349a
+  276   1.074510 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  279   1.087581      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  280   1.089240 192.168.200.55 → 1.1.1.1      DNS 95 Standard query 0x0002 A www.tripadvisor.com.maestrale.local
+  283   1.104459      1.1.1.1 → 192.168.200.55 DNS 170 Standard query response 0x0002 No such name A www.tripadvisor.com.maestrale.local SOA a.root-servers.net
+  284   1.105098 192.168.200.55 → 1.1.1.1      DNS 95 Standard query 0x0003 AAAA www.tripadvisor.com.maestrale.local
+  287   1.142447      1.1.1.1 → 192.168.200.55 DNS 170 Standard query response 0x0003 No such name AAAA www.tripadvisor.com.maestrale.local SOA a.root-servers.net
+  288   1.143096 192.168.200.55 → 1.1.1.1      DNS 79 Standard query 0x0004 A www.tripadvisor.com
+  291   1.156030      1.1.1.1 → 192.168.200.55 DNS 253 Standard query response 0x0004 A www.tripadvisor.com CNAME policy.www.tripadvisor.com.edge.tacdn.com CNAME www.tripadvisor.com.edge.tacdn.com CNAME www.tripadvisor.map.fastly.net A 151.101.2.40 A 151.101.66.40 A 151.101.130.40 A 151.101.194.40
+  293   1.160661 192.168.200.55 → 1.1.1.1      DNS 79 Standard query 0x0005 AAAA www.tripadvisor.com
+  296   1.175157      1.1.1.1 → 192.168.200.55 DNS 247 Standard query response 0x0005 AAAA www.tripadvisor.com CNAME policy.www.tripadvisor.com.edge.tacdn.com CNAME www.tripadvisor.com.edge.tacdn.com CNAME www.tripadvisor.map.fastly.net SOA ns1.fastly.net
+  298   1.204623 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  302   1.218167      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  303   1.219801 192.168.200.55 → 1.1.1.1      DNS 91 Standard query 0x0002 A www.xfinity.com.maestrale.local
+  306   1.233083      1.1.1.1 → 192.168.200.55 DNS 166 Standard query response 0x0002 No such name A www.xfinity.com.maestrale.local SOA a.root-servers.net
+  307   1.233772 192.168.200.55 → 1.1.1.1      DNS 91 Standard query 0x0003 AAAA www.xfinity.com.maestrale.local
+  310   1.247163      1.1.1.1 → 192.168.200.55 DNS 166 Standard query response 0x0003 No such name AAAA www.xfinity.com.maestrale.local SOA a.root-servers.net
+  311   1.247727 192.168.200.55 → 1.1.1.1      DNS 75 Standard query 0x0004 A www.xfinity.com
+  315   1.283402      1.1.1.1 → 192.168.200.55 DNS 169 Standard query response 0x0004 A www.xfinity.com CNAME www.xfinity.com.edgekey.net CNAME e10994.dscx.akamaiedge.net A 104.83.105.144
+  316   1.287537 192.168.200.55 → 1.1.1.1      DNS 75 Standard query 0x0005 AAAA www.xfinity.com
+  319   1.300670      1.1.1.1 → 192.168.200.55 DNS 209 Standard query response 0x0005 AAAA www.xfinity.com CNAME www.xfinity.com.edgekey.net CNAME e10994.dscx.akamaiedge.net AAAA 2a02:26f0:8d00:18b::2af2 AAAA 2a02:26f0:8d00:19c::2af2
+  320   1.328740 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  323   1.342204      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  324   1.343677 192.168.200.55 → 1.1.1.1      DNS 92 Standard query 0x0002 A www.outbrain.com.maestrale.local
+  327   1.357177      1.1.1.1 → 192.168.200.55 DNS 167 Standard query response 0x0002 No such name A www.outbrain.com.maestrale.local SOA a.root-servers.net
+  328   1.357785 192.168.200.55 → 1.1.1.1      DNS 92 Standard query 0x0003 AAAA www.outbrain.com.maestrale.local
+  331   1.370419      1.1.1.1 → 192.168.200.55 DNS 167 Standard query response 0x0003 No such name AAAA www.outbrain.com.maestrale.local SOA a.root-servers.net
+  332   1.371061 192.168.200.55 → 1.1.1.1      DNS 76 Standard query 0x0004 A www.outbrain.com
+  338   1.416709      1.1.1.1 → 192.168.200.55 DNS 173 Standard query response 0x0004 A www.outbrain.com CNAME wildcard.outbrain.com.edgekey.net CNAME e10883.g.akamaiedge.net A 184.87.213.107
+  339   1.421091 192.168.200.55 → 1.1.1.1      DNS 76 Standard query 0x0005 AAAA www.outbrain.com
+  342   1.434578      1.1.1.1 → 192.168.200.55 DNS 215 Standard query response 0x0005 AAAA www.outbrain.com CNAME wildcard.outbrain.com.edgekey.net CNAME e10883.g.akamaiedge.net SOA n0g.akamaiedge.net
+  344   1.475807 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  347   1.489567      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  348   1.491170 192.168.200.55 → 1.1.1.1      DNS 91 Standard query 0x0002 A www.espn.go.com.maestrale.local
+  351   1.505195      1.1.1.1 → 192.168.200.55 DNS 166 Standard query response 0x0002 No such name A www.espn.go.com.maestrale.local SOA a.root-servers.net
+  352   1.505980 192.168.200.55 → 1.1.1.1      DNS 91 Standard query 0x0003 AAAA www.espn.go.com.maestrale.local
+  355   1.540036      1.1.1.1 → 192.168.200.55 DNS 166 Standard query response 0x0003 No such name AAAA www.espn.go.com.maestrale.local SOA a.root-servers.net
+  356   1.540684 192.168.200.55 → 1.1.1.1      DNS 75 Standard query 0x0004 A www.espn.go.com
+  359   1.573140      1.1.1.1 → 192.168.200.55 DNS 139 Standard query response 0x0004 A www.espn.go.com A 108.138.199.28 A 108.138.199.58 A 108.138.199.12 A 108.138.199.121
+  360   1.577158 192.168.200.55 → 1.1.1.1      DNS 75 Standard query 0x0005 AAAA www.espn.go.com
+  367   1.590451      1.1.1.1 → 192.168.200.55 DNS 157 Standard query response 0x0005 AAAA www.espn.go.com SOA ns-1285.awsdns-32.org
+  369   1.618737 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  372   1.631594      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  373   1.633157 192.168.200.55 → 1.1.1.1      DNS 92 Standard query 0x0002 A www.blogspot.com.maestrale.local
+  377   1.648530      1.1.1.1 → 192.168.200.55 DNS 167 Standard query response 0x0002 No such name A www.blogspot.com.maestrale.local SOA a.root-servers.net
+  378   1.649182 192.168.200.55 → 1.1.1.1      DNS 92 Standard query 0x0003 AAAA www.blogspot.com.maestrale.local
+  382   1.682372      1.1.1.1 → 192.168.200.55 DNS 167 Standard query response 0x0003 No such name AAAA www.blogspot.com.maestrale.local SOA a.root-servers.net
+  383   1.682980 192.168.200.55 → 1.1.1.1      DNS 76 Standard query 0x0004 A www.blogspot.com
+  387   1.746461      1.1.1.1 → 192.168.200.55 DNS 123 Standard query response 0x0004 A www.blogspot.com CNAME blogger.l.google.com A 216.58.204.233
+  388   1.751118 192.168.200.55 → 1.1.1.1      DNS 76 Standard query 0x0005 AAAA www.blogspot.com
+  395   1.813239      1.1.1.1 → 192.168.200.55 DNS 135 Standard query response 0x0005 AAAA www.blogspot.com CNAME blogger.l.google.com AAAA 2a00:1450:4002:402::2009
+  396   1.841589 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  399   1.854015      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  400   1.855752 192.168.200.55 → 1.1.1.1      DNS 90 Standard query 0x0002 A www.github.com.maestrale.local
+  403   1.868551      1.1.1.1 → 192.168.200.55 DNS 165 Standard query response 0x0002 No such name A www.github.com.maestrale.local SOA a.root-servers.net
+  404   1.869236 192.168.200.55 → 1.1.1.1      DNS 90 Standard query 0x0003 AAAA www.github.com.maestrale.local
+  407   1.882211      1.1.1.1 → 192.168.200.55 DNS 165 Standard query response 0x0003 No such name AAAA www.github.com.maestrale.local SOA a.root-servers.net
+  408   1.882828 192.168.200.55 → 1.1.1.1      DNS 74 Standard query 0x0004 A www.github.com
+  411   1.896385      1.1.1.1 → 192.168.200.55 DNS 104 Standard query response 0x0004 A www.github.com CNAME github.com A 140.82.121.3
+  412   1.900501 192.168.200.55 → 1.1.1.1      DNS 74 Standard query 0x0005 AAAA www.github.com
+  415   1.932083      1.1.1.1 → 192.168.200.55 DNS 172 Standard query response 0x0005 AAAA www.github.com CNAME github.com SOA ns-1707.awsdns-21.co.uk
+  418   1.960650 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  421   1.974273      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  422   1.975898 192.168.200.55 → 1.1.1.1      DNS 90 Standard query 0x0002 A www.amazon.com.maestrale.local
+  428   2.081662      1.1.1.1 → 192.168.200.55 DNS 165 Standard query response 0x0002 No such name A www.amazon.com.maestrale.local SOA a.root-servers.net
+  429   2.082550 192.168.200.55 → 1.1.1.1      DNS 90 Standard query 0x0003 AAAA www.amazon.com.maestrale.local
+  432   2.120272      1.1.1.1 → 192.168.200.55 DNS 165 Standard query response 0x0003 No such name AAAA www.amazon.com.maestrale.local SOA a.root-servers.net
+  433   2.121004 192.168.200.55 → 1.1.1.1      DNS 74 Standard query 0x0004 A www.amazon.com
+  436   2.134006      1.1.1.1 → 192.168.200.55 DNS 169 Standard query response 0x0004 A www.amazon.com CNAME tp.47cf2c8c9-frontier.amazon.com CNAME d3ag4hukkh62yn.cloudfront.net A 108.138.190.178
+  437   2.138086 192.168.200.55 → 1.1.1.1      DNS 74 Standard query 0x0005 AAAA www.amazon.com
+  442   2.151554      1.1.1.1 → 192.168.200.55 DNS 270 Standard query response 0x0005 AAAA www.amazon.com CNAME tp.47cf2c8c9-frontier.amazon.com CNAME www-amazon-com.customer.fastly.net AAAA 2606:2cc0:3::374 AAAA 2606:2cc0::374 AAAA 2606:2cc0:1::374 AAAA 2606:2cc0:2::374
+  443   2.179911 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  447   2.193067      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  448   2.194701 192.168.200.55 → 1.1.1.1      DNS 89 Standard query 0x0002 A www.wikia.com.maestrale.local
+  451   2.208821      1.1.1.1 → 192.168.200.55 DNS 164 Standard query response 0x0002 No such name A www.wikia.com.maestrale.local SOA a.root-servers.net
+  452   2.209443 192.168.200.55 → 1.1.1.1      DNS 89 Standard query 0x0003 AAAA www.wikia.com.maestrale.local
+  455   2.224888      1.1.1.1 → 192.168.200.55 DNS 164 Standard query response 0x0003 No such name AAAA www.wikia.com.maestrale.local SOA a.root-servers.net
+  456   2.225537 192.168.200.55 → 1.1.1.1      DNS 73 Standard query 0x0004 A www.wikia.com
+  459   2.239128      1.1.1.1 → 192.168.200.55 DNS 151 Standard query response 0x0004 A www.wikia.com CNAME wikia.com A 151.101.0.194 A 151.101.128.194 A 151.101.192.194 A 151.101.64.194
+  460   2.243720 192.168.200.55 → 1.1.1.1      DNS 73 Standard query 0x0005 AAAA www.wikia.com
+  463   2.257063      1.1.1.1 → 192.168.200.55 DNS 199 Standard query response 0x0005 AAAA www.wikia.com CNAME wikia.com AAAA 2a04:4e42:600::194 AAAA 2a04:4e42::194 AAAA 2a04:4e42:400::194 AAAA 2a04:4e42:200::194
+  467   2.289573 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  470   2.306626      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  471   2.308285 192.168.200.55 → 1.1.1.1      DNS 93 Standard query 0x0002 A www.pinterest.com.maestrale.local
+  475   2.343479      1.1.1.1 → 192.168.200.55 DNS 168 Standard query response 0x0002 No such name A www.pinterest.com.maestrale.local SOA a.root-servers.net
+  476   2.344103 192.168.200.55 → 1.1.1.1      DNS 93 Standard query 0x0003 AAAA www.pinterest.com.maestrale.local
+  479   2.357473      1.1.1.1 → 192.168.200.55 DNS 168 Standard query response 0x0003 No such name AAAA www.pinterest.com.maestrale.local SOA a.root-servers.net
+  480   2.358083 192.168.200.55 → 1.1.1.1      DNS 77 Standard query 0x0004 A www.pinterest.com
+  483   2.371307      1.1.1.1 → 192.168.200.55 DNS 269 Standard query response 0x0004 A www.pinterest.com CNAME www-pinterest-com.gslb.pinterest.com CNAME 2-01-37d2-0018.cdx.cedexis.net CNAME prod.pinterest.global.map.fastly.net A 151.101.128.84 A 151.101.192.84 A 151.101.0.84 A 151.101.64.84
+  484   2.375528 192.168.200.55 → 1.1.1.1      DNS 77 Standard query 0x0005 AAAA www.pinterest.com
+  487   2.389812      1.1.1.1 → 192.168.200.55 DNS 289 Standard query response 0x0005 AAAA www.pinterest.com CNAME www-pinterest-com.gslb.pinterest.com CNAME 2-01-37d2-0018.cdx.cedexis.net CNAME www.pinterest.com.edgekey.net CNAME e6449.a.akamaiedge.net SOA n0a.akamaiedge.net
+  491   2.418919 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  494   2.431531      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  495   2.432974 192.168.200.55 → 1.1.1.1      DNS 97 Standard query 0x0002 A www.stackoverflow.com.maestrale.local
+  498   2.447763      1.1.1.1 → 192.168.200.55 DNS 172 Standard query response 0x0002 No such name A www.stackoverflow.com.maestrale.local SOA a.root-servers.net
+  499   2.448401 192.168.200.55 → 1.1.1.1      DNS 97 Standard query 0x0003 AAAA www.stackoverflow.com.maestrale.local
+  502   2.488006      1.1.1.1 → 192.168.200.55 DNS 172 Standard query response 0x0003 No such name AAAA www.stackoverflow.com.maestrale.local SOA a.root-servers.net
+  503   2.488741 192.168.200.55 → 1.1.1.1      DNS 81 Standard query 0x0004 A www.stackoverflow.com
+  506   2.502020      1.1.1.1 → 192.168.200.55 DNS 113 Standard query response 0x0004 A www.stackoverflow.com A 104.18.32.7 A 172.64.155.249
+  507   2.506055 192.168.200.55 → 1.1.1.1      DNS 81 Standard query 0x0005 AAAA www.stackoverflow.com
+  510   2.520828      1.1.1.1 → 192.168.200.55 DNS 142 Standard query response 0x0005 AAAA www.stackoverflow.com SOA damian.ns.cloudflare.com
+  512   2.549920 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  515   2.563207      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  516   2.564903 192.168.200.55 → 1.1.1.1      DNS 90 Standard query 0x0002 A www.tumblr.com.maestrale.local
+  519   2.601092      1.1.1.1 → 192.168.200.55 DNS 165 Standard query response 0x0002 No such name A www.tumblr.com.maestrale.local SOA a.root-servers.net
+  520   2.601702 192.168.200.55 → 1.1.1.1      DNS 90 Standard query 0x0003 AAAA www.tumblr.com.maestrale.local
+  523   2.634339      1.1.1.1 → 192.168.200.55 DNS 165 Standard query response 0x0003 No such name AAAA www.tumblr.com.maestrale.local SOA a.root-servers.net
+  524   2.634891 192.168.200.55 → 1.1.1.1      DNS 74 Standard query 0x0004 A www.tumblr.com
+  528   2.647909      1.1.1.1 → 192.168.200.55 DNS 90 Standard query response 0x0004 A www.tumblr.com A 192.0.77.40
+  529   2.652347 192.168.200.55 → 1.1.1.1      DNS 74 Standard query 0x0005 AAAA www.tumblr.com
+  532   2.665888      1.1.1.1 → 192.168.200.55 DNS 125 Standard query response 0x0005 AAAA www.tumblr.com SOA ns1.tumblr.com
+  533   2.693952 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  536   2.706701      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  537   2.708319 192.168.200.55 → 1.1.1.1      DNS 91 Standard query 0x0002 A www.bestbuy.com.maestrale.local
+  540   2.721223      1.1.1.1 → 192.168.200.55 DNS 166 Standard query response 0x0002 No such name A www.bestbuy.com.maestrale.local SOA a.root-servers.net
+  541   2.721827 192.168.200.55 → 1.1.1.1      DNS 91 Standard query 0x0003 AAAA www.bestbuy.com.maestrale.local
+  545   2.829448      1.1.1.1 → 192.168.200.55 DNS 166 Standard query response 0x0003 No such name AAAA www.bestbuy.com.maestrale.local SOA a.root-servers.net
+  546   2.830117 192.168.200.55 → 1.1.1.1      DNS 75 Standard query 0x0004 A www.bestbuy.com
+  549   2.844340      1.1.1.1 → 192.168.200.55 DNS 165 Standard query response 0x0004 A www.bestbuy.com CNAME www.bestbuy.com.edgekey.net CNAME e5816.x.akamaiedge.net A 2.20.80.209
+  550   2.848727 192.168.200.55 → 1.1.1.1      DNS 75 Standard query 0x0005 AAAA www.bestbuy.com
+  553   2.871959      1.1.1.1 → 192.168.200.55 DNS 207 Standard query response 0x0005 AAAA www.bestbuy.com CNAME www.bestbuy.com.edgekey.net CNAME e5816.x.akamaiedge.net SOA n0x.akamaiedge.net
+  566   2.902264 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  572   2.914715      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  573   2.916317 192.168.200.55 → 1.1.1.1      DNS 92 Standard query 0x0002 A www.blogspot.com.maestrale.local
+  577   2.950778      1.1.1.1 → 192.168.200.55 DNS 167 Standard query response 0x0002 No such name A www.blogspot.com.maestrale.local SOA a.root-servers.net
+  578   2.951411 192.168.200.55 → 1.1.1.1      DNS 92 Standard query 0x0003 AAAA www.blogspot.com.maestrale.local
+  581   2.985354      1.1.1.1 → 192.168.200.55 DNS 167 Standard query response 0x0003 No such name AAAA www.blogspot.com.maestrale.local SOA a.root-servers.net
+  582   2.986019 192.168.200.55 → 1.1.1.1      DNS 76 Standard query 0x0004 A www.blogspot.com
+  585   2.999751      1.1.1.1 → 192.168.200.55 DNS 123 Standard query response 0x0004 A www.blogspot.com CNAME blogger.l.google.com A 142.250.180.137
+  587   3.004198 192.168.200.55 → 1.1.1.1      DNS 76 Standard query 0x0005 AAAA www.blogspot.com
+  590   3.043644      1.1.1.1 → 192.168.200.55 DNS 135 Standard query response 0x0005 AAAA www.blogspot.com CNAME blogger.l.google.com AAAA 2a00:1450:4002:415::2009
+  592   3.071806 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  595   3.084786      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  596   3.086410 192.168.200.55 → 1.1.1.1      DNS 98 Standard query 0x0002 A www.huffingtonpost.com.maestrale.local
+  599   3.122529      1.1.1.1 → 192.168.200.55 DNS 173 Standard query response 0x0002 No such name A www.huffingtonpost.com.maestrale.local SOA a.root-servers.net
+  600   3.123155 192.168.200.55 → 1.1.1.1      DNS 98 Standard query 0x0003 AAAA www.huffingtonpost.com.maestrale.local
+  603   3.137221      1.1.1.1 → 192.168.200.55 DNS 173 Standard query response 0x0003 No such name AAAA www.huffingtonpost.com.maestrale.local SOA a.root-servers.net
+  604   3.137750 192.168.200.55 → 1.1.1.1      DNS 82 Standard query 0x0004 A www.huffingtonpost.com
+  607   3.171815      1.1.1.1 → 192.168.200.55 DNS 184 Standard query response 0x0004 A www.huffingtonpost.com CNAME buzzfeed2.map.fastly.net A 151.101.2.114 A 151.101.66.114 A 151.101.130.114 A 151.101.194.114
+  608   3.175843 192.168.200.55 → 1.1.1.1      DNS 82 Standard query 0x0005 AAAA www.huffingtonpost.com
+  611   3.209499      1.1.1.1 → 192.168.200.55 DNS 178 Standard query response 0x0005 AAAA www.huffingtonpost.com CNAME buzzfeed2.map.fastly.net SOA ns1.fastly.net
+  613   3.238254 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  616   3.251204      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  617   3.252798 192.168.200.55 → 1.1.1.1      DNS 88 Standard query 0x0002 A www.ebay.com.maestrale.local
+  620   3.265667      1.1.1.1 → 192.168.200.55 DNS 163 Standard query response 0x0002 No such name A www.ebay.com.maestrale.local SOA a.root-servers.net
+  621   3.266329 192.168.200.55 → 1.1.1.1      DNS 88 Standard query 0x0003 AAAA www.ebay.com.maestrale.local
+  624   3.280706      1.1.1.1 → 192.168.200.55 DNS 163 Standard query response 0x0003 No such name AAAA www.ebay.com.maestrale.local SOA a.root-servers.net
+  625   3.281443 192.168.200.55 → 1.1.1.1      DNS 72 Standard query 0x0004 A www.ebay.com
+  629   3.294916      1.1.1.1 → 192.168.200.55 DNS 164 Standard query response 0x0004 A www.ebay.com CNAME slot9428.ebay.com.edgekey.net CNAME e9428.a.akamaiedge.net A 2.22.33.86
+  630   3.299388 192.168.200.55 → 1.1.1.1      DNS 72 Standard query 0x0005 AAAA www.ebay.com
+  633   3.312520      1.1.1.1 → 192.168.200.55 DNS 206 Standard query response 0x0005 AAAA www.ebay.com CNAME slot9428.ebay.com.edgekey.net CNAME e9428.a.akamaiedge.net SOA n0a.akamaiedge.net
+  635   3.340637 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  638   3.353686      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  639   3.355432 192.168.200.55 → 1.1.1.1      DNS 89 Standard query 0x0002 A www.wikia.com.maestrale.local
+  642   3.368161      1.1.1.1 → 192.168.200.55 DNS 164 Standard query response 0x0002 No such name A www.wikia.com.maestrale.local SOA a.root-servers.net
+  643   3.368889 192.168.200.55 → 1.1.1.1      DNS 89 Standard query 0x0003 AAAA www.wikia.com.maestrale.local
+  646   3.401715      1.1.1.1 → 192.168.200.55 DNS 164 Standard query response 0x0003 No such name AAAA www.wikia.com.maestrale.local SOA a.root-servers.net
+  647   3.402326 192.168.200.55 → 1.1.1.1      DNS 73 Standard query 0x0004 A www.wikia.com
+  650   3.415655      1.1.1.1 → 192.168.200.55 DNS 151 Standard query response 0x0004 A www.wikia.com CNAME wikia.com A 151.101.0.194 A 151.101.128.194 A 151.101.192.194 A 151.101.64.194
+  651   3.420301 192.168.200.55 → 1.1.1.1      DNS 73 Standard query 0x0005 AAAA www.wikia.com
+  654   3.433931      1.1.1.1 → 192.168.200.55 DNS 199 Standard query response 0x0005 AAAA www.wikia.com CNAME wikia.com AAAA 2a04:4e42:400::194 AAAA 2a04:4e42::194 AAAA 2a04:4e42:200::194 AAAA 2a04:4e42:600::194
+  656   3.463890 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  659   3.476806      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  660   3.478455 192.168.200.55 → 1.1.1.1      DNS 87 Standard query 0x0002 A www.aol.com.maestrale.local
+  664   3.514328      1.1.1.1 → 192.168.200.55 DNS 162 Standard query response 0x0002 No such name A www.aol.com.maestrale.local SOA a.root-servers.net
+  665   3.514873 192.168.200.55 → 1.1.1.1      DNS 87 Standard query 0x0003 AAAA www.aol.com.maestrale.local
+  668   3.529929      1.1.1.1 → 192.168.200.55 DNS 162 Standard query response 0x0003 No such name AAAA www.aol.com.maestrale.local SOA a.root-servers.net
+  669   3.530480 192.168.200.55 → 1.1.1.1      DNS 71 Standard query 0x0004 A www.aol.com
+  672   3.543593      1.1.1.1 → 192.168.200.55 DNS 142 Standard query response 0x0004 A www.aol.com CNAME edge.gycpi.b.yahoodns.net A 200.152.173.205 A 200.152.173.204
+  673   3.548156 192.168.200.55 → 1.1.1.1      DNS 71 Standard query 0x0005 AAAA www.aol.com
+  677   3.602885      1.1.1.1 → 192.168.200.55 DNS 166 Standard query response 0x0005 AAAA www.aol.com CNAME edge.gycpi.b.yahoodns.net AAAA 2a00:1288:f035:1fa::4000 AAAA 2a00:1288:f035:1fa::2000
+  678   3.632249 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  681   3.645062      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  684   3.646823 192.168.200.55 → 1.1.1.1      DNS 87 Standard query 0x0002 A www.cnn.com.maestrale.local
+  692   3.680516      1.1.1.1 → 192.168.200.55 DNS 162 Standard query response 0x0002 No such name A www.cnn.com.maestrale.local SOA a.root-servers.net
+  693   3.681167 192.168.200.55 → 1.1.1.1      DNS 87 Standard query 0x0003 AAAA www.cnn.com.maestrale.local
+  696   3.695744      1.1.1.1 → 192.168.200.55 DNS 162 Standard query response 0x0003 No such name AAAA www.cnn.com.maestrale.local SOA a.root-servers.net
+  697   3.696495 192.168.200.55 → 1.1.1.1      DNS 71 Standard query 0x0004 A www.cnn.com
+  700   3.710853      1.1.1.1 → 192.168.200.55 DNS 171 Standard query response 0x0004 A www.cnn.com CNAME cnn-tls.map.fastly.net A 151.101.3.5 A 151.101.131.5 A 151.101.67.5 A 151.101.195.5
+  701   3.715538 192.168.200.55 → 1.1.1.1      DNS 71 Standard query 0x0005 AAAA www.cnn.com
+  704   3.728356      1.1.1.1 → 192.168.200.55 DNS 219 Standard query response 0x0005 AAAA www.cnn.com CNAME cnn-tls.map.fastly.net AAAA 2a04:4e42:400::773 AAAA 2a04:4e42:200::773 AAAA 2a04:4e42::773 AAAA 2a04:4e42:600::773
+  706   3.758528 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  709   3.772213      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  710   3.773875 192.168.200.55 → 1.1.1.1      DNS 90 Standard query 0x0002 A www.tumblr.com.maestrale.local
+  718   3.787766      1.1.1.1 → 192.168.200.55 DNS 165 Standard query response 0x0002 No such name A www.tumblr.com.maestrale.local SOA a.root-servers.net
+  719   3.788341 192.168.200.55 → 1.1.1.1      DNS 90 Standard query 0x0003 AAAA www.tumblr.com.maestrale.local
+  724   3.803494      1.1.1.1 → 192.168.200.55 DNS 165 Standard query response 0x0003 No such name AAAA www.tumblr.com.maestrale.local SOA a.root-servers.net
+  725   3.804093 192.168.200.55 → 1.1.1.1      DNS 74 Standard query 0x0004 A www.tumblr.com
+  728   3.818186      1.1.1.1 → 192.168.200.55 DNS 90 Standard query response 0x0004 A www.tumblr.com A 192.0.77.40
+  729   3.822488 192.168.200.55 → 1.1.1.1      DNS 74 Standard query 0x0005 AAAA www.tumblr.com
+  733   3.836570      1.1.1.1 → 192.168.200.55 DNS 125 Standard query response 0x0005 AAAA www.tumblr.com SOA ns1.tumblr.com
+  735   3.864867 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  740   3.877719      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  741   3.879402 192.168.200.55 → 1.1.1.1      DNS 91 Standard query 0x0002 A www.groupon.com.maestrale.local
+  744   3.893544      1.1.1.1 → 192.168.200.55 DNS 166 Standard query response 0x0002 No such name A www.groupon.com.maestrale.local SOA a.root-servers.net
+  745   3.894112 192.168.200.55 → 1.1.1.1      DNS 91 Standard query 0x0003 AAAA www.groupon.com.maestrale.local
+  748   3.909209      1.1.1.1 → 192.168.200.55 DNS 166 Standard query response 0x0003 No such name AAAA www.groupon.com.maestrale.local SOA a.root-servers.net
+  749   3.909831 192.168.200.55 → 1.1.1.1      DNS 75 Standard query 0x0004 A www.groupon.com
+  752   3.928182      1.1.1.1 → 192.168.200.55 DNS 166 Standard query response 0x0004 A www.groupon.com CNAME www.groupon.com.edgekey.net CNAME e13056.x.akamaiedge.net A 2.20.81.208
+  753   3.932925 192.168.200.55 → 1.1.1.1      DNS 75 Standard query 0x0005 AAAA www.groupon.com
+  756   3.946041      1.1.1.1 → 192.168.200.55 DNS 208 Standard query response 0x0005 AAAA www.groupon.com CNAME www.groupon.com.edgekey.net CNAME e13056.x.akamaiedge.net SOA n0x.akamaiedge.net
+  758   3.975377 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  762   3.987890      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  763   3.989410 192.168.200.55 → 1.1.1.1      DNS 88 Standard query 0x0002 A www.bing.com.maestrale.local
+  769   4.024441      1.1.1.1 → 192.168.200.55 DNS 163 Standard query response 0x0002 No such name A www.bing.com.maestrale.local SOA a.root-servers.net
+  770   4.025038 192.168.200.55 → 1.1.1.1      DNS 88 Standard query 0x0003 AAAA www.bing.com.maestrale.local
+  774   4.058415      1.1.1.1 → 192.168.200.55 DNS 163 Standard query response 0x0003 No such name AAAA www.bing.com.maestrale.local SOA a.root-servers.net
+  775   4.059035 192.168.200.55 → 1.1.1.1      DNS 72 Standard query 0x0004 A www.bing.com
+  778   4.072243      1.1.1.1 → 192.168.200.55 DNS 337 Standard query response 0x0004 A www.bing.com CNAME www-www.bing.com.trafficmanager.net CNAME www.bing.com.edgekey.net CNAME e86303.dscx.akamaiedge.net A 2.18.254.26 A 2.18.254.40 A 2.18.254.51 A 2.18.254.41 A 2.18.254.27 A 2.18.254.43 A 2.18.254.42 A 2.18.254.32 A 2.18.254.50
+  779   4.076440 192.168.200.55 → 1.1.1.1      DNS 72 Standard query 0x0005 AAAA www.bing.com
+  782   4.090938      1.1.1.1 → 192.168.200.55 DNS 333 Standard query response 0x0005 AAAA www.bing.com CNAME www-www.bing.com.trafficmanager.net CNAME www.bing.com.edgekey.net CNAME e86303.dscx.akamaiedge.net AAAA 2a02:26f0:df::5f65:b513 AAAA 2a02:26f0:df::5f65:b548 AAAA 2a02:26f0:df::5f65:b523 AAAA 2a02:26f0:df::5f65:b52b AAAA 2a02:26f0:df::5f65:b531
+  785   4.121960 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  788   4.135481      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  789   4.137039 192.168.200.55 → 1.1.1.1      DNS 91 Standard query 0x0002 A www.xfinity.com.maestrale.local
+  792   4.171715      1.1.1.1 → 192.168.200.55 DNS 166 Standard query response 0x0002 No such name A www.xfinity.com.maestrale.local SOA a.root-servers.net
+  793   4.172374 192.168.200.55 → 1.1.1.1      DNS 91 Standard query 0x0003 AAAA www.xfinity.com.maestrale.local
+  796   4.205948      1.1.1.1 → 192.168.200.55 DNS 166 Standard query response 0x0003 No such name AAAA www.xfinity.com.maestrale.local SOA a.root-servers.net
+  797   4.206509 192.168.200.55 → 1.1.1.1      DNS 75 Standard query 0x0004 A www.xfinity.com
+  800   4.240428      1.1.1.1 → 192.168.200.55 DNS 169 Standard query response 0x0004 A www.xfinity.com CNAME www.xfinity.com.edgekey.net CNAME e10994.dscx.akamaiedge.net A 104.83.105.144
+  801   4.244670 192.168.200.55 → 1.1.1.1      DNS 75 Standard query 0x0005 AAAA www.xfinity.com
+  804   4.265446      1.1.1.1 → 192.168.200.55 DNS 209 Standard query response 0x0005 AAAA www.xfinity.com CNAME www.xfinity.com.edgekey.net CNAME e10994.dscx.akamaiedge.net AAAA 2a02:26f0:8d00:19c::2af2 AAAA 2a02:26f0:8d00:18b::2af2
+  806   4.295469 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  809   4.308526      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  810   4.309913 192.168.200.55 → 1.1.1.1      DNS 88 Standard query 0x0002 A www.yelp.com.maestrale.local
+  814   4.324230      1.1.1.1 → 192.168.200.55 DNS 163 Standard query response 0x0002 No such name A www.yelp.com.maestrale.local SOA a.root-servers.net
+  815   4.324818 192.168.200.55 → 1.1.1.1      DNS 88 Standard query 0x0003 AAAA www.yelp.com.maestrale.local
+  818   4.338359      1.1.1.1 → 192.168.200.55 DNS 163 Standard query response 0x0003 No such name AAAA www.yelp.com.maestrale.local SOA a.root-servers.net
+  819   4.338927 192.168.200.55 → 1.1.1.1      DNS 72 Standard query 0x0004 A www.yelp.com
+  822   4.353048      1.1.1.1 → 192.168.200.55 DNS 172 Standard query response 0x0004 A www.yelp.com CNAME yelpcdn.map.fastly.net A 151.101.192.116 A 151.101.64.116 A 151.101.0.116 A 151.101.128.116
+  823   4.357295 192.168.200.55 → 1.1.1.1      DNS 72 Standard query 0x0005 AAAA www.yelp.com
+  826   4.395946      1.1.1.1 → 192.168.200.55 DNS 166 Standard query response 0x0005 AAAA www.yelp.com CNAME yelpcdn.map.fastly.net SOA ns1.fastly.net
+  830   4.425011 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  833   4.438248      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  834   4.439973 192.168.200.55 → 1.1.1.1      DNS 91 Standard query 0x0002 A www.groupon.com.maestrale.local
+  837   4.453531      1.1.1.1 → 192.168.200.55 DNS 166 Standard query response 0x0002 No such name A www.groupon.com.maestrale.local SOA a.root-servers.net
+  838   4.454207 192.168.200.55 → 1.1.1.1      DNS 91 Standard query 0x0003 AAAA www.groupon.com.maestrale.local
+  841   4.467902      1.1.1.1 → 192.168.200.55 DNS 166 Standard query response 0x0003 No such name AAAA www.groupon.com.maestrale.local SOA a.root-servers.net
+  842   4.468528 192.168.200.55 → 1.1.1.1      DNS 75 Standard query 0x0004 A www.groupon.com
+  845   4.483198      1.1.1.1 → 192.168.200.55 DNS 166 Standard query response 0x0004 A www.groupon.com CNAME www.groupon.com.edgekey.net CNAME e13056.x.akamaiedge.net A 2.20.81.208
+  846   4.487420 192.168.200.55 → 1.1.1.1      DNS 75 Standard query 0x0005 AAAA www.groupon.com
+  850   4.524501      1.1.1.1 → 192.168.200.55 DNS 208 Standard query response 0x0005 AAAA www.groupon.com CNAME www.groupon.com.edgekey.net CNAME e13056.x.akamaiedge.net SOA n0x.akamaiedge.net
+  852   4.552965 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  855   4.565673      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  856   4.567309 192.168.200.55 → 1.1.1.1      DNS 94 Standard query 0x0002 A www.salesforce.com.maestrale.local
+  859   4.600067      1.1.1.1 → 192.168.200.55 DNS 169 Standard query response 0x0002 No such name A www.salesforce.com.maestrale.local SOA a.root-servers.net
+  860   4.600672 192.168.200.55 → 1.1.1.1      DNS 94 Standard query 0x0003 AAAA www.salesforce.com.maestrale.local
+  866   4.706443      1.1.1.1 → 192.168.200.55 DNS 169 Standard query response 0x0003 No such name AAAA www.salesforce.com.maestrale.local SOA a.root-servers.net
+  867   4.707031 192.168.200.55 → 1.1.1.1      DNS 78 Standard query 0x0004 A www.salesforce.com
+  870   4.721898      1.1.1.1 → 192.168.200.55 DNS 191 Standard query response 0x0004 A www.salesforce.com CNAME www.salesforce.com.edgekey.net CNAME e63490.dsca.akamaiedge.net A 104.104.52.104 A 104.104.52.24
+  871   4.725937 192.168.200.55 → 1.1.1.1      DNS 78 Standard query 0x0005 AAAA www.salesforce.com
+  874   4.740012      1.1.1.1 → 192.168.200.55 DNS 215 Standard query response 0x0005 AAAA www.salesforce.com CNAME www.salesforce.com.edgekey.net CNAME e63490.dsca.akamaiedge.net AAAA 2a02:26f0:8d00:3a::217:5406 AAAA 2a02:26f0:8d00:3a::217:543a
+  876   4.768927 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  879   4.782016      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  880   4.783576 192.168.200.55 → 1.1.1.1      DNS 88 Standard query 0x0002 A www.etsy.com.maestrale.local
+  886   4.890014      1.1.1.1 → 192.168.200.55 DNS 163 Standard query response 0x0002 No such name A www.etsy.com.maestrale.local SOA a.root-servers.net
+  887   4.890614 192.168.200.55 → 1.1.1.1      DNS 88 Standard query 0x0003 AAAA www.etsy.com.maestrale.local
+  890   4.905349      1.1.1.1 → 192.168.200.55 DNS 163 Standard query response 0x0003 No such name AAAA www.etsy.com.maestrale.local SOA a.root-servers.net
+  891   4.906017 192.168.200.55 → 1.1.1.1      DNS 72 Standard query 0x0004 A www.etsy.com
+  894   4.918912      1.1.1.1 → 192.168.200.55 DNS 189 Standard query response 0x0004 A www.etsy.com CNAME zone1.www.etsy.com CNAME etsy.map.fastly.net A 151.101.1.224 A 151.101.65.224 A 151.101.129.224 A 151.101.193.224
+  895   4.923112 192.168.200.55 → 1.1.1.1      DNS 72 Standard query 0x0005 AAAA www.etsy.com
+  898   4.936283      1.1.1.1 → 192.168.200.55 DNS 183 Standard query response 0x0005 AAAA www.etsy.com CNAME zone1.www.etsy.com CNAME etsy.map.fastly.net SOA ns1.fastly.net
+  900   4.966058 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  904   4.978976      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  905   4.980683 192.168.200.55 → 1.1.1.1      DNS 90 Standard query 0x0002 A www.tumblr.com.maestrale.local
+  908   5.013765      1.1.1.1 → 192.168.200.55 DNS 165 Standard query response 0x0002 No such name A www.tumblr.com.maestrale.local SOA a.root-servers.net
+  909   5.014380 192.168.200.55 → 1.1.1.1      DNS 90 Standard query 0x0003 AAAA www.tumblr.com.maestrale.local
+  912   5.027422      1.1.1.1 → 192.168.200.55 DNS 165 Standard query response 0x0003 No such name AAAA www.tumblr.com.maestrale.local SOA a.root-servers.net
+  913   5.028046 192.168.200.55 → 1.1.1.1      DNS 74 Standard query 0x0004 A www.tumblr.com
+  916   5.042006      1.1.1.1 → 192.168.200.55 DNS 90 Standard query response 0x0004 A www.tumblr.com A 192.0.77.40
+  918   5.046332 192.168.200.55 → 1.1.1.1      DNS 74 Standard query 0x0005 AAAA www.tumblr.com
+  921   5.059235      1.1.1.1 → 192.168.200.55 DNS 125 Standard query response 0x0005 AAAA www.tumblr.com SOA ns1.tumblr.com
+  922   5.087440 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  926   5.100585      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  927   5.102157 192.168.200.55 → 1.1.1.1      DNS 92 Standard query 0x0002 A www.facebook.com.maestrale.local
+  931   5.137748      1.1.1.1 → 192.168.200.55 DNS 167 Standard query response 0x0002 No such name A www.facebook.com.maestrale.local SOA a.root-servers.net
+  932   5.138443 192.168.200.55 → 1.1.1.1      DNS 92 Standard query 0x0003 AAAA www.facebook.com.maestrale.local
+  935   5.153105      1.1.1.1 → 192.168.200.55 DNS 167 Standard query response 0x0003 No such name AAAA www.facebook.com.maestrale.local SOA a.root-servers.net
+  936   5.153783 192.168.200.55 → 1.1.1.1      DNS 76 Standard query 0x0004 A www.facebook.com
+  939   5.166926      1.1.1.1 → 192.168.200.55 DNS 121 Standard query response 0x0004 A www.facebook.com CNAME star-mini.c10r.facebook.com A 31.13.86.36
+  940   5.171250 192.168.200.55 → 1.1.1.1      DNS 76 Standard query 0x0005 AAAA www.facebook.com
+  943   5.184844      1.1.1.1 → 192.168.200.55 DNS 133 Standard query response 0x0005 AAAA www.facebook.com CNAME star-mini.c10r.facebook.com AAAA 2a03:2880:f108:83:face:b00c:0:25de
+  944   5.212567 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  948   5.225582      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  949   5.227211 192.168.200.55 → 1.1.1.1      DNS 88 Standard query 0x0002 A www.live.com.maestrale.local
+  952   5.243045      1.1.1.1 → 192.168.200.55 DNS 163 Standard query response 0x0002 No such name A www.live.com.maestrale.local SOA a.root-servers.net
+  953   5.243597 192.168.200.55 → 1.1.1.1      DNS 88 Standard query 0x0003 AAAA www.live.com.maestrale.local
+  961   5.351354      1.1.1.1 → 192.168.200.55 DNS 163 Standard query response 0x0003 No such name AAAA www.live.com.maestrale.local SOA a.root-servers.net
+  962   5.351992 192.168.200.55 → 1.1.1.1      DNS 72 Standard query 0x0004 A www.live.com
+  965   5.366020      1.1.1.1 → 192.168.200.55 DNS 151 Standard query response 0x0004 A www.live.com CNAME outlook-fd-0010.live.com CNAME a-0010.a-msedge.net A 204.79.197.212
+  966   5.370070 192.168.200.55 → 1.1.1.1      DNS 72 Standard query 0x0005 AAAA www.live.com
+  969   5.388833      1.1.1.1 → 192.168.200.55 DNS 163 Standard query response 0x0005 AAAA www.live.com CNAME outlook-fd-0010.live.com CNAME a-0010.a-msedge.net AAAA 2620:1ec:c11::212
+  972   5.417267 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  975   5.429987      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  976   5.431600 192.168.200.55 → 1.1.1.1      DNS 93 Standard query 0x0002 A www.homedepot.com.maestrale.local
+  979   5.444595      1.1.1.1 → 192.168.200.55 DNS 168 Standard query response 0x0002 No such name A www.homedepot.com.maestrale.local SOA a.root-servers.net
+  980   5.445244 192.168.200.55 → 1.1.1.1      DNS 93 Standard query 0x0003 AAAA www.homedepot.com.maestrale.local
+  983   5.479205      1.1.1.1 → 192.168.200.55 DNS 168 Standard query response 0x0003 No such name AAAA www.homedepot.com.maestrale.local SOA a.root-servers.net
+  984   5.479826 192.168.200.55 → 1.1.1.1      DNS 77 Standard query 0x0004 A www.homedepot.com
+  987   5.505192      1.1.1.1 → 192.168.200.55 DNS 170 Standard query response 0x0004 A www.homedepot.com CNAME www.homedepot.com.edgekey.net CNAME e14801.x.akamaiedge.net A 2.18.234.55
+  988   5.509085 192.168.200.55 → 1.1.1.1      DNS 77 Standard query 0x0005 AAAA www.homedepot.com
+  992   5.530245      1.1.1.1 → 192.168.200.55 DNS 212 Standard query response 0x0005 AAAA www.homedepot.com CNAME www.homedepot.com.edgekey.net CNAME e14801.x.akamaiedge.net SOA n0x.akamaiedge.net
+  995   5.558096 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+  998   5.572607      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+  999   5.574270 192.168.200.55 → 1.1.1.1      DNS 90 Standard query 0x0002 A www.office.com.maestrale.local
+ 1002   5.589474      1.1.1.1 → 192.168.200.55 DNS 165 Standard query response 0x0002 No such name A www.office.com.maestrale.local SOA a.root-servers.net
+ 1003   5.590096 192.168.200.55 → 1.1.1.1      DNS 90 Standard query 0x0003 AAAA www.office.com.maestrale.local
+ 1007   5.697250      1.1.1.1 → 192.168.200.55 DNS 165 Standard query response 0x0003 No such name AAAA www.office.com.maestrale.local SOA a.root-servers.net
+ 1008   5.697979 192.168.200.55 → 1.1.1.1      DNS 74 Standard query 0x0004 A www.office.com
+ 1011   5.712482      1.1.1.1 → 192.168.200.55 DNS 182 Standard query response 0x0004 A www.office.com CNAME home-portal.office.com CNAME home-office365-com.b-0004.b-msedge.net CNAME b-0004.b-msedge.net A 13.107.6.156
+ 1012   5.717121 192.168.200.55 → 1.1.1.1      DNS 74 Standard query 0x0005 AAAA www.office.com
+ 1016   5.776529      1.1.1.1 → 192.168.200.55 DNS 194 Standard query response 0x0005 AAAA www.office.com CNAME home-portal.office.com CNAME home-office365-com.b-0004.b-msedge.net CNAME b-0004.b-msedge.net AAAA 2620:1ec:a92::156
+ 1017   5.804845 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+ 1020   5.817992      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+ 1021   5.819754 192.168.200.55 → 1.1.1.1      DNS 89 Standard query 0x0002 A www.chase.com.maestrale.local
+ 1024   5.833629      1.1.1.1 → 192.168.200.55 DNS 164 Standard query response 0x0002 No such name A www.chase.com.maestrale.local SOA a.root-servers.net
+ 1025   5.834285 192.168.200.55 → 1.1.1.1      DNS 89 Standard query 0x0003 AAAA www.chase.com.maestrale.local
+ 1028   5.850025      1.1.1.1 → 192.168.200.55 DNS 164 Standard query response 0x0003 No such name AAAA www.chase.com.maestrale.local SOA a.root-servers.net
+ 1029   5.850559 192.168.200.55 → 1.1.1.1      DNS 73 Standard query 0x0004 A www.chase.com
+ 1035   5.957264      1.1.1.1 → 192.168.200.55 DNS 218 Standard query response 0x0004 A www.chase.com CNAME gtm.www.chase.com.akadns.net CNAME www.chase.com.edgekey.net CNAME e129412.a.akamaiedge.net A 23.36.162.210 A 23.36.162.196
+ 1036   5.961584 192.168.200.55 → 1.1.1.1      DNS 73 Standard query 0x0005 AAAA www.chase.com
+ 1041   6.159635      1.1.1.1 → 192.168.200.55 DNS 244 Standard query response 0x0005 AAAA www.chase.com CNAME gtm.www.chase.com.akadns.net CNAME www.chase.com.edgekey.net CNAME e129412.a.akamaiedge.net SOA n0a.akamaiedge.net
+ 1042   6.187621 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+ 1045   6.200357      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+ 1046   6.202024 192.168.200.55 → 1.1.1.1      DNS 94 Standard query 0x0002 A www.capitalone.com.maestrale.local
+ 1049   6.215919      1.1.1.1 → 192.168.200.55 DNS 169 Standard query response 0x0002 No such name A www.capitalone.com.maestrale.local SOA a.root-servers.net
+ 1050   6.216646 192.168.200.55 → 1.1.1.1      DNS 94 Standard query 0x0003 AAAA www.capitalone.com.maestrale.local
+ 1053   6.249678      1.1.1.1 → 192.168.200.55 DNS 169 Standard query response 0x0003 No such name AAAA www.capitalone.com.maestrale.local SOA a.root-servers.net
+ 1054   6.250327 192.168.200.55 → 1.1.1.1      DNS 78 Standard query 0x0004 A www.capitalone.com
+ 1058   6.274133      1.1.1.1 → 192.168.200.55 DNS 251 Standard query response 0x0004 A www.capitalone.com CNAME emwp-prod-controller.d16207fc61.capitalonegslbex.com CNAME www.capitalone.com.edgekey.net CNAME e64599.x.akamaiedge.net A 2.18.254.24 A 2.18.254.82
+ 1059   6.278394 192.168.200.55 → 1.1.1.1      DNS 78 Standard query 0x0005 AAAA www.capitalone.com
+ 1063   6.321691      1.1.1.1 → 192.168.200.55 DNS 277 Standard query response 0x0005 AAAA www.capitalone.com CNAME emwp-prod-controller.d16207fc61.capitalonegslbex.com CNAME www.capitalone.com.edgekey.net CNAME e64599.x.akamaiedge.net SOA n0x.akamaiedge.net
+ 1065   6.351137 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+ 1068   6.364491      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+ 1069   6.366139 192.168.200.55 → 1.1.1.1      DNS 87 Standard query 0x0002 A www.cnn.com.maestrale.local
+ 1075   6.472577      1.1.1.1 → 192.168.200.55 DNS 162 Standard query response 0x0002 No such name A www.cnn.com.maestrale.local SOA a.root-servers.net
+ 1076   6.473311 192.168.200.55 → 1.1.1.1      DNS 87 Standard query 0x0003 AAAA www.cnn.com.maestrale.local
+ 1079   6.509000      1.1.1.1 → 192.168.200.55 DNS 162 Standard query response 0x0003 No such name AAAA www.cnn.com.maestrale.local SOA a.root-servers.net
+ 1080   6.509752 192.168.200.55 → 1.1.1.1      DNS 71 Standard query 0x0004 A www.cnn.com
+ 1083   6.523094      1.1.1.1 → 192.168.200.55 DNS 171 Standard query response 0x0004 A www.cnn.com CNAME cnn-tls.map.fastly.net A 151.101.195.5 A 151.101.131.5 A 151.101.3.5 A 151.101.67.5
+ 1084   6.527414 192.168.200.55 → 1.1.1.1      DNS 71 Standard query 0x0005 AAAA www.cnn.com
+ 1087   6.542552      1.1.1.1 → 192.168.200.55 DNS 219 Standard query response 0x0005 AAAA www.cnn.com CNAME cnn-tls.map.fastly.net AAAA 2a04:4e42::773 AAAA 2a04:4e42:200::773 AAAA 2a04:4e42:400::773 AAAA 2a04:4e42:600::773
+ 1090   6.571482 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+ 1093   6.584444      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+ 1094   6.586004 192.168.200.55 → 1.1.1.1      DNS 93 Standard query 0x0002 A www.microsoft.com.maestrale.local
+ 1097   6.600162      1.1.1.1 → 192.168.200.55 DNS 168 Standard query response 0x0002 No such name A www.microsoft.com.maestrale.local SOA a.root-servers.net
+ 1098   6.600807 192.168.200.55 → 1.1.1.1      DNS 93 Standard query 0x0003 AAAA www.microsoft.com.maestrale.local
+ 1102   6.637004      1.1.1.1 → 192.168.200.55 DNS 168 Standard query response 0x0003 No such name AAAA www.microsoft.com.maestrale.local SOA a.root-servers.net
+ 1103   6.637579 192.168.200.55 → 1.1.1.1      DNS 77 Standard query 0x0004 A www.microsoft.com
+ 1106   6.651342      1.1.1.1 → 192.168.200.55 DNS 244 Standard query response 0x0004 A www.microsoft.com CNAME www.microsoft.com-c-3.edgekey.net CNAME www.microsoft.com-c-3.edgekey.net.globalredir.akadns.net CNAME e13678.dscb.akamaiedge.net A 2.22.33.235
+ 1107   6.655517 192.168.200.55 → 1.1.1.1      DNS 77 Standard query 0x0005 AAAA www.microsoft.com
+ 1110   6.668705      1.1.1.1 → 192.168.200.55 DNS 368 Standard query response 0x0005 AAAA www.microsoft.com CNAME www.microsoft.com-c-3.edgekey.net CNAME www.microsoft.com-c-3.edgekey.net.globalredir.akadns.net CNAME e13678.dscb.akamaiedge.net AAAA 2a02:26f0:de:28a::356e AAAA 2a02:26f0:de:2be::356e AAAA 2a02:26f0:de:28d::356e AAAA 2a02:26f0:de:2b4::356e AAAA 2a02:26f0:de:2a4::356e
+ 1112   6.698656 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+ 1115   6.712635      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+ 1116   6.714142 192.168.200.55 → 1.1.1.1      DNS 88 Standard query 0x0002 A www.ebay.com.maestrale.local
+ 1119   6.727103      1.1.1.1 → 192.168.200.55 DNS 163 Standard query response 0x0002 No such name A www.ebay.com.maestrale.local SOA a.root-servers.net
+ 1120   6.727660 192.168.200.55 → 1.1.1.1      DNS 88 Standard query 0x0003 AAAA www.ebay.com.maestrale.local
+ 1123   6.741911      1.1.1.1 → 192.168.200.55 DNS 163 Standard query response 0x0003 No such name AAAA www.ebay.com.maestrale.local SOA a.root-servers.net
+ 1124   6.742480 192.168.200.55 → 1.1.1.1      DNS 72 Standard query 0x0004 A www.ebay.com
+ 1127   6.755777      1.1.1.1 → 192.168.200.55 DNS 164 Standard query response 0x0004 A www.ebay.com CNAME slot9428.ebay.com.edgekey.net CNAME e9428.a.akamaiedge.net A 2.22.33.86
+ 1128   6.759885 192.168.200.55 → 1.1.1.1      DNS 72 Standard query 0x0005 AAAA www.ebay.com
+ 1132   6.772979      1.1.1.1 → 192.168.200.55 DNS 206 Standard query response 0x0005 AAAA www.ebay.com CNAME slot9428.ebay.com.edgekey.net CNAME e9428.a.akamaiedge.net SOA n0a.akamaiedge.net
+ 1133   6.801565 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+ 1138   6.814902      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+ 1139   6.816498 192.168.200.55 → 1.1.1.1      DNS 86 Standard query 0x0002 A www.go.com.maestrale.local
+ 1142   6.849013      1.1.1.1 → 192.168.200.55 DNS 161 Standard query response 0x0002 No such name A www.go.com.maestrale.local SOA a.root-servers.net
+ 1143   6.849649 192.168.200.55 → 1.1.1.1      DNS 86 Standard query 0x0003 AAAA www.go.com.maestrale.local
+ 1146   6.863933      1.1.1.1 → 192.168.200.55 DNS 161 Standard query response 0x0003 No such name AAAA www.go.com.maestrale.local SOA a.root-servers.net
+ 1147   6.864638 192.168.200.55 → 1.1.1.1      DNS 70 Standard query 0x0004 A www.go.com
+ 1150   6.878853      1.1.1.1 → 192.168.200.55 DNS 170 Standard query response 0x0004 A www.go.com CNAME www-cdn.matterhorn.app A 108.157.188.47 A 108.157.188.44 A 108.157.188.117 A 108.157.188.105
+ 1151   6.883045 192.168.200.55 → 1.1.1.1      DNS 70 Standard query 0x0005 AAAA www.go.com
+ 1154   6.898616      1.1.1.1 → 192.168.200.55 DNS 184 Standard query response 0x0005 AAAA www.go.com CNAME www-cdn.matterhorn.app SOA ns-221.awsdns-27.com
+ 1157   6.927853 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+ 1160   6.940718      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+ 1161   6.942238 192.168.200.55 → 1.1.1.1      DNS 88 Standard query 0x0002 A www.imdb.com.maestrale.local
+ 1168   6.981492      1.1.1.1 → 192.168.200.55 DNS 163 Standard query response 0x0002 No such name A www.imdb.com.maestrale.local SOA a.root-servers.net
+ 1169   6.982112 192.168.200.55 → 1.1.1.1      DNS 88 Standard query 0x0003 AAAA www.imdb.com.maestrale.local
+ 1172   6.996863      1.1.1.1 → 192.168.200.55 DNS 163 Standard query response 0x0003 No such name AAAA www.imdb.com.maestrale.local SOA a.root-servers.net
+ 1173   6.997498 192.168.200.55 → 1.1.1.1      DNS 72 Standard query 0x0004 A www.imdb.com
+ 1177   7.022643      1.1.1.1 → 192.168.200.55 DNS 167 Standard query response 0x0004 A www.imdb.com CNAME tp.391b988c0-frontier.imdb.com CNAME d2bytcopxu066p.cloudfront.net A 3.160.216.211
+ 1178   7.026695 192.168.200.55 → 1.1.1.1      DNS 72 Standard query 0x0005 AAAA www.imdb.com
+ 1182   7.045225      1.1.1.1 → 192.168.200.55 DNS 233 Standard query response 0x0005 AAAA www.imdb.com CNAME tp.391b988c0-frontier.imdb.com CNAME d2bytcopxu066p.cloudfront.net SOA ns-1434.awsdns-51.org
+ 1184   7.073590 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+ 1188   7.086146      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+ 1189   7.087788 192.168.200.55 → 1.1.1.1      DNS 91 Standard query 0x0002 A www.comcast.net.maestrale.local
+ 1193   7.194660      1.1.1.1 → 192.168.200.55 DNS 166 Standard query response 0x0002 No such name A www.comcast.net.maestrale.local SOA a.root-servers.net
+ 1194   7.195368 192.168.200.55 → 1.1.1.1      DNS 91 Standard query 0x0003 AAAA www.comcast.net.maestrale.local
+ 1197   7.210524      1.1.1.1 → 192.168.200.55 DNS 166 Standard query response 0x0003 No such name AAAA www.comcast.net.maestrale.local SOA a.root-servers.net
+ 1198   7.211123 192.168.200.55 → 1.1.1.1      DNS 75 Standard query 0x0004 A www.comcast.net
+ 1202   7.225496      1.1.1.1 → 192.168.200.55 DNS 165 Standard query response 0x0004 A www.comcast.net CNAME www.comcast.net.edgekey.net CNAME e7010.dscg.akamaiedge.net A 23.50.151.162
+ 1205   7.230241 192.168.200.55 → 1.1.1.1      DNS 75 Standard query 0x0005 AAAA www.comcast.net
+ 1208   7.244101      1.1.1.1 → 192.168.200.55 DNS 205 Standard query response 0x0005 AAAA www.comcast.net CNAME www.comcast.net.edgekey.net CNAME e7010.dscg.akamaiedge.net AAAA 2a02:26f0:8d00:b9f::1b62 AAAA 2a02:26f0:8d00:b8d::1b62
+ 1211   7.272704 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+ 1214   7.286117      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+ 1215   7.287736 192.168.200.55 → 1.1.1.1      DNS 88 Standard query 0x0002 A www.ebay.com.maestrale.local
+ 1218   7.300861      1.1.1.1 → 192.168.200.55 DNS 163 Standard query response 0x0002 No such name A www.ebay.com.maestrale.local SOA a.root-servers.net
+ 1219   7.301458 192.168.200.55 → 1.1.1.1      DNS 88 Standard query 0x0003 AAAA www.ebay.com.maestrale.local
+ 1222   7.314818      1.1.1.1 → 192.168.200.55 DNS 163 Standard query response 0x0003 No such name AAAA www.ebay.com.maestrale.local SOA a.root-servers.net
+ 1223   7.315421 192.168.200.55 → 1.1.1.1      DNS 72 Standard query 0x0004 A www.ebay.com
+ 1226   7.329040      1.1.1.1 → 192.168.200.55 DNS 164 Standard query response 0x0004 A www.ebay.com CNAME slot9428.ebay.com.edgekey.net CNAME e9428.a.akamaiedge.net A 2.22.33.86
+ 1227   7.333148 192.168.200.55 → 1.1.1.1      DNS 72 Standard query 0x0005 AAAA www.ebay.com
+ 1230   7.347611      1.1.1.1 → 192.168.200.55 DNS 206 Standard query response 0x0005 AAAA www.ebay.com CNAME slot9428.ebay.com.edgekey.net CNAME e9428.a.akamaiedge.net SOA n0a.akamaiedge.net
+ 1232   7.375738 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+ 1235   7.388901      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+ 1236   7.390293 192.168.200.55 → 1.1.1.1      DNS 98 Standard query 0x0002 A www.washingtonpost.com.maestrale.local
+ 1239   7.403931      1.1.1.1 → 192.168.200.55 DNS 173 Standard query response 0x0002 No such name A www.washingtonpost.com.maestrale.local SOA a.root-servers.net
+ 1240   7.404576 192.168.200.55 → 1.1.1.1      DNS 98 Standard query 0x0003 AAAA www.washingtonpost.com.maestrale.local
+ 1243   7.417701      1.1.1.1 → 192.168.200.55 DNS 173 Standard query response 0x0003 No such name AAAA www.washingtonpost.com.maestrale.local SOA a.root-servers.net
+ 1244   7.418374 192.168.200.55 → 1.1.1.1      DNS 82 Standard query 0x0004 A www.washingtonpost.com
+ 1248   7.431477      1.1.1.1 → 192.168.200.55 DNS 162 Standard query response 0x0004 A www.washingtonpost.com CNAME 50992.edgekey.net CNAME e9631.j.akamaiedge.net A 23.50.153.34
+ 1249   7.435815 192.168.200.55 → 1.1.1.1      DNS 82 Standard query 0x0005 AAAA www.washingtonpost.com
+ 1253   7.449815      1.1.1.1 → 192.168.200.55 DNS 204 Standard query response 0x0005 AAAA www.washingtonpost.com CNAME 50992.edgekey.net CNAME e9631.j.akamaiedge.net SOA n0j.akamaiedge.net
+ 1264   7.479309 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+ 1267   7.492465      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one
+ 1268   7.494063 192.168.200.55 → 1.1.1.1      DNS 90 Standard query 0x0002 A www.target.com.maestrale.local
+ 1271   7.530219      1.1.1.1 → 192.168.200.55 DNS 165 Standard query response 0x0002 No such name A www.target.com.maestrale.local SOA a.root-servers.net
+ 1272   7.530972 192.168.200.55 → 1.1.1.1      DNS 90 Standard query 0x0003 AAAA www.target.com.maestrale.local
+ 1275   7.545727      1.1.1.1 → 192.168.200.55 DNS 165 Standard query response 0x0003 No such name AAAA www.target.com.maestrale.local SOA a.root-servers.net
+ 1276   7.546432 192.168.200.55 → 1.1.1.1      DNS 74 Standard query 0x0004 A www.target.com
+ 1281   7.597481      1.1.1.1 → 192.168.200.55 DNS 179 Standard query response 0x0004 A www.target.com CNAME sites.target.map.fastly.net A 151.101.2.187 A 151.101.66.187 A 151.101.130.187 A 151.101.194.187
+ 1282   7.601527 192.168.200.55 → 1.1.1.1      DNS 74 Standard query 0x0005 AAAA www.target.com
+ 1285   7.614656      1.1.1.1 → 192.168.200.55 DNS 173 Standard query response 0x0005 AAAA www.target.com CNAME sites.target.map.fastly.net SOA ns1.fastly.net
+ 1287   7.645243 192.168.200.55 → 1.1.1.1      DNS 80 Standard query 0x0001 PTR 1.1.1.1.in-addr.arpa
+ 1290   7.658304      1.1.1.1 → 192.168.200.55 DNS 109 Standard query response 0x0001 PTR 1.1.1.1.in-addr.arpa PTR one.one.one.one

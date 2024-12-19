@@ -6,6 +6,9 @@
 
 ######## Recent capture files (latest last), cannot be altered through command line ########
 
+recent.capture_file: C:\Users\loris.simonetti\Documents\Tesi-tool\Receiver\cloaked_command.pcap
+recent.capture_file: C:\Users\loris.simonetti\Desktop\cattura.pcapng
+recent.capture_file: C:\Users\loris.simonetti\Documents\Tesi-tool\Sender\cloaked_response.pcap
 
 ######## Recent capture filters (latest first), cannot be altered through command line ########
 
@@ -28,18 +31,18 @@ recent.display_filter: dns
 
 # Main window geometry.
 # Decimal numbers.
-gui.geometry_main_x: -1920
-gui.geometry_main_y: 485
-gui.geometry_main_width: 1536
-gui.geometry_main_height: 793
+gui.geometry_main_x: -1677
+gui.geometry_main_y: 266
+gui.geometry_main_width: 1141
+gui.geometry_main_height: 770
 
 # Main window maximized.
 # true or false (case-insensitive).
-gui.geometry_main_maximized: true
+gui.geometry_main_maximized: false
 
 # Main window geometry state.
 # Hex byte string.
-gui.geometry_main: 01d9d0cb00030000fffff880000001e5fffffe7f0000051bfffffa900000020ffffffe510000051000000001020000000600fffff88000000203fffffe7f0000051b
+gui.geometry_main: 01d9d0cb00030000fffff9730000010afffffde700000429fffff97300000128fffffde70000042900000001000000000600fffff97300000128fffffde700000429
 
 # Leftalign Action Buttons.
 # true or false (case-insensitive).
@@ -83,6 +86,17 @@ gui.search_multiple_occurs: false
 # Find packet search type.
 # One of: DISPLAY_FILTER, HEX_VALUE, STRING, REGEX
 gui.search_type: DISPLAY_FILTER
+
+# Geometry and maximized state of TrafficTableDialog window.
+# Decimal integers.
+gui.geom.TrafficTableDialog.x: -1732
+gui.geom.TrafficTableDialog.y: 313
+gui.geom.TrafficTableDialog.width: 1141
+gui.geom.TrafficTableDialog.height: 577
+# true or false (case-insensitive).
+gui.geom.TrafficTableDialog.maximized: false
+# Qt Geometry State (hex byte string).
+gui.geom.TrafficTableDialog.qt_geometry: 01d9d0cb00030000fffff93c00000139fffffdb000000397fffff93c00000157fffffdb00000039700000001000000000600fffff93c00000157fffffdb000000397
 
 # Geometry and maximized state of FollowStreamDialog window.
 # Decimal integers.
