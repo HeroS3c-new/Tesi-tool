@@ -76,6 +76,7 @@ def start_udp_server():
                 response = data 
                 FQDN = decode_dns_ptr(data)
                 if FQDN == "endOfTransmission.google.com":
+                    os.environ["EOT"] = "True"
                     print("End of transmission received.")
                     return
                 if is_dns_query_of_type_a(data):

@@ -85,8 +85,8 @@ def receive_command(local=False):
             send_response(f"Unrecognized command: {e}")
 
     # Removes useless files (after execution)
-    os.remove(cloaked_command)
-    os.remove(decloaked_command)
+    #os.remove(cloaked_command)
+    #os.remove(decloaked_command)
     start_udp_server()
 
 def send_response(response, dns='127.0.0.1'):
