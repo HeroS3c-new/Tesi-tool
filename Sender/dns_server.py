@@ -2,14 +2,6 @@ import socket
 import logging
 import struct
 import os
-import signal
-def clear_files_on_exit(signum, frame):
-    open('cloaked.payload', 'w').close()
-    open('cloaked_response.txt', 'w').close()
-    print("Files cleared on exit.")
-    exit(0)
-
-signal.signal(signal.SIGINT, clear_files_on_exit)
 
 os.environ["SRC_IP"] = "127.0.0.1"
 os.environ["EOT"] = "False"

@@ -2,7 +2,7 @@ import os
 import sys
 import base64
 
-array64 = list("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/+=")
+array64 = list("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/+=�")
 
 def Cloakify(arg1, arg2, arg3):
     payloadB64 = base64.encodebytes(arg1.encode('utf-8'))

