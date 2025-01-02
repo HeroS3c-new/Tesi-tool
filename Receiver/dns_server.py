@@ -7,16 +7,20 @@ os.environ["EOT"] = "False"
 os.environ["EOTUrl"] = "endOfTransmission.google.com"
 
 
-def get_checksum(data):
-    checksum = 0
-    for i in range(0, len(data), 2):
-        if i + 1 < len(data):
-            word = (data[i] << 8) + data[i + 1]
-        else:
-            word = (data[i] << 8)
-        checksum += word
-        checksum = (checksum & 0xFFFF) + (checksum >> 16)
-    return ~checksum & 0xFFFF
+def get_dns_request_id(data):
+    """
+    Extracts the ID value from a DNS request.
+
+    :param data: The raw DNS request data
+    :return: The ID value as an integer
+    """
+    if len(data) < 2:
+        raise ValueError("Data is too short to contain a valid DNS request")
+    
+    # The ID is the first 2 bytes of the DNS request
+    dns_id = struct.unpack('!H', data[:2])[0]
+    return dns_id
+
 
 def decode_dns_ptr(data):
     """Decodifica un record DNS PTR da una stringa di byte.
@@ -88,7 +92,7 @@ def start_udp_server():
                 # Process the data (example: echo the received data)
                 response = data 
                 FQDN = decode_dns_ptr(data)
-                print(get_checksum(data))
+                print(get_dns_request_id(data)) # Seq id of the packet (to check if any packets are missing)
                 if FQDN == os.environ["EOTUrl"]:
                     os.environ["EOT"] = "True"
                     print("End of transmission received.")

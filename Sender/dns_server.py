@@ -2,10 +2,24 @@ import socket
 import logging
 import struct
 import os
-
 os.environ["SRC_IP"] = "127.0.0.1"
 os.environ["EOT"] = "False"
-os.environ["EOTUrl"] = "endOfTransmission.google.com"   
+os.environ["EOTUrl"] = "endOfTransmission.google.com"
+
+
+def get_dns_request_id(data):
+    """
+    Extracts the ID value from a DNS request.
+
+    :param data: The raw DNS request data
+    :return: The ID value as an integer
+    """
+    if len(data) < 2:
+        raise ValueError("Data is too short to contain a valid DNS request")
+    
+    # The ID is the first 2 bytes of the DNS request
+    dns_id = struct.unpack('!H', data[:2])[0]
+    return dns_id
 
 
 def decode_dns_ptr(data):
@@ -68,7 +82,8 @@ def start_udp_server():
         sock.bind(server_address)
         logging.info(f"Server started on {server_address}")
 
-
+        # Receive data
+        seq_id = 0
         while True:
             try:
                 data, address = sock.recvfrom(4096)
@@ -78,9 +93,16 @@ def start_udp_server():
                 # Process the data (example: echo the received data)
                 response = data 
                 FQDN = decode_dns_ptr(data)
+                print(get_dns_request_id(data)) # Seq id of the packet (to check if any packets are missing)
                 if FQDN == os.environ["EOTUrl"]:
+                    os.environ["EOT"] = "True"
+                    print("End of transmission received.")
                     return
                 if is_dns_query_of_type_a(data):
+                    if seq_id != get_dns_request_id(data):
+                        print(f"Packet missing: {seq_id}")
+                        print("requesting re-transmission")
+                        # Aggiungere chiamata alla funzione di retrasmissione
                     append_domain(FQDN)
 
                 # Send the response to the client

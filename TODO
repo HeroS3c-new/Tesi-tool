@@ -1,4 +1,6 @@
 
+- Aggiungere sul file dns_server.py la chiamata alla funzione di ritrasmissione
+
 - Inviare come ultimo dominio un dominio accordato tra uno di quelli della lista dei domini attravreso l'algoritmo di clokify.
 -> Non prende un dominio dalla lista ma se ne sceglie uno comune (con il flag --EOT_url), sennò lo scambierebbe come fine trasmissione se fosse una lettera
 
