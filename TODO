@@ -1,13 +1,12 @@
 
 - Inviare come ultimo dominio un dominio accordato tra uno di quelli della lista dei domini attravreso l'algoritmo di clokify.
-a alla fine inviare un numero random di richieste in modo da confondere. (comunicarlo prima anche questo in modo che sa quante richieste scartare).
+-> Non prende un dominio dalla lista ma se ne sceglie uno comune (con il flag --EOT_url), sennò lo scambierebbe come fine trasmissione se fosse una lettera
+
+-a alla fine inviare un numero random di richieste in modo da confondere. (comunicarlo prima anche questo in modo che sa quante richieste scartare).
 
 - mettere ritrasmissione se non arriva niente dopo 3s 
 
-- per la ritrasmissione inserire nella lista di caratteri un carattere in più dedicato alla ritrasmisisone.
-
-Protocollo ritrasmissione:
-Per la ritrasmissione inviare l'ultimo carattere ricevuto così sa quale reinviare.
+- Per la ritrasmissione inviare l'ultimo carattere ricevuto così sa quale reinviare.
 
 vedi cap 6: https://link.springer.com/article/10.1007/s10207-024-00879-z
 

@@ -5,6 +5,7 @@ import os
 
 os.environ["SRC_IP"] = "127.0.0.1"
 os.environ["EOT"] = "False"
+os.environ["EOTUrl"] = "endOfTransmission.google.com"   
 
 
 def decode_dns_ptr(data):
@@ -77,7 +78,7 @@ def start_udp_server():
                 # Process the data (example: echo the received data)
                 response = data 
                 FQDN = decode_dns_ptr(data)
-                if FQDN == "endOfTransmission.google.com":
+                if FQDN == os.environ["EOTUrl"]:
                     return
                 if is_dns_query_of_type_a(data):
                     append_domain(FQDN)

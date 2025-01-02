@@ -4,6 +4,19 @@ import struct
 import os
 os.environ["SRC_IP"] = "127.0.0.1"
 os.environ["EOT"] = "False"
+os.environ["EOTUrl"] = "endOfTransmission.google.com"
+
+
+def get_checksum(data):
+    checksum = 0
+    for i in range(0, len(data), 2):
+        if i + 1 < len(data):
+            word = (data[i] << 8) + data[i + 1]
+        else:
+            word = (data[i] << 8)
+        checksum += word
+        checksum = (checksum & 0xFFFF) + (checksum >> 16)
+    return ~checksum & 0xFFFF
 
 def decode_dns_ptr(data):
     """Decodifica un record DNS PTR da una stringa di byte.
@@ -75,7 +88,8 @@ def start_udp_server():
                 # Process the data (example: echo the received data)
                 response = data 
                 FQDN = decode_dns_ptr(data)
-                if FQDN == "endOfTransmission.google.com":
+                print(get_checksum(data))
+                if FQDN == os.environ["EOTUrl"]:
                     os.environ["EOT"] = "True"
                     print("End of transmission received.")
                     return
