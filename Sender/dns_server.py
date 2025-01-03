@@ -103,7 +103,9 @@ def start_udp_server():
                         print(f"Packet missing: {seq_id}")
                         print("requesting re-transmission")
                         # Aggiungere chiamata alla funzione di retrasmissione
-                    append_domain(FQDN)
+                    else:
+                        seq_id += 1
+                        append_domain(FQDN)
 
                 # Send the response to the client
                 sock.sendto(response, address)
