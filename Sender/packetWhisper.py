@@ -112,7 +112,7 @@ def GenerateDNSQueries(cloakedFile, queryDelay, dns='localhost'):
 
                 # Handle potential errors during DNS lookup
                 try:
-                    subprocess.run(['nslookup', fqdnStr, dns], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                    #subprocess.run(['nslookup', fqdnStr, dns], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
                     time.sleep(queryDelay)
                 except Exception as e:
                     print(f"Error encountered for FQDN: {fqdnStr} - {e}")

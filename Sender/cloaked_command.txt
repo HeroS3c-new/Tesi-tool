@@ -1,9 +1,5 @@
-www.outbrain.com
-www.forbes.com
-www.netflix.com
-www.stackoverflow.com
-www.vice.com
-www.yelp.com
-www.chase.com
-www.blogspot.com
+www.salesforce.com
+www.groupon.com
+www.bing.com
+www.facebook.com
 endOfTransmission.google.com

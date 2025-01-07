@@ -82,28 +82,52 @@ def start_udp_server():
         sock.bind(server_address)
         logging.info(f"Server started on {server_address}")
 
+        # Receive data
+        seq_id = 0
+        received_packets = set()  # Registro per tracciare gli ID dei pacchetti già ricevuti
 
         while True:
             try:
                 data, address = sock.recvfrom(4096)
-                os.environ['SRC_IP'] =  address[0]
-                logging.info(f"Received {len(data)} bytes from {address}")
-
-                # Process the data (example: echo the received data)
+                os.environ['SRC_IP'] = address[0]
+                #logging.info(f"Received {len(data)} bytes from {address}")
                 response = data 
                 FQDN = decode_dns_ptr(data)
-                print(get_dns_request_id(data)) # Seq id of the packet (to check if any packets are missing)
+                
                 if FQDN == os.environ["EOTUrl"]:
                     os.environ["EOT"] = "True"
                     print("End of transmission received.")
                     return
-                if is_dns_query_of_type_a(data):
-                    append_domain(FQDN)
+                
+                if is_dns_query_of_type_a(data): 
+                    with open('ciphers\\common_fqdn\\topWebsites', 'r') as f:
+                        top_websites = [line.strip() for line in f]  # Crea una lista delle righe del file
+                        if FQDN.strip() not in top_websites:  # Confronta con le righe lette
+                            print(f"Domain {FQDN} is not in the top websites list. Ignoring., seq_id: {get_dns_request_id(data)}")
+                            continue
 
+                    packet_id = get_dns_request_id(data)
+                    print("Expected seq_id:", seq_id)
+                    print("Received packet_id:", packet_id)
+                    print("Received FQDN:", FQDN)
+                    
+                    if packet_id in received_packets:
+                        print(f"Duplicate packet detected: {packet_id}. Ignoring.")
+                    elif seq_id != packet_id:
+                        print(f"Packet mismatch: Expected {seq_id}, but got {packet_id}")
+                        print("Requesting re-transmission.")
+                        # Non incrementiamo seq_id qui perché il pacchetto non è corretto
+                    else:
+                        print(f"Packet {seq_id} received correctly")
+                        append_domain(FQDN)
+                        received_packets.add(packet_id)
+                        seq_id += 1  # Incrementiamo solo quando riceviamo il pacchetto corretto
+                
                 # Send the response to the client
                 sock.sendto(response, address)
             except Exception as e:
                 logging.error(f"Error receiving data: {e}")
+
 
     except Exception as e:
         logging.error(f"Error starting server: {e}")
