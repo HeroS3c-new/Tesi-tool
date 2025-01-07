@@ -1,10 +1,13 @@
 import sys
 import base64
 import binascii
+import os
 
 array64 = list("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/+=�")
 
 def Decloakify(arg1, arg2, arg3):
+    if os.path.exists(arg1) == False or os.path.exists(arg2) == False:
+        return -1
     with open(arg1) as file:
         listExfiltrated = file.readlines()
         

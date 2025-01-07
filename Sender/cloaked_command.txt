@@ -1,5 +1,5 @@
-www.salesforce.com
-www.groupon.com
-www.bing.com
-www.facebook.com
+www.americanexpress.com
+www.americanexpress.com
+www.nytimes.com
+www.target.com
 endOfTransmission.google.com

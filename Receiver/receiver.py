@@ -18,7 +18,7 @@ import threading
 def clear_files_on_exit(signum, frame):
     open('cloaked.payload', 'w').close()
     open('cloaked_response.txt', 'w').close()
-    print("Files cleared on exit.")
+    print("Files cleared.")
     #exit(0)
 
 signal.signal(signal.SIGINT, clear_files_on_exit)
@@ -47,13 +47,13 @@ def receive_command(local=False, args=None):
 
     cloaked_command = cloakedFile 
     decloaked_command = "decloaked_command.txt"
-    
+
+    # Request re-transmission if no response is received within 3 seconds
     if os.environ.get('EOT') == 'True' or local:
         def timeout_handler():
             print("No command received within 3 seconds. Requesting re-transmission.")
             send_response('�', srcIp, args)
             receive_command(local, args)
-
         timer = threading.Timer(3.0, timeout_handler)
         timer.start()
 
