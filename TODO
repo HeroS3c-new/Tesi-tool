@@ -1,13 +1,13 @@
+- [IN CORSO] Per la ritrasmissione inviare l'ultimo carattere ricevuto così sa quale reinviare.
+    + implementare '# appendi domini', deve riecevere i domini ritrasmessi e appenderli al cloaked.payload (modificre la receive_response mettndo un parametro per accettare l'appesa di soli domini a partire dal >= al mannte ricevuto)
 
-- Aggiungere sul file dns_server.py la chiamata alla funzione di ritrasmissione (si lavora sul dns_server del sender)
+vedi cap 6: https://link.springer.com/article/10.1007/s10207-024-00879-z
+
 
 - Inviare come ultimo dominio un dominio accordato tra uno di quelli della lista dei domini attravreso l'algoritmo di clokify.
 -> Non prende un dominio dalla lista ma se ne sceglie uno comune (con il flag --EOT_url), sennò lo scambierebbe come fine trasmissione se fosse una lettera
 
--a alla fine inviare un numero random di richieste in modo da confondere. (comunicarlo prima anche questo in modo che sa quante richieste scartare).
+-alla fine inviare un numero random di richieste in modo da confondere. (comunicarlo prima anche questo in modo che sa quante richieste scartare).
 
-- Per la ritrasmissione inviare l'ultimo carattere ricevuto così sa quale reinviare.
-
-vedi cap 6: https://link.springer.com/article/10.1007/s10207-024-00879-z
 
 

@@ -2,9 +2,34 @@ import socket
 import logging
 import struct
 import os
+from scapy.all import *
+from aes_encrypt import encrypt_message
+from cloakify import Cloakify
+from packetWhisper import TransferCloakedFile
+
 os.environ["SRC_IP"] = "127.0.0.1"
 os.environ["EOT"] = "False"
 os.environ["EOTUrl"] = "endOfTransmission.google.com"
+key = b'VijMwRNSQHALXQodmjCdH4UB7SCw/+EpnuBXfko7ReyqG3oYAky0eYxxx92xi49q'[:32]
+
+
+def retransmit(seq_id):
+    cipher = "ciphers\\common_fqdn\\topWebsites"
+    cloaked_restrasmission = "cloaked_retramission.txt"
+    Cloakify('�{seq_id}', cipher, cloaked_restrasmission)
+    TransferCloakedFile(cloaked_restrasmission, 0.0, os.environ["SRC_IP"])
+    fqdn_array = []
+    with open(cloaked_restrasmission, 'r') as file:
+        fqdn_array = [line.strip() for line in file]
+
+    with open('cloaked_response.txt', 'r') as file:
+        fqdn_array = [line.strip() for line in file]
+        for fqdn in fqdn_array:
+            if fqdn_array.index(fqdn) >= seq_id:
+                id = int(fqdn_array.index(fqdn))
+                dns_req = IP(dst=os.environ["SRC_IP"])/UDP(dport=53)/DNS(rd=1, qd=DNSQR(unicastresponse=1, qname=fqdn))
+                dns_req[DNS].id = id
+                send(dns_req, verbose=0)
 
 
 def get_dns_request_id(data):
@@ -116,6 +141,7 @@ def start_udp_server():
                     elif seq_id != packet_id:
                         print(f"Packet mismatch: Expected {seq_id}, but got {packet_id}")
                         print("Requesting re-transmission.")
+                        retransmit(seq_id)
                         # Non incrementiamo seq_id qui perché il pacchetto non è corretto
                     else:
                         print(f"Packet {seq_id} received correctly")

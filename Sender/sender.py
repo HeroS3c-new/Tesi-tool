@@ -5,7 +5,7 @@ from decloakify import Decloakify
 from aes_encrypt import decrypt_message, encrypt_message
 from cloakify import Cloakify
 from packetWhisper import ExtractDNSQueriesFromPCAP, ExtractPayloadFromDNSQueries, TransferCloakedFile
-from dns_server import start_udp_server
+from dns_server import *
 from scapy.all import *
 import signal
 
@@ -81,7 +81,7 @@ def receive_response(dns='localhost', local=False, args=None):
         
     # Decloakify the command
     if Decloakify(cloaked_response, cipher, decloaked_response) == -1:
-        print("Requesting re-trasmission")
+        print("Requesting full re-trasmission")
         send_command('�', dns)
         receive_response()
 
@@ -92,6 +92,8 @@ def receive_response(dns='localhost', local=False, args=None):
     print(f'\n {response}')
     if response=='�':
         send_command(command, args=args)
+    elif response.startswith('�') and response[1:].isdigit():
+        # appendi domini
     
         
 
