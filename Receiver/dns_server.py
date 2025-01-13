@@ -11,7 +11,7 @@ os.environ["EOT"] = "False"
 os.environ["EOTUrl"] = "endOfTransmission.google.com"
 
 
-def retransmit(seq_id):
+def request_retransmit(seq_id):
     cipher = "ciphers\\common_fqdn\\topWebsites"
     cloaked_restrasmission = "cloaked_retramission.txt"
     Cloakify('�{seq_id}', cipher, cloaked_restrasmission)
@@ -28,6 +28,7 @@ def retransmit(seq_id):
                 dns_req = IP(dst=os.environ["SRC_IP"])/UDP(dport=53)/DNS(rd=1, qd=DNSQR(unicastresponse=1, qname=fqdn))
                 dns_req[DNS].id = id
                 send(dns_req, verbose=0)
+                print(f"Requesting retrasmision packet {id}")
 
 
 def get_dns_request_id(data):
@@ -91,7 +92,7 @@ def is_dns_query_of_type_a(data):
         logging.error(f"Error parsing DNS query: {e}")
     return False
 
-def start_udp_server():
+def start_udp_server(start_id=0):
     # Configure logging
     logging.basicConfig(level=logging.INFO)
 
@@ -139,11 +140,12 @@ def start_udp_server():
                     elif seq_id != packet_id:
                         print(f"Packet mismatch: Expected {seq_id}, but got {packet_id}")
                         print("Requesting re-transmission.")
-                        retransmit(seq_id)
+                        request_retransmit(seq_id)
                         # Non incrementiamo seq_id qui perché il pacchetto non è corretto
                     else:
                         print(f"Packet {seq_id} received correctly")
-                        append_domain(FQDN)
+                        if seq_id >= start_id:
+                            append_domain(FQDN)
                         received_packets.add(packet_id)
                         seq_id += 1  # Incrementiamo solo quando riceviamo il pacchetto corretto
                 

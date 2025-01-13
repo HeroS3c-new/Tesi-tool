@@ -54,7 +54,7 @@ def send_command(command, dns='localhost', args=None):
     #os.remove(cloaked_command)
 
 
-def receive_response(dns='localhost', local=False, args=None):
+def receive_response(dns='localhost', local=False, args=None, seq_id=0):
     cloakedFile = "cloaked.payload"
     if local:
         subprocess.call(['python', 'pcapCapture.py'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) 
@@ -76,6 +76,7 @@ def receive_response(dns='localhost', local=False, args=None):
 
     with open(cloaked_response, 'r') as file:
         if file.read().strip() == "":
+            os.remove(cloaked_response) if os.path.exists(cloaked_response) else None
             print("No response received.")
             return
         
@@ -93,8 +94,8 @@ def receive_response(dns='localhost', local=False, args=None):
     if response=='�':
         send_command(command, args=args)
     elif response.startswith('�') and response[1:].isdigit():
-        # appendi domini
-    
+        #receive_response(dns, local, args, int(response[1:]))
+        start_udp_server(seq_id)
         
 
     # Remove useless file after execution

