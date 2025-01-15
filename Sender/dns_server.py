@@ -132,6 +132,12 @@ def start_udp_server(start_id=0):
                             continue
 
                     packet_id = get_dns_request_id(data)
+                                        
+                    # ignore confusing fqdns
+                    if packet_id > 65530:
+                        print(f"Packet {packet_id} is confusing. Ignoring.")
+                        break 
+                    
                     print("Expected seq_id:", seq_id)
                     print("Received packet_id:", packet_id)
                     print("Received FQDN:", FQDN)
@@ -149,7 +155,8 @@ def start_udp_server(start_id=0):
                             append_domain(FQDN)
                         received_packets.add(packet_id)
                         seq_id += 1  # Incrementiamo solo quando riceviamo il pacchetto corretto
-                
+                        
+
                 # Send the response to the client
                 sock.sendto(response, address)
             except Exception as e:

