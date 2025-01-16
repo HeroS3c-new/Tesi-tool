@@ -136,7 +136,7 @@ def start_udp_server(start_id=0):
                     # ignore confusing fqdns
                     if packet_id > 65530:
                         print(f"Packet {packet_id} is confusing. Ignoring.")
-                        break 
+                        continue
                     
                     print("Expected seq_id:", seq_id)
                     print("Received packet_id:", packet_id)
@@ -153,6 +153,7 @@ def start_udp_server(start_id=0):
                         print(f"Packet {seq_id} received correctly")
                         if seq_id >= start_id:
                             append_domain(FQDN)
+                            print(f"Appended {FQDN} to cloaked.payload")
                         received_packets.add(packet_id)
                         seq_id += 1  # Incrementiamo solo quando riceviamo il pacchetto corretto
                         

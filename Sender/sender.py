@@ -83,12 +83,13 @@ def receive_response(dns='localhost', local=False, args=None, seq_id=0):
             receive_response(local, args)
         timer = threading.Timer(3.0, timeout_handler)
         timer.start()
-
+    '''
     with open(cloaked_response, 'r') as file:
         if file.read().strip() == "":
             os.remove(cloaked_response) if os.path.exists(cloaked_response) else None
             print("No response received.")
             return
+    '''
         
     # Decloakify the command
     if Decloakify(cloaked_response, cipher, decloaked_response) == -1:

