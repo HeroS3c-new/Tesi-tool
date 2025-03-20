@@ -1,43 +1,8 @@
-  977  30.633416 192.168.200.66 → 192.168.200.240 DNS 80 Standard query 0xacb0 A substrate.office.com
-  978  30.647837 192.168.200.240 → 192.168.200.66 DNS 254 Standard query response 0xacb0 A substrate.office.com CNAME outlook.office365.com CNAME ooc-g2.tm-4.office.com CNAME outlook.ms-acdc.office.com CNAME LIN-efz.ms-acdc.office.com A 52.98.237.146 A 52.98.242.226 A 52.98.243.146 A 52.98.237.162
- 1032  31.160040 192.168.200.66 → 192.168.200.240 DNS 88 Standard query 0xa1eb A dc.services.visualstudio.com
- 1033  31.176783 192.168.200.240 → 192.168.200.66 DNS 454 Standard query response 0xa1eb A dc.services.visualstudio.com CNAME dc.applicationinsights.microsoft.com CNAME dc.applicationinsights.azure.com CNAME global.in.ai.monitor.azure.com CNAME global.in.ai.privatelink.monitor.azure.com CNAME dc.trafficmanager.net CNAME westeurope-global.in.applicationinsights.azure.com CNAME gig-ai-prod-westeurope-global.trafficmanager.net CNAME gig-ai-g-prod-westeurope-1-app-v4-tag.westeurope.cloudapp.azure.com A 20.50.88.244
- 1051  31.308284 192.168.200.66 → 192.168.200.240 DNS 92 Standard query 0xc14d A server.events.data.microsoft.com
- 1052  31.322991 192.168.200.240 → 192.168.200.66 DNS 212 Standard query response 0xc14d A server.events.data.microsoft.com CNAME server.events.data.trafficmanager.net CNAME onedscolprdeus02.eastus.cloudapp.azure.com A 20.42.65.84
- 2268  46.726344 192.168.200.66 → 192.168.200.240 DNS 85 Standard query 0x72fe A login.microsoftonline.com
- 2269  46.726952 192.168.200.240 → 192.168.200.66 DNS 327 Standard query response 0x72fe A login.microsoftonline.com CNAME login.mso.msidentity.com CNAME ak.privatelink.msidentity.com CNAME www.tm.a.prd.aadg.trafficmanager.net A 40.126.53.11 A 20.190.181.2 A 40.126.53.7 A 40.126.53.9 A 20.190.181.1 A 40.126.53.10 A 20.231.128.65 A 20.190.181.0
- 2797  54.607082 192.168.200.66 → 192.168.200.240 DNS 75 Standard query 0xb71e A ssl.gstatic.com
- 2798  54.607520 192.168.200.240 → 192.168.200.66 DNS 91 Standard query response 0xb71e A ssl.gstatic.com A 216.58.204.131
-10145  72.633451 192.168.200.66 → 192.168.200.240 DNS 89 Standard query 0xaa62 A v10.events.data.microsoft.com
-10147  72.647900 192.168.200.240 → 192.168.200.66 DNS 226 Standard query response 0xaa62 A v10.events.data.microsoft.com CNAME win-global-asimov-leafs-events-data.trafficmanager.net CNAME onedscolprdwus10.westus.cloudapp.azure.com A 20.189.173.11
-10976 102.116838 192.168.200.66 → 192.168.200.240 DNS 79 Standard query 0xaf93 A play.googleapis.com
-10978 102.131693 192.168.200.240 → 192.168.200.66 DNS 143 Standard query response 0xaf93 A play.googleapis.com A 216.239.36.223 A 216.239.34.223 A 216.239.38.223 A 216.239.32.223
-11392 116.602886 192.168.200.66 → 192.168.200.240 DNS 75 Standard query 0x7371 A ssl.gstatic.com
-11393 116.603548 192.168.200.240 → 192.168.200.66 DNS 91 Standard query response 0x7371 A ssl.gstatic.com A 216.58.209.35
-11638 131.983510 192.168.200.66 → 192.168.200.240 DNS 70 Standard query 0x9b95 A github.com
-11639 131.999640 192.168.200.240 → 192.168.200.66 DNS 86 Standard query response 0x9b95 A github.com A 140.82.121.4
-11756 136.313623 192.168.200.66 → 192.168.200.240 DNS 92 Standard query 0x2abb A mobile.events.data.microsoft.com
-11757 136.314025 192.168.200.66 → 192.168.200.240 DNS 92 Standard query 0xc222 HTTPS mobile.events.data.microsoft.com
-11763 136.340516 192.168.200.240 → 192.168.200.66 DNS 212 Standard query response 0x2abb A mobile.events.data.microsoft.com CNAME mobile.events.data.trafficmanager.net CNAME onedscolprdeus14.eastus.cloudapp.azure.com A 20.42.65.90
-11764 136.341832 192.168.200.240 → 192.168.200.66 DNS 196 Standard query response 0xc222 HTTPS mobile.events.data.microsoft.com CNAME mobile.events.data.trafficmanager.net CNAME onedscolprdeus14.eastus.cloudapp.azure.com
-13552 165.022942 192.168.200.66 → 192.168.200.240 DNS 84 Standard query 0xab1e A EURO03.azure-devices.net
-13556 165.038508 192.168.200.240 → 192.168.200.66 DNS 175 Standard query response 0xab1e A EURO03.azure-devices.net CNAME gateway-prod-gw-uksouth-3-tls10-g2.uksouth.cloudapp.azure.com A 51.105.69.4
-13918 171.306284 192.168.200.66 → 192.168.200.240 DNS 84 Standard query 0x9e93 A EURO03.azure-devices.net
-13919 171.306796 192.168.200.240 → 192.168.200.66 DNS 175 Standard query response 0x9e93 A EURO03.azure-devices.net CNAME gateway-prod-gw-uksouth-3-tls10-g2.uksouth.cloudapp.azure.com A 51.105.69.4
-15040 192.808333 192.168.200.66 → 192.168.200.240 DNS 92 Standard query 0x942c A mobile.events.data.microsoft.com
-15041 192.822536 192.168.200.240 → 192.168.200.66 DNS 212 Standard query response 0x942c A mobile.events.data.microsoft.com CNAME mobile.events.data.trafficmanager.net CNAME onedscolprdeus11.eastus.cloudapp.azure.com A 20.42.65.89
-15055 193.038931 192.168.200.66 → 103.241.66.38 DNS 78 Standard query 0xffff A www.capitalone.com
-15056 193.042544 192.168.200.66 → 103.241.66.38 DNS 73 Standard query 0xfffe A www.yahoo.com
-15057 193.047705 192.168.200.66 → 103.241.66.38 DNS 72 Standard query 0xfffd A www.live.com
-15058 193.052550 103.241.66.38 → 192.168.200.66 ICMP 106 Destination unreachable (Port unreachable)
-15065 193.056717 192.168.200.66 → 103.241.66.38 DNS 72 Standard query 0xfffc A www.live.com
-15071 193.058155 103.241.66.38 → 192.168.200.66 ICMP 101 Destination unreachable (Port unreachable)
-15076 193.060788 103.241.66.38 → 192.168.200.66 ICMP 100 Destination unreachable (Port unreachable)
-15080 193.062367 192.168.200.66 → 103.241.66.38 DNS 72 Standard query 0xfffb A www.bing.com
-15093 193.069615 103.241.66.38 → 192.168.200.66 ICMP 100 Destination unreachable (Port unreachable)
-15100 193.075223 103.241.66.38 → 192.168.200.66 ICMP 100 Destination unreachable (Port unreachable)
-15197 194.352894 192.168.200.66 → 103.241.66.38 DNS 83 Standard query 0x0000 A www.americanexpress.com
-15198 194.358716 192.168.200.66 → 103.241.66.38 DNS 83 Standard query 0x0000 A www.americanexpress.com
-15199 194.363098 192.168.200.66 → 103.241.66.38 DNS 75 Standard query 0x0002 A www.nytimes.com
-15200 194.366036 103.241.66.38 → 192.168.200.66 ICMP 111 Destination unreachable (Port unreachable)
-15201 194.366787 192.168.200.66 → 103.241.66.38 DNS 74 Standard query 0x0003 A www.target.com
+   18   1.180250 103.241.66.38 → 192.168.200.46 DNS 83 Standard query 0x0000 A www.americanexpress.com
+   19   1.185936 192.168.200.46 → 103.241.66.38 DNS 83 Standard query 0x0000 A www.americanexpress.com
+   20   1.200093 103.241.66.38 → 192.168.200.46 ICMP 111 Destination unreachable (Port unreachable)
+   21   1.204344 103.241.66.38 → 192.168.200.46 DNS 83 Standard query 0x0000 A www.americanexpress.com
+   22   1.207390 192.168.200.46 → 103.241.66.38 DNS 83 Standard query 0x0000 A www.americanexpress.com
+   23   1.221785 103.241.66.38 → 192.168.200.46 ICMP 111 Destination unreachable (Port unreachable)
+   24   1.228231 103.241.66.38 → 192.168.200.46 DNS 75 Standard query 0x0002 A www.nytimes.com
+   25   1.252337 103.241.66.38 → 192.168.200.46 DNS 74 Standard query 0x0003 A www.target.com

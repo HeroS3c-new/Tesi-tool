@@ -125,7 +125,7 @@ def start_udp_server(start_id=0):
                     return
                 
                 if is_dns_query_of_type_a(data): 
-                    with open('ciphers\\common_fqdn\\topWebsites', 'r') as f:
+                    with open('topWebsites', 'r') as f:
                         top_websites = [line.strip() for line in f]  # Crea una lista delle righe del file
                         if FQDN.strip() not in top_websites:  # Confronta con le righe lette
                             print(f"Domain {FQDN} is not in the top websites list. Ignoring., seq_id: {get_dns_request_id(data)}")

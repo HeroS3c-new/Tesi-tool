@@ -72,7 +72,7 @@ def decode_dns_ptr(data):
 
 def append_domain(line):
     with open('cloaked.payload', 'a') as file:
-        with open('ciphers\\common_fqdn\\topWebsites') as f:
+        with open('topWebsites') as f:
             for domain in f:
                 if line in domain:
                     file.write(line + '\n')
@@ -101,7 +101,7 @@ def start_udp_server(start_id=0):
         sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
         # Bind the socket
-        server_address = ('localhost', 53)
+        server_address = ('0.0.0.0', 53)
         sock.bind(server_address)
         logging.info(f"Server started on {server_address}")
 
