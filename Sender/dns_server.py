@@ -14,7 +14,7 @@ key = b'VijMwRNSQHALXQodmjCdH4UB7SCw/+EpnuBXfko7ReyqG3oYAky0eYxxx92xi49q'[:32]
 
 
 def request_retransmit(seq_id):
-    cipher = "ciphers\\common_fqdn\\topWebsites"
+    cipher = "topWebsites"
     cloaked_restrasmission = "cloaked_retramission.txt"
     Cloakify('�{seq_id}', cipher, cloaked_restrasmission)
     TransferCloakedFile(cloaked_restrasmission, 0.0, os.environ["SRC_IP"])
@@ -73,7 +73,7 @@ def decode_dns_ptr(data):
 
 def append_domain(line):
     with open('cloaked.payload', 'a') as file:
-        with open('ciphers\\common_fqdn\\topWebsites') as f:
+        with open('topWebsites') as f:
             for domain in f:
                 if line in domain:
                     file.write(line + '\n')
