@@ -9,12 +9,15 @@
 recent.capture_file: C:\Users\loris.simonetti\Documents\Tesi-tool\Receiver\cloaked_command.pcap
 recent.capture_file: C:\Users\loris.simonetti\Desktop\cattura.pcapng
 recent.capture_file: C:\Users\loris.simonetti\Documents\Tesi-tool\Sender\cloaked_response.pcap
+recent.capture_file: C:\Users\loris.simonetti\Downloads\4f88bff7-f5bd-4a4a-8204-e82bf5e4a18d.pcap
 
 ######## Recent capture filters (latest first), cannot be altered through command line ########
 
 
 ######## Recent display filters (latest last), cannot be altered through command line ########
 
+recent.display_filter: udp.stream eq 7
+recent.display_filter: tcp.stream eq 7
 recent.display_filter: dns.afsdb.hostname
 recent.display_filter: dns.a
 recent.display_filter: dns.a.ch.domain == google.com
@@ -23,18 +26,16 @@ recent.display_filter: dns.a.ch.domain
 recent.display_filter: udp.port == 53
 recent.display_filter: udp.port == 15
 recent.display_filter: dnsserver
-recent.display_filter: udp.stream eq 15
-recent.display_filter: dns
 
 ######## Recent remote hosts (latest first), cannot be altered through command line ########
 
 
 # Main window geometry.
 # Decimal numbers.
-gui.geometry_main_x: 1920
+gui.geometry_main_x: 0
 gui.geometry_main_y: -8
 gui.geometry_main_width: 1920
-gui.geometry_main_height: 1129
+gui.geometry_main_height: 1009
 
 # Main window maximized.
 # true or false (case-insensitive).
@@ -42,7 +43,7 @@ gui.geometry_main_maximized: true
 
 # Main window geometry state.
 # Hex byte string.
-gui.geometry_main: 01d9d0cb0003000000000780fffffff800000eff0000047f00000960000000c000000d1f000003bf00000001020000000780000007800000001700000eff0000047f
+gui.geometry_main: 01d9d0cb0003000000000000fffffff80000077f00000407000001e0000000840000059f000003830000000002000000078000000000000000170000077f00000407
 
 # Leftalign Action Buttons.
 # true or false (case-insensitive).
@@ -101,13 +102,13 @@ gui.geom.TrafficTableDialog.qt_geometry: 01d9d0cb00030000fffff93c00000139fffffdb
 # Geometry and maximized state of FollowStreamDialog window.
 # Decimal integers.
 gui.geom.FollowStreamDialog.x: 310
-gui.geom.FollowStreamDialog.y: 0
+gui.geom.FollowStreamDialog.y: -6
 gui.geom.FollowStreamDialog.width: 1280
-gui.geom.FollowStreamDialog.height: 1009
+gui.geom.FollowStreamDialog.height: 1006
 # true or false (case-insensitive).
 gui.geom.FollowStreamDialog.maximized: false
 # Qt Geometry State (hex byte string).
-gui.geom.FollowStreamDialog.qt_geometry: 01d9d0cb000300000000013600000000000006350000040f000001360000001f000006350000040f00000000000000000780000001360000001f000006350000040f
+gui.geom.FollowStreamDialog.qt_geometry: 01d9d0cb0003000000000136fffffffa0000063500000406000001360000001900000635000004060000000000000000078000000136000000190000063500000406
 
 # Custom colors.
 # List of custom colors selected in Qt color picker.

@@ -20,7 +20,7 @@ signal.signal(signal.SIGINT, clear_files_on_exit)
 
 # AES Key
 key = b'VijMwRNSQHALXQodmjCdH4UB7SCw/+EpnuBXfko7ReyqG3oYAky0eYxxx92xi49q'[:32]
-cipher = "ciphers\\common_fqdn\\topWebsites"
+cipher = "topWebsites"
 command = None
 
 def send_command(command, dns='localhost', args=None):

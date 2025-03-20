@@ -26,7 +26,7 @@ signal.signal(signal.SIGINT, clear_files_on_exit)
 # AES Key
 key = b'VijMwRNSQHALXQodmjCdH4UB7SCw/+EpnuBXfko7ReyqG3oYAky0eYxxx92xi49q'[:32]
 cipher = "ciphers\\common_fqdn\\topWebsites"
-dns = '127.0.0.1'
+dns = '0.0.0.0'
 
 def receive_command(local=False, args=None, seq_id=0):
     srcIp = os.environ.get('SRC_IP')
@@ -110,7 +110,7 @@ def receive_command(local=False, args=None, seq_id=0):
 
     start_udp_server()
 
-def send_response(response, dns='127.0.0.1', args=None):
+def send_response(response, dns='0.0.0.0', args=None):
     # Initilize number of random fqdns to be discarded after the command is sent
     rnd_fqdn = random.randint(1, 5)
     # pick random fqdn from cipher file

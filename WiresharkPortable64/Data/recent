@@ -95,7 +95,7 @@ gui.show_bytes_show: ASCII
 
 # Main window upper (or leftmost) pane size.
 # Decimal number.
-gui.geometry_main_upper_pane: 510
+gui.geometry_main_upper_pane: 450
 
 # Main window middle pane size.
 # Decimal number.
@@ -115,7 +115,7 @@ column.width:
         %m, -1,
         %t, -1,
         %s, -1,
-        %d, -1,
+        %d, 505,
         %p, -1,
         %L, -1,
         %i, 1353
@@ -141,7 +141,7 @@ gui.endpoint_tabs_columns:
 gui.rlc_pdus_from_mac_frames: false
 
 # Last directory navigated to in File Open dialog.
-gui.fileopen_remembered_dir: C:\Users\loris.simonetti\Documents\Tesi-tool\Sender\
+gui.fileopen_remembered_dir: C:\Users\loris.simonetti\Downloads\
 
 # Additional Toolbars shown
 # List of additional toolbars to show.

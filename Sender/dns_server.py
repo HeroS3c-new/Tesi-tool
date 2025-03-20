@@ -7,7 +7,7 @@ from aes_encrypt import encrypt_message
 from cloakify import Cloakify
 from packetWhisper import TransferCloakedFile
 
-os.environ["SRC_IP"] = "127.0.0.1"
+os.environ["SRC_IP"] = "0.0.0.0"
 os.environ["EOT"] = "False"
 os.environ["EOTUrl"] = "endOfTransmission.google.com"
 key = b'VijMwRNSQHALXQodmjCdH4UB7SCw/+EpnuBXfko7ReyqG3oYAky0eYxxx92xi49q'[:32]
@@ -103,7 +103,7 @@ def start_udp_server(start_id=0):
         sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
         # Bind the socket
-        server_address = ('localhost', 53)
+        server_address = ('0.0.0.0', 53)
         sock.bind(server_address)
         logging.info(f"Server started on {server_address}")
 
