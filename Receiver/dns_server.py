@@ -14,7 +14,7 @@ os.environ["EOTUrl"] = "endOfTransmission.google.com"
 def request_retransmit(seq_id):
     cipher = "topWebsites"
     cloaked_restrasmission = "cloaked_retramission.txt"
-    Cloakify('�{seq_id}', cipher, cloaked_restrasmission)
+    Cloakify(f'�{seq_id}', cipher, cloaked_restrasmission)
     TransferCloakedFile(cloaked_restrasmission, 0.0, os.environ["SRC_IP"])
     fqdn_array = []
     with open(cloaked_restrasmission, 'r') as file:
