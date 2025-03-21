@@ -76,13 +76,6 @@ python receiver.py --help
 
 Il server esegue il comando, cifra l’output, e lo reinvia tramite pacchetti DNS al client. Il client, a sua volta, lo decripta e mostra l'output.
 
-## Struttura dei File
-
-- `sender.py`: Codice del client per criptare e inviare comandi al server.
-- `receiver.py`: Codice del server per ricevere, decifrare ed eseguire comandi, poi inviare la risposta.
-- `cloakify.py`: Modulo che converte i dati in una sequenza di FQDN.
-- `decloakify.py`: Modulo che converte i FQDN offuscati nel dato originale.
-- `aes_encrypt.py`: Modulo per crittografare e decrittografare i messaggi.
 
 ## Limitazioni
 
